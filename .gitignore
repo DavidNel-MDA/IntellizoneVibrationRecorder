@@ -1,0 +1,28 @@
+# Ignore Python files
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore IDE and editor files
+.vscode/
+.idea/
+*.iml
+
+# Ignore virtual environment files
+venv/
+env/
+
+# Ignore logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Ignore node_modules (if using npm or yarn)
+node_modules/
+
+# Ignore .DS_Store files (MacOS)
+.DS_Store
+
+# Ignore .gitattributes files
+.gitattributes.venv/
+.venv/
