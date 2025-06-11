@@ -1,5 +1,7 @@
 from bidict import bidict
 
+DISCOVERY_TIMEOUT= 300.0
+
 # Configuration parameters
 UID = [0x45, 0x2F, 0xA7, 0xA2]                  # Replace with real UID
 BITRATE = 125000

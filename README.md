@@ -32,7 +32,5 @@ The config.py file contains settings for the device, including the UID, module t
 - Check the logs for errors and warnings.
 - Verify that the CAN bus interface is properly configured.
 - Use a CAN bus analyzer tool to inspect the messages being sent and received.
-## License
-This project is licensed under the MIT License.
 ## Contributing
 Contributions are welcome! Please submit pull requests with clear descriptions of the changes made.

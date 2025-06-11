@@ -1,6 +1,21 @@
 import can
 from messages import SendMessage
-from config import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE
+import logging
+from datetime import datetime
+import time
+from config import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE, DISCOVERY_TIMEOUT
+
+ERROR_LOG_BASE = "error_log_"
+
+def get_daily_error_log_filename():
+    """Generate filename for today's error log."""
+    return f"{ERROR_LOG_BASE}{datetime.now().strftime('%Y-%m-%d')}.log"
+
+def log_timeout_error(message):
+    """Log error to the daily file with timestamp."""
+    with open(get_daily_error_log_filename(), "a") as f:
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        f.write(f"[{timestamp}] {message}\n")
 
 def send_periodic_node_discovery(
     can_bus: can.BusABC,
@@ -75,7 +90,14 @@ def wait_for_configuration_write(
     -------
     int
         The assigned node ID from the controller.
+
+    Raises
+    ------
+    TimeoutError
+        If the operation times out while waiting for the Configuration Write
+        message.
     """
+    start_time = time.time()
 
     # Build the expected Configuration Write message
     expected_message = SendMessage(
@@ -91,7 +113,7 @@ def wait_for_configuration_write(
     expected_arbitration_id = expected_message.build_arbitration_id()
 
     # Wait indefinitely for the Configuration Write message
-    while True:
+    while time.time() - start_time < DISCOVERY_TIMEOUT:
         message = canbus.recv()
         if message and message.arbitration_id == expected_arbitration_id:
             # Extract the assigned node ID from the message
@@ -99,3 +121,7 @@ def wait_for_configuration_write(
             if data[0] == 0x00 and data[1:5] == device_uid:
                 node_id = data[5]
                 return node_id
+
+    # Log and raise timeout if no message is received within the specified time
+    log_timeout_error("Timeout waiting for Configuration Write message.")
+    raise TimeoutError("Timed out after 5 minutes waiting for Configuration Write.")

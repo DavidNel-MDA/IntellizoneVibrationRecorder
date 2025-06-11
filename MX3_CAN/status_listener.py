@@ -97,6 +97,7 @@ class StatusListener(can.Listener):
 
     def on_message_received(self, msg: can.Message) -> None:
         message_type = (msg.arbitration_id >> 16) & 0x1FFF
+        # print(f"Received status message: {msg}")
         if message_type == CONTROLLER_MESSAGE_TYPE["Device_Status_Report"]:
             data_bytes = list(msg.data)
 

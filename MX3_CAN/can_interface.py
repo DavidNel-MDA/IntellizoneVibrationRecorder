@@ -18,27 +18,59 @@ class CANInterface:
         self.bitrate = bitrate
         self.bus = None
 
-    def bring_up(self):
+    def bring_up(self) -> can.BusABC:
         """
         Activate the CAN interface with the specified bitrate.
+
+        This method brings up the CAN interface by executing a system
+        command to set the bitrate. It then creates a CAN bus object
+        associated with the interface and returns it.
 
         Returns
         -------
         can.Bus
             The CAN bus object associated with the interface.
         """
+        # Bring down the CAN interface
         try:
             subprocess.run(
-                ["sudo", "ip", "link", "set", self.channel, "down"], check=False
+                ["sudo", "ip", "link", "set", self.channel, "down"],
+                check=False,
+                capture_output=True,
             )
-            subprocess.run(
-                ["sudo", "ip", "link", "set", self.channel, "up", "type", "can", "bitrate", str(self.bitrate)],
-                check=True
-            )
-            self.bus = can.Bus(interface='socketcan', channel=self.channel, bitrate=self.bitrate)
-            return self.bus
         except subprocess.CalledProcessError as error:
-            raise RuntimeError(f"Failed to activate CAN interface '{self.channel}'") from error
+            raise RuntimeError(
+                f"Failed to bring down CAN interface '{self.channel}': {error.stderr}"
+            ) from error
+
+        # Bring up the CAN interface with the specified bitrate
+        try:
+            subprocess.run(
+                [
+                    "sudo",
+                    "ip",
+                    "link",
+                    "set",
+                    self.channel,
+                    "up",
+                    "type",
+                    "can",
+                    "bitrate",
+                    str(self.bitrate),
+                ],
+                check=True,
+                capture_output=True,
+            )
+        except subprocess.CalledProcessError as error:
+            raise RuntimeError(
+                f"Failed to set bitrate for CAN interface '{self.channel}': {error.stderr}"
+            ) from error
+
+        # Create and return the CAN bus object
+        self._bus = can.Bus(
+            interface="socketcan", channel=self.channel, bitrate=self.bitrate
+        )
+        return self._bus
 
     def shutdown(self) -> None:
         """
