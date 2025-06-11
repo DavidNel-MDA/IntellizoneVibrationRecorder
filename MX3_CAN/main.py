@@ -341,9 +341,11 @@ def main() -> None:
 
     while True:
         can_interface = None
+        can_bus = None
         heartbeat_task = None
         can_notifier = None
         status_listener = None
+
 
         try:
             # 1. Initialize CAN
@@ -391,6 +393,12 @@ def main() -> None:
                 logger.info("Stopped heartbeat task.")
             if status_listener:
                 status_listener.close_logger()
+            if can_bus:
+                try:
+                    can_bus.shutdown()  # <-- NEW: Ensure raw socket is released properly
+                    logger.info("Shutdown CAN bus.")
+                except Exception as e:
+                    logger.warning("Could not shutdown CAN bus cleanly: %s", e)
             if can_interface:
                 can_interface.shutdown()
                 logger.info("Cleaned up CAN interface.")

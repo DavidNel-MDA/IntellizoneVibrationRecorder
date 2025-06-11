@@ -9,60 +9,61 @@ def safe_get(data: list[int], index: int, default: int = 0) -> int:
 
 
 def parse_tracking_status(
-    data_bytes: list[int],
+    data_bytes: list[int], 
     status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
-    Parse tracking status from the given data bytes and update the status store.
+    Parse tracking status from data bytes.
 
     Data format:
     - Byte 0: Parameter code (0x10)
     - Byte 1:
-        Bits 7-6: Global zone status
-        Bit 3: Operator present
-    - Byte 2-4: Closest locator ID (3 bytes, big-endian)
+        Bits 7-6: Global Zone Status
+        Bit 5: Operator Present
+        Bits 4-2: Octant Location
+        Bits 1-0: Screen Orientation
+    - Bytes 2–4: Closest Locator ID (24-bit MSB)
     - Byte 5:
-        Bits 7-5: Octant location
-        Bits 1-0: Screen orientation
-
-    :return: The updated status store
+        Bits 7-5: Octant Location
+        Bits 1-0: Screen Orientation
     """
     if not data_bytes:
         return status_store
 
     try:
-        # Global zone status
-        global_zone_status_code = (data_bytes[1] >> 6) & 0b11
+        byte1 = safe_get(data_bytes, 1)
+        byte2 = safe_get(data_bytes, 2)
+        byte3 = safe_get(data_bytes, 3)
+        byte4 = safe_get(data_bytes, 4)
+        byte5 = safe_get(data_bytes, 5)
 
-        # Operator presence
-        operator_presence_code = (data_bytes[1] >> 3) & 0b1
+        # Extract bit fields
+        global_zone_status_code = (byte1 >> 6) & 0b11
+        operator_presence_code = (byte1 >> 5) & 0b1
 
-        # Closest locator ID
-        locator_id = (data_bytes[2] << 16) | (data_bytes[3] << 8) | data_bytes[4]
+        # Closest Locator ID (3 bytes: byte2, byte3, byte4)
+        closest_locator_id = f"{(byte2 << 16 | byte3 << 8 | byte4):06X}"
 
-        # Octant location
-        octant_location_code = (data_bytes[5] >> 5) & 0b111
+        octant_location_code = (byte5 >> 5) & 0b111
+        screen_orientation_code = byte5 & 0b11
 
-        # Screen orientation
-        screen_orientation_code = data_bytes[5] & 0b11
-
+        # Map codes to human-readable statuses
         parsed_status = {
             "Global Zone Status": STATUS_LEVEL.get(global_zone_status_code, "Unknown"),
             "Operator Present": OPERATOR_PRESENCE.get(operator_presence_code, "Unknown"),
-            "Closest Locator ID": f"{locator_id:06X}",
+            "Closest Locator ID": closest_locator_id,
             "Octant Location": OCTANT_LOCATION.get(octant_location_code, "Unknown"),
             "Screen Orientation": SCREEN_ORIENTATION.get(screen_orientation_code, "Unknown")
         }
 
-        # Update the status store
         status_store.setdefault("Tracking Status", {})
+
         for key, value in parsed_status.items():
             if status_store["Tracking Status"].get(key) != value:
                 status_store["Tracking Status"][key] = value
 
-    except IndexError:
-        # Handle the case when the data bytes are incomplete
-        pass
+    except Exception as e:
+        logger.exception(f"Error parsing tracking status: {e}")
 
     return status_store
 
@@ -179,44 +180,53 @@ def parse_rf_module_status(
     data_bytes: list[int],
     status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
-    """Parse RF module status from CAN message data bytes.
+    """
+    Parse RF module status from a list of data bytes and update the status store.
 
-    Extracts serial communications status, Mnet connection status, and wireless AVR error code status
-    from the provided data bytes and updates the status store if changes are detected.
+    This function takes a list of data bytes and a status store dictionary as input,
+    and returns an updated status store with the parsed RF module status information.
 
-    Args:
-        data_bytes (list[int]): List of data bytes from the CAN message, starting with parameter code.
-        status_store (dict[str, dict[str, str]]): Dictionary storing the current status, updated with new values.
+    The function extracts the serial communications status, Mnet connection status,
+    and wireless AVR error code status from the data bytes, and updates the status
+    store with these values if they have changed.
 
-    Returns:
-        dict[str, dict[str, str]]: Updated status store with RF module status information.
+    Parameters
+    ----------
+    data_bytes : list[int]
+        A list of integers representing the data bytes to be parsed.
+    status_store : dict[str, dict[str, str]]
+        A dictionary containing the current status store, which will be updated
+        with the parsed RF module status information.
+
+    Returns
+    -------
+    dict[str, dict[str, str]]
+        The updated status store with the latest RF module status information.
     """
     if not data_bytes:
         return status_store
 
+    parsed_status = {}
+
     try:
         # Extract the serial communications status, Mnet connection status, and
         # wireless AVR error code status from the data bytes
-        serial_comms_status = GLOBAL_ZONE_STATUS.get(data_bytes[1], "Unknown")
-        mnet_connection_status = GLOBAL_ZONE_STATUS.get(data_bytes[2], "Unknown")
-        wireless_avr_error_code_status = GLOBAL_ZONE_STATUS.get(data_bytes[3], "Unknown")
+        parsed_status["SerialCommsStatus"] = GLOBAL_ZONE_STATUS.get(data_bytes[1], "Unknown")
+        parsed_status["MnetConnectionStatus"] = GLOBAL_ZONE_STATUS.get(data_bytes[2], "Unknown")
+        parsed_status["WirelessAvrErrorCodeStatus"] = GLOBAL_ZONE_STATUS.get(data_bytes[3], "Unknown")
 
         # Update the status store with the parsed status information
         status_key = "RFModuleStatus"
+
         if status_key not in status_store:
-            # Initialize the status store with the status key
             status_store[status_key] = {}
 
-        # Update the status store only if the values have changed
-        if status_store[status_key].get("SerialCommsStatus") != serial_comms_status:
-            status_store[status_key]["SerialCommsStatus"] = serial_comms_status
-        if status_store[status_key].get("MnetConnectionStatus") != mnet_connection_status:
-            status_store[status_key]["MnetConnectionStatus"] = mnet_connection_status
-        if status_store[status_key].get("WirelessAvrErrorCodeStatus") != wireless_avr_error_code_status:
-            status_store[status_key]["WirelessAvrErrorCodeStatus"] = wireless_avr_error_code_status
+        for key, value in parsed_status.items():
+            if status_store[status_key].get(key) != value:
+                status_store[status_key][key] = value
 
     except (IndexError, TypeError):
-        # Handle the case where the data bytes are invalid or missing
+        # Handle potential exceptions from safe_get or dictionary operations
         pass
 
     return status_store
@@ -591,11 +601,14 @@ def parse_long_range_drive_status_2(
 
 def parse_locator_failure_update(
     data_bytes: list[int],
-    status_store: dict[str, dict[str, dict[str, str]]]
-) -> dict[str, dict[str, dict[str, str]]]:
+    status_store: dict[str, dict[str, str]]
+) -> dict[str, dict[str, str]]:
     """
-    Parse a Locator Failure Update message from a list of data bytes and update the
-    status store with the parsed information.
+    Parse Locator Failure Update data bytes and update the status store.
+
+    The Locator Failure Update message is used to report the status of Locators
+    in the system. The message contains the Locator ID, Failure Type, and Update
+    Type.
 
     Parameters
     ----------
@@ -608,31 +621,33 @@ def parse_locator_failure_update(
     Returns
     -------
     dict[str, dict[str, str]]
-        The updated status store with the latest Locator Failure Update information.
+        The updated status store with the latest Locator Failure Update
+        information.
     """
-    # failure_type_index is the lower 3 bits of the second byte
-    failure_type_index = safe_get(data_bytes, 1) & 0b00000111
-    # update_type_index is the 4th bit of the second byte
-    update_type_index = (safe_get(data_bytes, 1) >> 3) & 0b1
-    # The locator ID is stored in the 3rd and 4th bytes
-    locator_id = f"{(safe_get(data_bytes, 3) << 8 | safe_get(data_bytes, 4)):04X}"
+    # Extract the Failure Type from the first byte
+    failure_type_code = data_bytes[1] & 0b00000111
+    # Extract the Update Type from the first byte
+    update_type_code = (data_bytes[1] >> 3) & 0b1
+    # Extract the Locator ID from the second and third bytes
+    locator_id = f"{data_bytes[2]:02X}{data_bytes[3]:02X}"
 
-    # Map the indices to their respective strings
-    parsed_status = {
-        "failure_type": LOCATOR_FAILURE_TYPES.get(failure_type_index, f"Unknown ({failure_type_index})"),
-        "update_type": LOCATOR_UPDATE_TYPES.get(update_type_index, f"Unknown ({update_type_index})")
+    # Create a dictionary to store the parsed data
+    parsed_data = {
+        "locator_id": locator_id,
+        "failure_type": LOCATOR_FAILURE_TYPES.get(failure_type_code, f"Unknown ({failure_type_code})"),
+        "update_type": LOCATOR_UPDATE_TYPES.get(update_type_code, f"Unknown ({update_type_code})")
     }
 
-    # If this is the first message of this type, create a new dictionary
-    status_store.setdefault("locator_failure_update", {})
+    # Initialize the status entry if it doesn't exist
+    if "locator_failure_update" not in status_store:
+        status_store["locator_failure_update"] = {}
 
-    # If the parsed status is different from the one already stored, update the store
-    if status_store["locator_failure_update"].get(locator_id) != parsed_status:
-        status_store["locator_failure_update"][locator_id] = parsed_status
+    # Update the status store with the parsed data if there are changes
+    for key, value in parsed_data.items():
+        if status_store["locator_failure_update"].get(key) != value:
+            status_store["locator_failure_update"][key] = value
 
     return status_store
-
-
 
 
 def parse_message(
