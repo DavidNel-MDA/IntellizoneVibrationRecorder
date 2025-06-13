@@ -1,5 +1,5 @@
 import can
-from config import MODULE_TYPE
+from MX3_CAN.config_yaml import MODULE_TYPE
 
 class SendMessage:
     def __init__(

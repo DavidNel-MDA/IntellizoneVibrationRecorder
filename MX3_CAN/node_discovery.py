@@ -3,7 +3,7 @@ from messages import SendMessage
 import logging
 from datetime import datetime
 import time
-from config import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE, DISCOVERY_TIMEOUT
+from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE, DISCOVERY_TIMEOUT
 
 ERROR_LOG_BASE = "error_log_"
 

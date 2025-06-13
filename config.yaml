@@ -1,0 +1,100 @@
+DISCOVERY_TIMEOUT: 300.0
+UID: [69, 47, 167, 162]   # 0x45, 0x2F, 0xA7, 0xA2
+BITRATE: 125000
+
+MODULE_TYPE:
+  Controller: 3
+  Driver: 6
+  MML: 9
+  Tracker: 10
+  Status_Screen: 12
+  Reserved: 15
+
+CONTROLLER_MESSAGE_TYPE:
+  Config_Write: 7966
+  Config_Write_Ext: 7967
+  Device_Error_Report: 8026
+  Device_Error_Report_Ext: 8027
+  Device_Status_Report: 8056
+  Device_Status_Report_Ext: 8057
+  Config_Response: 8086
+  Config_Response_Ext: 8087
+  Node_Discovery: 8096
+  Config_Read_Request: 8146
+  Config_Read_Request_Ext: 8147
+  Status_Read_Request: 8156
+  Status_Read_Request_Ext: 8157
+  Heartbeat: 8163
+  Device_Command: 8176
+
+GLOBAL_ZONE_STATUS:
+  0: Safe/Normal
+  1: Warning
+  2: Shutdown/Error
+  3: Reserved
+
+OCTANT_LOCATION:
+  0: 0-45 Octant
+  1: 45-90 Octant
+  2: 90-135 Octant
+  3: 135-180 Octant
+  4: 180-225 Octant
+  5: 225-270 Octant
+  6: 270-315 Octant
+  7: 315-360 Octant
+
+SCREEN_ORIENTATION:
+  0: Front
+  1: Right
+  2: Back
+  3: Left
+
+STATUS_LEVEL:
+  0: Safe/Normal
+  1: Warning
+  2: Shutdown/Error
+  3: Reserved
+
+OPERATOR_PRESENCE:
+  0: Not Present
+  1: Present
+
+SYNC_RATE:
+  0: 20 ms
+  1: 30 ms
+  2: 40 ms
+  3: 50 ms
+  4: 60 ms
+  5: 70 ms
+  6: 80 ms
+  7: 90 ms
+  8: 100 ms
+
+PROXIMITY_SYNC_RATE:
+  0: 100ms
+  1: 200ms
+  2: 300ms
+  3: 400ms
+  4: 500ms
+  5: 600ms
+  6: 700ms
+  7: 800ms
+  8: 900ms
+
+ENABLED_STATUS:
+  0: Disabled
+  1: Enabled
+
+LOCATOR_FAILURE_TYPES:
+  0: Test Status
+  1: Wave Set
+  2: Battery Voltage
+  3: No FPGA Int
+  4: Driver Dist Diff
+  5: Reserved
+  6: Reserved
+  7: Reserved
+
+LOCATOR_UPDATE_TYPES:
+  0: Remove
+  1: Add

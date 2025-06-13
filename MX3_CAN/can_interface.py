@@ -1,6 +1,6 @@
 import can
 import subprocess
-from config import BITRATE
+from MX3_CAN.config_yaml import BITRATE
 
 class CANInterface:
     def __init__(self, channel='can0', bitrate=BITRATE):

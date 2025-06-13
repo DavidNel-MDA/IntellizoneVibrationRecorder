@@ -2,7 +2,7 @@ import logging
 from messages import SendMessage
 from can import BusABC, CanError
 from status_listener import StatusListener
-from config import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE
+from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE
 
 
 logger = logging.getLogger(__name__)

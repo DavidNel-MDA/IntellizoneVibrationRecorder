@@ -4,7 +4,7 @@ import copy
 import json
 import datetime
 import os
-from config import *
+from MX3_CAN.config_yaml import *
 from message_parser import parse_message
 
 
