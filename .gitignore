@@ -4,6 +4,7 @@
 *.pyd
 
 # Ignore IDE and editor files
+.pytest_cache/
 .vscode/
 .idea/
 *.iml
