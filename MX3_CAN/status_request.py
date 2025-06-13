@@ -1,7 +1,8 @@
 import logging
-from messages import SendMessage
 from can import BusABC, CanError
-from status_listener import StatusListener
+
+from MX3_CAN.messages import SendMessage
+from MX3_CAN.status_listener import StatusListener
 from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE
 
 

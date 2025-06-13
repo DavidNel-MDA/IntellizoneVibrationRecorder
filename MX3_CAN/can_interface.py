@@ -3,16 +3,29 @@ import subprocess
 from MX3_CAN.config_yaml import BITRATE
 
 class CANInterface:
+    """
+    A class for creating a CAN bus interface on a Raspberry Pi.
+
+    Args:
+        channel (str): The name of the CAN bus interface (e.g. 'can0').
+        bitrate (int): The bitrate of the CAN bus (e.g. 500000).
+
+    Attributes:
+        channel (str): The name of the CAN bus interface.
+        bitrate (int): The bitrate of the CAN bus.
+        bus (can.BusABC): The CAN bus interface.
+    """
+
     def __init__(self, channel='can0', bitrate=BITRATE):
         """
-        Initialize a CANInterface object with a specified channel and bitrate.
+        Initialize a CAN bus interface.
 
-        Parameters
-        ----------
-        channel : str, optional
-            The CAN channel to use for communication (default is 'can0').
-        bitrate : int, optional
-            The bitrate to set for the CAN interface (default is specified by BITRATE).
+        Args:
+            channel (str): The name of the CAN bus interface.
+            bitrate (int): The bitrate of the CAN bus.
+
+        Returns:
+            None
         """
         self.channel = channel
         self.bitrate = bitrate
@@ -20,18 +33,35 @@ class CANInterface:
 
     def bring_up(self) -> can.BusABC:
         """
-        Activate the CAN interface with the specified bitrate.
+        Bring up the CAN bus interface with the specified bitrate and create a
+        CAN bus object.
 
-        This method brings up the CAN interface by executing a system
-        command to set the bitrate. It then creates a CAN bus object
-        associated with the interface and returns it.
-
-        Returns
-        -------
-        can.Bus
-            The CAN bus object associated with the interface.
+        Returns:
+            can.BusABC: The CAN bus object.
         """
         # Bring down the CAN interface
+        self._bring_interface_down()
+
+        # Bring up the CAN interface with the specified bitrate
+        self._set_bitrate()
+
+        # Create and return the CAN bus object
+        self._bus = can.Bus(
+            interface="socketcan", channel=self.channel, bitrate=self.bitrate
+        )
+        return self._bus
+
+
+    def _bring_interface_down(self) -> None:
+        """Bring down the CAN interface.
+
+        This method is a no-op if the interface is already down. If the interface
+        is not down, it will be brought down using the `ip link set` command.
+
+        Raises:
+            RuntimeError: If the command fails to bring down the interface.
+        """
+        # Attempt to bring down the CAN interface
         try:
             subprocess.run(
                 ["sudo", "ip", "link", "set", self.channel, "down"],
@@ -43,7 +73,19 @@ class CANInterface:
                 f"Failed to bring down CAN interface '{self.channel}': {error.stderr}"
             ) from error
 
-        # Bring up the CAN interface with the specified bitrate
+
+    def _set_bitrate(self) -> None:
+        """
+        Set the bitrate for the CAN interface.
+
+        This method configures the CAN interface with the specified bitrate
+        using the `ip link set` command. It brings up the interface if it's
+        not already up.
+
+        Raises:
+            RuntimeError: If the command fails to set the bitrate.
+        """
+        # Attempt to bring up the CAN interface with the specified bitrate
         try:
             subprocess.run(
                 [
@@ -62,34 +104,25 @@ class CANInterface:
                 capture_output=True,
             )
         except subprocess.CalledProcessError as error:
+            # Raise a runtime error if setting the bitrate fails
             raise RuntimeError(
                 f"Failed to set bitrate for CAN interface '{self.channel}': {error.stderr}"
             ) from error
 
-        # Create and return the CAN bus object
-        self._bus = can.Bus(
-            interface="socketcan", channel=self.channel, bitrate=self.bitrate
-        )
-        return self._bus
-
     def shutdown(self) -> None:
         """
-        Shut down the CAN interface and clean up resources.
+        Shut down the CAN bus interface.
 
-        This method deactivates the CAN interface by shutting down the
-        associated CAN bus object and executing a system command to bring
-        down the network interface. It ensures the CAN interface is properly
-        deactivated.
-
-        Parameters
-        ----------
-        None
-
-        Returns
-        -------
-        None
+        This method brings down the CAN interface and releases any system resources
+        associated with it. It also shuts down the CAN bus object.
         """
         if self.bus:
+            # Shut down the CAN bus object
             self.bus.shutdown()
             self.bus = None
-        subprocess.run(["sudo", "ip", "link", "set", self.channel, "down"], check=True)
+
+        # Bring down the CAN interface
+        subprocess.run(
+            ["sudo", "ip", "link", "set", self.channel, "down"],
+            check=True,
+        )

@@ -1,8 +1,9 @@
 import can
-from messages import SendMessage
-import logging
+import os
 from datetime import datetime
 import time
+
+from MX3_CAN.messages import SendMessage
 from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE, DISCOVERY_TIMEOUT
 
 ERROR_LOG_BASE = "error_log_"
@@ -11,11 +12,13 @@ def get_daily_error_log_filename():
     """Generate filename for today's error log."""
     return f"{ERROR_LOG_BASE}{datetime.now().strftime('%Y-%m-%d')}.log"
 
-def log_timeout_error(message):
-    """Log error to the daily file with timestamp."""
-    with open(get_daily_error_log_filename(), "a") as f:
-        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        f.write(f"[{timestamp}] {message}\n")
+
+def log_timeout_error(message: str):
+    os.makedirs("logs", exist_ok=True)  # Ensure folder exists
+    log_file = os.path.join("logs", f"error_log_{datetime.now().strftime('%Y-%m-%d')}.log")
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(log_file, "a") as f:
+        f.write(f"{timestamp} - {message}\n")
 
 def send_periodic_node_discovery(
     can_bus: can.BusABC,
@@ -23,29 +26,6 @@ def send_periodic_node_discovery(
     temporary_node_id: int = 0xF,
     local_module: str = "Status_Screen"
 ):
-    """
-    Starts periodic Node Discovery messages on the CAN bus.
-
-    Sends a Node Discovery message every 100 ms to the CAN bus. The message
-    contains the device's Unique ID, along with the temporary Node ID assigned
-    by the device before the controller assigns a new one.
-
-    Parameters
-    ----------
-    can_bus : can.BusABC
-        The active CAN bus interface.
-    device_uid : list[int]
-        4-byte Unique ID of this device.
-    temporary_node_id : int
-        Temporary node ID before being assigned by controller (default 0xF).
-    local_module : str
-        Name of the local module type (e.g., 'Status_Screen').
-
-    Returns
-    -------
-    can.bus.AsyncBufferedSendTask
-        Periodic sender task handle.
-    """
     discovery_payload = device_uid + [0x01, 0x00, 0x01, 0x00]
     # Build the Node Discovery message
     sender = SendMessage(
@@ -66,37 +46,6 @@ def wait_for_configuration_write(
     temporary_node_id: int = 0xF,
     local_module: str = "Status_Screen"
 ) -> int:
-    """
-    Waits for a Configuration Write message from the controller and retrieves
-    the assigned node ID for the device.
-
-    The function waits indefinitely until a Configuration Write message is
-    received that matches the given device UID and temporary node ID. It then
-    extracts the assigned node ID from the message and returns it.
-
-    Parameters
-    ----------
-    canbus : can.BusABC
-        The active CAN bus interface to listen on.
-    device_uid : list[int]
-        The 4-byte unique ID of this device.
-    temporary_node_id : int, optional
-        Temporary node ID for the device before being assigned by the
-        controller (default is 0xF).
-    local_module : str, optional
-        Name of the local module type (e.g., 'Status_Screen').
-
-    Returns
-    -------
-    int
-        The assigned node ID from the controller.
-
-    Raises
-    ------
-    TimeoutError
-        If the operation times out while waiting for the Configuration Write
-        message.
-    """
     start_time = time.time()
 
     # Build the expected Configuration Write message

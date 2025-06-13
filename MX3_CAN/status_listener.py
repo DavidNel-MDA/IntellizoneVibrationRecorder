@@ -5,7 +5,7 @@ import json
 import datetime
 import os
 from MX3_CAN.config_yaml import *
-from message_parser import parse_message
+from MX3_CAN.message_parser import parse_message
 
 
 class DailyRotatingLogger:
