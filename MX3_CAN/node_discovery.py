@@ -8,6 +8,7 @@ from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE, DISCOVERY_
 
 ERROR_LOG_BASE = "error_log_"
 
+
 def get_daily_error_log_filename():
     """Generate filename for today's error log."""
     return f"{ERROR_LOG_BASE}{datetime.now().strftime('%Y-%m-%d')}.log"
@@ -15,16 +16,19 @@ def get_daily_error_log_filename():
 
 def log_timeout_error(message: str):
     os.makedirs("logs", exist_ok=True)  # Ensure folder exists
-    log_file = os.path.join("logs", f"error_log_{datetime.now().strftime('%Y-%m-%d')}.log")
+    log_file = os.path.join(
+        "logs", f"error_log_{datetime.now().strftime('%Y-%m-%d')}.log"
+    )
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open(log_file, "a") as f:
         f.write(f"{timestamp} - {message}\n")
+
 
 def send_periodic_node_discovery(
     can_bus: can.BusABC,
     device_uid: list[int],
     temporary_node_id: int = 0xF,
-    local_module: str = "Status_Screen"
+    local_module: str = "Status_Screen",
 ):
     discovery_payload = device_uid + [0x01, 0x00, 0x01, 0x00]
     # Build the Node Discovery message
@@ -33,7 +37,7 @@ def send_periodic_node_discovery(
         node_id=temporary_node_id,
         module_type=MODULE_TYPE[local_module],
         dest_module=MODULE_TYPE["Controller"],
-        dest_node=0x0
+        dest_node=0x0,
     )
 
     # Send the message every 100 ms
@@ -44,7 +48,7 @@ def wait_for_configuration_write(
     canbus: can.BusABC,
     device_uid: list[int],
     temporary_node_id: int = 0xF,
-    local_module: str = "Status_Screen"
+    local_module: str = "Status_Screen",
 ) -> int:
     start_time = time.time()
 
@@ -55,7 +59,7 @@ def wait_for_configuration_write(
         module_type=MODULE_TYPE[local_module],
         dest_module=MODULE_TYPE["Controller"],
         dest_node=0x0,
-        direction="rx"
+        direction="rx",
     )
 
     # Calculate the expected arbitration ID

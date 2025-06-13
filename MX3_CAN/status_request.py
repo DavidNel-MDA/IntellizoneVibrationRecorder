@@ -8,11 +8,12 @@ from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE
 
 logger = logging.getLogger(__name__)
 
+
 def request_controller_status(
     can_bus: BusABC,
     node_id: int,
     status_listener: StatusListener,
-    local_module_type: str = "Status_Screen"
+    local_module_type: str = "Status_Screen",
 ) -> None:
     """
     Continuously sends Status_Read_Request messages until a response is received.
@@ -43,7 +44,7 @@ def request_controller_status(
         node_id=node_id,
         module_type=MODULE_TYPE[local_module_type],
         dest_module=MODULE_TYPE["Controller"],
-        dest_node=0x0
+        dest_node=0x0,
     )
 
     # Continuously send the message every 2 seconds until a response is received

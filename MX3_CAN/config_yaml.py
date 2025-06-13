@@ -2,6 +2,7 @@ import yaml
 from bidict import bidict
 import argparse
 
+
 # Parse command-line arguments for config path
 def get_config_path() -> str:
     """
@@ -18,16 +19,17 @@ def get_config_path() -> str:
         description="Parse command-line arguments for the device configuration.",
     )
     parser.add_argument(
-        '--config',
-        default='config.yaml',
+        "--config",
+        default="config.yaml",
         help="Path to the YAML configuration file.",
     )
     args, _ = parser.parse_known_args()
     return args.config
 
+
 config_path = get_config_path()
 
-with open(config_path, 'r') as f:
+with open(config_path, "r") as f:
     raw_config = yaml.safe_load(f)
 
 DISCOVERY_TIMEOUT = raw_config.get("DISCOVERY_TIMEOUT", 300.0)

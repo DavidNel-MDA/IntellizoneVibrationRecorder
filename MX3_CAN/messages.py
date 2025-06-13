@@ -1,6 +1,7 @@
 import can
 from MX3_CAN.config_yaml import MODULE_TYPE
 
+
 class SendMessage:
     def __init__(
         self,
@@ -71,19 +72,19 @@ class SendMessage:
         """
         if self.direction == "tx":
             return (
-                (self.message_type << 16) |
-                (self.module_type << 12) |
-                (self.node_id << 8) |
-                (self.dest_module << 4) |
-                self.dest_node
+                (self.message_type << 16)
+                | (self.module_type << 12)
+                | (self.node_id << 8)
+                | (self.dest_module << 4)
+                | self.dest_node
             )
         elif self.direction == "rx":
             return (
-                (self.message_type << 16) |
-                (self.dest_module << 12) |
-                (self.dest_node << 8) |
-                (self.module_type << 4) |
-                self.node_id
+                (self.message_type << 16)
+                | (self.dest_module << 12)
+                | (self.dest_node << 8)
+                | (self.module_type << 4)
+                | self.node_id
             )
         else:
             raise ValueError(f"Invalid direction: {self.direction}")
@@ -111,10 +112,12 @@ class SendMessage:
         return can.Message(
             arbitration_id=arbitration_id,
             data=message_data,
-            is_extended_id=True  # This is a MatrixCAN message
+            is_extended_id=True,  # This is a MatrixCAN message
         )
 
-    def send_once(self, bus: can.BusABC, data: list[int] | None = None) -> can.Message | None:
+    def send_once(
+        self, bus: can.BusABC, data: list[int] | None = None
+    ) -> can.Message | None:
         """
         Send the message once on the CAN bus.
 
@@ -143,10 +146,7 @@ class SendMessage:
             return None
 
     def send_periodic(
-        self,
-        canbus: can.BusABC,
-        data: list[int] | None = None,
-        period: float = 0.2
+        self, canbus: can.BusABC, data: list[int] | None = None, period: float = 0.2
     ):
         """
         Start sending the message at a periodic rate on the CAN bus.

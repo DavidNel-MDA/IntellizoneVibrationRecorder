@@ -9,7 +9,11 @@ from MX3_CAN.can_interface import CANInterface
 from MX3_CAN.messages import SendMessage
 from MX3_CAN.status_listener import StatusListener
 from MX3_CAN.status_request import request_controller_status
-from MX3_CAN.node_discovery import wait_for_configuration_write, send_periodic_node_discovery, log_timeout_error
+from MX3_CAN.node_discovery import (
+    wait_for_configuration_write,
+    send_periodic_node_discovery,
+    log_timeout_error,
+)
 
 
 # Command-line interface for verbosity
@@ -18,7 +22,9 @@ parser.add_argument("--verbose", action="store_true", help="Enable debug logging
 args = parser.parse_args()
 
 logging_level = logging.DEBUG if args.verbose else logging.INFO
-logging.basicConfig(level=logging_level, format="%(asctime)s - %(levelname)s - %(message)s")
+logging.basicConfig(
+    level=logging_level, format="%(asctime)s - %(levelname)s - %(message)s"
+)
 logger = logging.getLogger(__name__)
 
 
@@ -151,7 +157,7 @@ def main() -> None:
             logger.info("Initialized CAN bus interface.")
 
             # 2. Node discovery (may raise TimeoutError)
-            node_id = perform_node_discovery(can_bus, list(UID))
+            node_id = perform_node_discovery(can_bus, UID)
             logger.info(f"Assigned Node ID: 0x{node_id:X}")
 
             # 3. Heartbeat

@@ -60,10 +60,7 @@ class DailyRotatingLogger:
         """
         self._rotate_if_needed()
         timestamp = datetime.datetime.now().isoformat()  # local time
-        entry = {
-            "timestamp": timestamp,
-            "changes": data
-        }
+        entry = {"timestamp": timestamp, "changes": data}
         json.dump(entry, self.file)
         self.file.write("\n")
 
@@ -80,14 +77,14 @@ class StatusListener(can.Listener):
         expected_reply: int,
         module_type: int,
         source_module: int = 0x0,
-        source_node: int = 0x0
+        source_node: int = 0x0,
     ) -> None:
         self.expected_arbitration_id = (
-            (expected_reply << 16) |
-            (source_module << 12) |
-            (source_node << 8) |
-            (module_type << 4) |
-            node_id
+            (expected_reply << 16)
+            | (source_module << 12)
+            | (source_node << 8)
+            | (module_type << 4)
+            | node_id
         )
         self.received_event = threading.Event()
         self.status_store = {}

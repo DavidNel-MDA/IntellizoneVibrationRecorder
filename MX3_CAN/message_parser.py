@@ -3,6 +3,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 def safe_get(data: list[int], index: int, default: int = 0) -> int:
     """
     Safely retrieves an element from a list at the specified index.
@@ -23,8 +24,7 @@ def safe_get(data: list[int], index: int, default: int = 0) -> int:
 
 
 def parse_tracking_status(
-    data_bytes: list[int], 
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
     Parses tracking status information from a list of data bytes and updates the status store.
@@ -62,10 +62,14 @@ def parse_tracking_status(
         # Map codes to human-readable statuses
         parsed_status = {
             "Global_Zone_Status": STATUS_LEVEL.get(global_zone_status_code, "Unknown"),
-            "Operator_Present": OPERATOR_PRESENCE.get(operator_presence_code, "Unknown"),
+            "Operator_Present": OPERATOR_PRESENCE.get(
+                operator_presence_code, "Unknown"
+            ),
             "Closest_Locator_ID": closest_locator_id,
             "Octant_Location": OCTANT_LOCATION.get(octant_location_code, "Unknown"),
-            "Screen_Orientation": SCREEN_ORIENTATION.get(screen_orientation_code, "Unknown")
+            "Screen_Orientation": SCREEN_ORIENTATION.get(
+                screen_orientation_code, "Unknown"
+            ),
         }
 
         # Ensure "Tracking Status" exists in the status store
@@ -84,11 +88,8 @@ def parse_tracking_status(
     return status_store
 
 
-
-
 def operator_mnid(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
     Parses Operator MNID information from a list of data bytes and updates the status store.
@@ -110,7 +111,9 @@ def operator_mnid(
 
         # Parse MNID from the data bytes
         parsed_mnid = {
-            mnid_keys[i]: f"{safe_get(data_bytes, 2 * i + 2):02X}{safe_get(data_bytes, 2 * i + 3):02X}"
+            mnid_keys[
+                i
+            ]: f"{safe_get(data_bytes, 2 * i + 2):02X}{safe_get(data_bytes, 2 * i + 3):02X}"
             for i in range(3)
         }
 
@@ -130,10 +133,8 @@ def operator_mnid(
     return status_store
 
 
-
 def parse_diagnostic_information(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
     Parses diagnostic information from a list of data bytes and updates the status store.
@@ -157,11 +158,21 @@ def parse_diagnostic_information(
         byte_2 = safe_get(data_bytes, 2)
 
         # Parse the diagnostic information from the first two bytes
-        diagnostic_info["Global_System_Status"] = GLOBAL_ZONE_STATUS.get((byte_1 >> 6) & 0b11, "Unknown")
-        diagnostic_info["Driver_0_Status"] = GLOBAL_ZONE_STATUS.get((byte_2 >> 6) & 0b11, "Unknown")
-        diagnostic_info["Driver_1_Status"] = GLOBAL_ZONE_STATUS.get((byte_2 >> 4) & 0b11, "Unknown")
-        diagnostic_info["Driver_2_Status"] = GLOBAL_ZONE_STATUS.get((byte_2 >> 2) & 0b11, "Unknown")
-        diagnostic_info["Driver_3_Status"] = GLOBAL_ZONE_STATUS.get(byte_2 & 0b11, "Unknown")
+        diagnostic_info["Global_System_Status"] = GLOBAL_ZONE_STATUS.get(
+            (byte_1 >> 6) & 0b11, "Unknown"
+        )
+        diagnostic_info["Driver_0_Status"] = GLOBAL_ZONE_STATUS.get(
+            (byte_2 >> 6) & 0b11, "Unknown"
+        )
+        diagnostic_info["Driver_1_Status"] = GLOBAL_ZONE_STATUS.get(
+            (byte_2 >> 4) & 0b11, "Unknown"
+        )
+        diagnostic_info["Driver_2_Status"] = GLOBAL_ZONE_STATUS.get(
+            (byte_2 >> 2) & 0b11, "Unknown"
+        )
+        diagnostic_info["Driver_3_Status"] = GLOBAL_ZONE_STATUS.get(
+            byte_2 & 0b11, "Unknown"
+        )
 
         # Ensure "Diagnostic Information" exists in the status store
         status_store.setdefault("Diagnostic_Information", {})
@@ -179,10 +190,8 @@ def parse_diagnostic_information(
     return status_store
 
 
-
 def parse_can_bus_status(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
     Parses CAN bus status information from a list of data bytes and updates the status store.
@@ -207,7 +216,9 @@ def parse_can_bus_status(
         byte_2 = safe_get(data_bytes, 2)
 
         # Parse the CAN bus status information from the first two bytes
-        can_bus_status["Vortex_CAN_Bus_Status"] = GLOBAL_ZONE_STATUS.get(byte_1, "Unknown")
+        can_bus_status["Vortex_CAN_Bus_Status"] = GLOBAL_ZONE_STATUS.get(
+            byte_1, "Unknown"
+        )
         can_bus_status["AVR_CAN_Bus_Status"] = GLOBAL_ZONE_STATUS.get(byte_2, "Unknown")
 
         # Ensure "CANBus Status" exists in the status store
@@ -226,10 +237,8 @@ def parse_can_bus_status(
     return status_store
 
 
-
 def parse_rf_module_status(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
     Parses the status of the RF module from a list of data bytes and updates the status store.
@@ -248,13 +257,19 @@ def parse_rf_module_status(
 
     try:
         # Get the serial communication status
-        parsed_status["Serial_Comms_Status"] = GLOBAL_ZONE_STATUS.get(safe_get(data_bytes, 1), "Unknown")
+        parsed_status["Serial_Comms_Status"] = GLOBAL_ZONE_STATUS.get(
+            safe_get(data_bytes, 1), "Unknown"
+        )
 
         # Get the M-NET connection status
-        parsed_status["Mnet_Connection_Status"] = GLOBAL_ZONE_STATUS.get(safe_get(data_bytes, 2), "Unknown")
+        parsed_status["Mnet_Connection_Status"] = GLOBAL_ZONE_STATUS.get(
+            safe_get(data_bytes, 2), "Unknown"
+        )
 
         # Get the wireless AVR error code status
-        parsed_status["Wireless_Avr_Error_CodeS_tatus"] = GLOBAL_ZONE_STATUS.get(safe_get(data_bytes, 3), "Unknown")
+        parsed_status["Wireless_Avr_Error_CodeS_tatus"] = GLOBAL_ZONE_STATUS.get(
+            safe_get(data_bytes, 3), "Unknown"
+        )
 
         # Update the status store with the parsed status information
         status_key = "RF_Module_Status"
@@ -274,8 +289,7 @@ def parse_rf_module_status(
 
 
 def parse_controller_status(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
     Parses controller status information from a list of data bytes and updates the status store.
@@ -300,37 +314,47 @@ def parse_controller_status(
 
         # Controller Version Status (0x00 - 0xFF)
         controller_status["Controller_Version_Status"] = GLOBAL_ZONE_STATUS.get(
-            (byte1 >> 6) & 0b11, "Unknown")
+            (byte1 >> 6) & 0b11, "Unknown"
+        )
 
         # Vortex Board Version Status (0x00 - 0xFF)
         controller_status["Vortex_Board_Version_Status"] = GLOBAL_ZONE_STATUS.get(
-            (byte1 >> 2) & 0b11, "Unknown")
+            (byte1 >> 2) & 0b11, "Unknown"
+        )
 
         # KeyLok Authentication Status (0x00 - 0xFF)
         controller_status["KeyLok_Authentication_Status"] = GLOBAL_ZONE_STATUS.get(
-            (byte2 >> 6) & 0b11, "Unknown")
+            (byte2 >> 6) & 0b11, "Unknown"
+        )
 
         # Soft PLC Comms Status (0x00 - 0xFF)
         controller_status["Soft_PLC_Comms_Status"] = GLOBAL_ZONE_STATUS.get(
-            (byte2 >> 2) & 0b11, "Unknown")
+            (byte2 >> 2) & 0b11, "Unknown"
+        )
 
         # CAN Serial Number Status (0x00 - 0xFF)
         controller_status["CAN_Serial_Number_Status"] = GLOBAL_ZONE_STATUS.get(
-            (byte3 >> 6) & 0b11, "Unknown")
+            (byte3 >> 6) & 0b11, "Unknown"
+        )
 
         # MML RF Signal Detection Status (0x00 - 0xFF)
         controller_status["MML_RF_Signal_Detection_Status"] = GLOBAL_ZONE_STATUS.get(
-            (byte3 >> 2) & 0b11, "Unknown")
+            (byte3 >> 2) & 0b11, "Unknown"
+        )
 
         # MML Mag Signal Detection Status (0x00 - 0xFF)
-        controller_status["MML_Mag_Signal_Detection_Driver_0_Status"] = GLOBAL_ZONE_STATUS.get(
-            (byte4 >> 6) & 0b11, "Unknown")
-        controller_status["MML_Mag_Signal_Detection_Driver_1_Status"] = GLOBAL_ZONE_STATUS.get(
-            (byte4 >> 4) & 0b11, "Unknown")
-        controller_status["MML_Mag_Signal_Detection_Driver_2_Status"] = GLOBAL_ZONE_STATUS.get(
-            (byte4 >> 2) & 0b11, "Unknown")
-        controller_status["MML_Mag_Signal_Detection_Driver_3_Status"] = GLOBAL_ZONE_STATUS.get(
-            byte4 & 0b11, "Unknown")
+        controller_status["MML_Mag_Signal_Detection_Driver_0_Status"] = (
+            GLOBAL_ZONE_STATUS.get((byte4 >> 6) & 0b11, "Unknown")
+        )
+        controller_status["MML_Mag_Signal_Detection_Driver_1_Status"] = (
+            GLOBAL_ZONE_STATUS.get((byte4 >> 4) & 0b11, "Unknown")
+        )
+        controller_status["MML_Mag_Signal_Detection_Driver_2_Status"] = (
+            GLOBAL_ZONE_STATUS.get((byte4 >> 2) & 0b11, "Unknown")
+        )
+        controller_status["MML_Mag_Signal_Detection_Driver_3_Status"] = (
+            GLOBAL_ZONE_STATUS.get(byte4 & 0b11, "Unknown")
+        )
 
         # Update the status store with the parsed status information
         status_store.setdefault("Controller_Status", {})
@@ -346,14 +370,11 @@ def parse_controller_status(
     return status_store
 
 
-
-
 def parse_proximity_sensor_status(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
-    Parses proximity sensor status information from a list of data bytes 
+    Parses proximity sensor status information from a list of data bytes
     and updates the status store.
 
     Args:
@@ -366,7 +387,7 @@ def parse_proximity_sensor_status(
     if not data_bytes:
         # Return the unchanged status store if data_bytes is empty
         return status_store
-    
+
     parsed_status = {}
 
     try:
@@ -378,12 +399,22 @@ def parse_proximity_sensor_status(
         # Parse proximity sensor status information from the bytes
         parsed_status = {
             "Sync_Rate": PROXIMITY_SYNC_RATE.get((byte_1 >> 4) & 0b1111, "Unknown"),
-            "Locator_Test_Status": GLOBAL_ZONE_STATUS.get((byte_1 >> 2) & 0b11, "Unknown"),
+            "Locator_Test_Status": GLOBAL_ZONE_STATUS.get(
+                (byte_1 >> 2) & 0b11, "Unknown"
+            ),
             "Sync_Rate_Status": GLOBAL_ZONE_STATUS.get(byte_1 & 0b11, "Unknown"),
-            "Locator_Wave_Set_Status": GLOBAL_ZONE_STATUS.get((byte_2 >> 6) & 0b11, "Unknown"),
-            "Locator_Battery_Voltage_Status": GLOBAL_ZONE_STATUS.get((byte_2 >> 2) & 0b11, "Unknown"),
-            "Locator_No_FPGA_Int_Status": GLOBAL_ZONE_STATUS.get((byte_3 >> 6) & 0b11, "Unknown"),
-            "Locator_Driver_Distance_Status": GLOBAL_ZONE_STATUS.get((byte_3 >> 2) & 0b11, "Unknown")
+            "Locator_Wave_Set_Status": GLOBAL_ZONE_STATUS.get(
+                (byte_2 >> 6) & 0b11, "Unknown"
+            ),
+            "Locator_Battery_Voltage_Status": GLOBAL_ZONE_STATUS.get(
+                (byte_2 >> 2) & 0b11, "Unknown"
+            ),
+            "Locator_No_FPGA_Int_Status": GLOBAL_ZONE_STATUS.get(
+                (byte_3 >> 6) & 0b11, "Unknown"
+            ),
+            "Locator_Driver_Distance_Status": GLOBAL_ZONE_STATUS.get(
+                (byte_3 >> 2) & 0b11, "Unknown"
+            ),
         }
 
         # Define the status key for storing parsed data
@@ -403,13 +434,11 @@ def parse_proximity_sensor_status(
     return status_store
 
 
-
 def parse_coil_driver_status(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
-    Parses coil driver status information from a list of data bytes 
+    Parses coil driver status information from a list of data bytes
     and updates the status store.
 
     Args:
@@ -425,12 +454,15 @@ def parse_coil_driver_status(
     parsed_status = {}
     try:
         # Extract coil driver status for each driver (4 bytes)
-        for byte_index, byte_name in enumerate(["Serial_Comms", "Signal_Open", "Signal_Short", "Power_Open", "Power_Short"]):
+        for byte_index, byte_name in enumerate(
+            ["Serial_Comms", "Signal_Open", "Signal_Short", "Power_Open", "Power_Short"]
+        ):
             parsed_status.update(
                 {
                     # Shift the byte value by 6 - i * 2 to get the status for the i-th driver
                     f"{byte_name.title()} Driver {i}": GLOBAL_ZONE_STATUS.get(
-                        (safe_get(data_bytes, byte_index + 1) >> (6 - i * 2)) & 0b11, "Unknown"
+                        (safe_get(data_bytes, byte_index + 1) >> (6 - i * 2)) & 0b11,
+                        "Unknown",
                     )
                     for i in range(4)
                 }
@@ -439,11 +471,21 @@ def parse_coil_driver_status(
         # Extract additional coil driver status
         parsed_status.update(
             {
-                "Driver_Enable_0": ENABLED_STATUS.get((safe_get(data_bytes, 6) >> 7) & 0b01, "Unknown"),
-                "Driver_Enable_1": ENABLED_STATUS.get((safe_get(data_bytes, 6) >> 5) & 0b01, "Unknown"),
-                "Driver_Enable_2": ENABLED_STATUS.get((safe_get(data_bytes, 6) >> 3) & 0b01, "Unknown"),
-                "Driver_Enable_3": ENABLED_STATUS.get((safe_get(data_bytes, 6) >> 1) & 0b01, "Unknown"),
-                "72V_Supply_Status": GLOBAL_ZONE_STATUS.get((safe_get(data_bytes, 7) >> 2) & 0b11, "Unknown"),
+                "Driver_Enable_0": ENABLED_STATUS.get(
+                    (safe_get(data_bytes, 6) >> 7) & 0b01, "Unknown"
+                ),
+                "Driver_Enable_1": ENABLED_STATUS.get(
+                    (safe_get(data_bytes, 6) >> 5) & 0b01, "Unknown"
+                ),
+                "Driver_Enable_2": ENABLED_STATUS.get(
+                    (safe_get(data_bytes, 6) >> 3) & 0b01, "Unknown"
+                ),
+                "Driver_Enable_3": ENABLED_STATUS.get(
+                    (safe_get(data_bytes, 6) >> 1) & 0b01, "Unknown"
+                ),
+                "72V_Supply_Status": GLOBAL_ZONE_STATUS.get(
+                    (safe_get(data_bytes, 7) >> 2) & 0b11, "Unknown"
+                ),
             }
         )
 
@@ -462,13 +504,11 @@ def parse_coil_driver_status(
     return status_store
 
 
-
 def parse_digital_io_status(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
-    Parses digital IO status information from a list of data bytes 
+    Parses digital IO status information from a list of data bytes
     and updates the status store.
 
     Args:
@@ -513,11 +553,10 @@ def parse_digital_io_status(
 
 
 def parse_long_range_drive_status_1(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
-    Parses long range drive status 1 information from a list of data bytes 
+    Parses long range drive status 1 information from a list of data bytes
     and updates the status store.
 
     Args:
@@ -543,17 +582,25 @@ def parse_long_range_drive_status_1(
             for i in range(8)
         }
         # Parse additional input statuses from the second byte
-        parsed_status.update({
-            # Parse 2 additional input statuses from the second byte
-            f"Input {i + 8}": GLOBAL_ZONE_STATUS.get((byte2 >> (15 - i)) & 0x01, "Unknown")
-            for i in range(2)
-        })
+        parsed_status.update(
+            {
+                # Parse 2 additional input statuses from the second byte
+                f"Input {i + 8}": GLOBAL_ZONE_STATUS.get(
+                    (byte2 >> (15 - i)) & 0x01, "Unknown"
+                )
+                for i in range(2)
+            }
+        )
         # Parse output statuses from the second byte
-        parsed_status.update({
-            # Parse 4 output statuses from the second byte
-            f"Output {i}": GLOBAL_ZONE_STATUS.get((byte2 >> (3 - i)) & 0x01, "Unknown")
-            for i in range(4)
-        })
+        parsed_status.update(
+            {
+                # Parse 4 output statuses from the second byte
+                f"Output {i}": GLOBAL_ZONE_STATUS.get(
+                    (byte2 >> (3 - i)) & 0x01, "Unknown"
+                )
+                for i in range(4)
+            }
+        )
 
         # Define the status key for storing parsed data
         status_key = "LRD_Status_1"
@@ -571,11 +618,10 @@ def parse_long_range_drive_status_1(
 
 
 def parse_long_range_drive_status_2(
-    data_bytes: list[int], 
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
-    Parses long range drive status 2 information from a list of data bytes 
+    Parses long range drive status 2 information from a list of data bytes
     and updates the status store.
 
     Args:
@@ -587,8 +633,8 @@ def parse_long_range_drive_status_2(
     """
     if not data_bytes:
         return status_store
-    
-    parsed_status = {}    
+
+    parsed_status = {}
     try:
         # Retrieve bytes from the data list
         bytes_data = [safe_get(data_bytes, i) for i in range(1, 6)]
@@ -597,34 +643,46 @@ def parse_long_range_drive_status_2(
         parsed_status = {
             **{
                 # Parse 4 output overvoltage statuses from the first byte
-                f"Output_Overvoltage {i}": GLOBAL_ZONE_STATUS.get((bytes_data[0] >> (7 - i)) & 0x01, "Unknown")
+                f"Output_Overvoltage {i}": GLOBAL_ZONE_STATUS.get(
+                    (bytes_data[0] >> (7 - i)) & 0x01, "Unknown"
+                )
                 for i in range(4)
             },
             **{
                 # Parse 4 output undervoltage statuses from the second byte
-                f"Output_Undervoltage {i}": GLOBAL_ZONE_STATUS.get((bytes_data[1] >> (7 - i)) & 0x01, "Unknown")
+                f"Output_Undervoltage {i}": GLOBAL_ZONE_STATUS.get(
+                    (bytes_data[1] >> (7 - i)) & 0x01, "Unknown"
+                )
                 for i in range(4)
             },
             **{
                 # Parse 4 output overcurrent statuses from the third byte
-                f"Output_Overcurrent {i}": GLOBAL_ZONE_STATUS.get((bytes_data[2] >> (7 - i)) & 0x01, "Unknown")
+                f"Output_Overcurrent {i}": GLOBAL_ZONE_STATUS.get(
+                    (bytes_data[2] >> (7 - i)) & 0x01, "Unknown"
+                )
                 for i in range(4)
             },
             **{
                 # Parse 4 output undercurrent statuses from the fourth byte
-                f"Output_Undercurrent {i}": GLOBAL_ZONE_STATUS.get((bytes_data[3] >> (7 - i)) & 0x01, "Unknown")
+                f"Output_Undercurrent {i}": GLOBAL_ZONE_STATUS.get(
+                    (bytes_data[3] >> (7 - i)) & 0x01, "Unknown"
+                )
                 for i in range(4)
             },
             **{
                 # Parse 4 serial comms statuses from the fifth byte
-                f"Serial_Comms {i}": GLOBAL_ZONE_STATUS.get((bytes_data[4] >> (7 - i)) & 0x01, "Unknown")
+                f"Serial_Comms {i}": GLOBAL_ZONE_STATUS.get(
+                    (bytes_data[4] >> (7 - i)) & 0x01, "Unknown"
+                )
                 for i in range(4)
             },
             **{
                 # Parse 4 drive signal comms statuses from the first byte
-                f"Drive_Signal_Comms {i}": GLOBAL_ZONE_STATUS.get((bytes_data[0] >> (3 - i)) & 0x01, "Unknown")
+                f"Drive_Signal_Comms {i}": GLOBAL_ZONE_STATUS.get(
+                    (bytes_data[0] >> (3 - i)) & 0x01, "Unknown"
+                )
                 for i in range(4)
-            }
+            },
         }
 
         # Define the status key for storing parsed data
@@ -643,8 +701,7 @@ def parse_long_range_drive_status_2(
 
 
 def parse_locator_failure_update(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
     Parse the Locator Failure Update message and update the status store with the parsed data.
@@ -657,7 +714,7 @@ def parse_locator_failure_update(
     dict[str, dict[str, str]]: The updated status store with new Locator Failure Update information.
     """
     if not data_bytes:
-        return status_store 
+        return status_store
 
     parsed_data = {}
 
@@ -672,8 +729,12 @@ def parse_locator_failure_update(
         # Create a dictionary to store the parsed data
         parsed_data = {
             "Locator_ID": locator_id,
-            "Failure_Type": LOCATOR_FAILURE_TYPES.get(failure_type_code, f"Unknown ({failure_type_code})"),
-            "Update_Type": LOCATOR_UPDATE_TYPES.get(update_type_code, f"Unknown ({update_type_code})")
+            "Failure_Type": LOCATOR_FAILURE_TYPES.get(
+                failure_type_code, f"Unknown ({failure_type_code})"
+            ),
+            "Update_Type": LOCATOR_UPDATE_TYPES.get(
+                update_type_code, f"Unknown ({update_type_code})"
+            ),
         }
 
         # Initialize the status entry if it doesn't exist
@@ -691,8 +752,7 @@ def parse_locator_failure_update(
 
 
 def parse_message(
-    data_bytes: list[int],
-    status_store: dict[str, dict[str, str]]
+    data_bytes: list[int], status_store: dict[str, dict[str, str]]
 ) -> dict[str, dict[str, str]]:
     """
     Parse a list of data bytes into a dictionary of parsed status information.
@@ -724,7 +784,6 @@ def parse_message(
     return status_store
 
 
-
 PARSERS = {
     0x10: parse_tracking_status,
     0x11: operator_mnid,
@@ -739,5 +798,5 @@ PARSERS = {
     0x1A: parse_digital_io_status,
     0x1B: parse_long_range_drive_status_1,
     0x1C: parse_long_range_drive_status_2,
-    0x1D: parse_locator_failure_update
+    0x1D: parse_locator_failure_update,
 }

@@ -2,6 +2,7 @@ import can
 import subprocess
 from MX3_CAN.config_yaml import BITRATE
 
+
 class CANInterface:
     """
     A class for creating a CAN bus interface on a Raspberry Pi.
@@ -16,7 +17,7 @@ class CANInterface:
         bus (can.BusABC): The CAN bus interface.
     """
 
-    def __init__(self, channel='can0', bitrate=BITRATE):
+    def __init__(self, channel="can0", bitrate=BITRATE):
         """
         Initialize a CAN bus interface.
 
@@ -51,7 +52,6 @@ class CANInterface:
         )
         return self._bus
 
-
     def _bring_interface_down(self) -> None:
         """Bring down the CAN interface.
 
@@ -72,7 +72,6 @@ class CANInterface:
             raise RuntimeError(
                 f"Failed to bring down CAN interface '{self.channel}': {error.stderr}"
             ) from error
-
 
     def _set_bitrate(self) -> None:
         """
