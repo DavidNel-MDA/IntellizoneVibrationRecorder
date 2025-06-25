@@ -1,100 +1,181 @@
-DISCOVERY_TIMEOUT: 300.0
-UID: [69, 47, 167, 162]   # 0x45, 0x2F, 0xA7, 0xA2
-BITRATE: 125000
+MCP2515_CONFIG:  
+  DISCOVERY_TIMEOUT: 300.0
+  UID: [69, 47, 167, 162]   # 0x45, 0x2F, 0xA7, 0xA2
+  BITRATE: 125000
 
-MODULE_TYPE:
-  Controller: 3
-  Driver: 6
-  MML: 9
-  Tracker: 10
-  Status_Screen: 12
-  Reserved: 15
+  MODULE_TYPE:
+    Controller: 3
+    Driver: 6
+    MML: 9
+    Tracker: 10
+    Status_Screen: 12
+    Reserved: 15
 
-CONTROLLER_MESSAGE_TYPE:
-  Config_Write: 7966
-  Config_Write_Ext: 7967
-  Device_Error_Report: 8026
-  Device_Error_Report_Ext: 8027
-  Device_Status_Report: 8056
-  Device_Status_Report_Ext: 8057
-  Config_Response: 8086
-  Config_Response_Ext: 8087
-  Node_Discovery: 8096
-  Config_Read_Request: 8146
-  Config_Read_Request_Ext: 8147
-  Status_Read_Request: 8156
-  Status_Read_Request_Ext: 8157
-  Heartbeat: 8163
-  Device_Command: 8176
+  CONTROLLER_MESSAGE_TYPE:
+    Config_Write: 7966
+    Config_Write_Ext: 7967
+    Device_Error_Report: 8026
+    Device_Error_Report_Ext: 8027
+    Device_Status_Report: 8056
+    Device_Status_Report_Ext: 8057
+    Config_Response: 8086
+    Config_Response_Ext: 8087
+    Node_Discovery: 8096
+    Config_Read_Request: 8146
+    Config_Read_Request_Ext: 8147
+    Status_Read_Request: 8156
+    Status_Read_Request_Ext: 8157
+    Heartbeat: 8163
+    Device_Command: 8176
 
-GLOBAL_ZONE_STATUS:
-  0: Safe/Normal
-  1: Warning
-  2: Shutdown/Error
-  3: Reserved
+  GLOBAL_ZONE_STATUS:
+    0: Safe/Normal
+    1: Warning
+    2: Shutdown/Error
+    3: Reserved
 
-OCTANT_LOCATION:
-  0: 0-45 Octant
-  1: 45-90 Octant
-  2: 90-135 Octant
-  3: 135-180 Octant
-  4: 180-225 Octant
-  5: 225-270 Octant
-  6: 270-315 Octant
-  7: 315-360 Octant
+  OCTANT_LOCATION:
+    0: 0-45 Octant
+    1: 45-90 Octant
+    2: 90-135 Octant
+    3: 135-180 Octant
+    4: 180-225 Octant
+    5: 225-270 Octant
+    6: 270-315 Octant
+    7: 315-360 Octant
 
-SCREEN_ORIENTATION:
-  0: Front
-  1: Right
-  2: Back
-  3: Left
+  SCREEN_ORIENTATION:
+    0: Front
+    1: Right
+    2: Back
+    3: Left
 
-STATUS_LEVEL:
-  0: Safe/Normal
-  1: Warning
-  2: Shutdown/Error
-  3: Reserved
+  STATUS_LEVEL:
+    0: Safe/Normal
+    1: Warning
+    2: Shutdown/Error
+    3: Reserved
 
-OPERATOR_PRESENCE:
-  0: Not Present
-  1: Present
+  OPERATOR_PRESENCE:
+    0: Not Present
+    1: Present
 
-SYNC_RATE:
-  0: 20 ms
-  1: 30 ms
-  2: 40 ms
-  3: 50 ms
-  4: 60 ms
-  5: 70 ms
-  6: 80 ms
-  7: 90 ms
-  8: 100 ms
+  SYNC_RATE:
+    0: 20 ms
+    1: 30 ms
+    2: 40 ms
+    3: 50 ms
+    4: 60 ms
+    5: 70 ms
+    6: 80 ms
+    7: 90 ms
+    8: 100 ms
 
-PROXIMITY_SYNC_RATE:
-  0: 100ms
-  1: 200ms
-  2: 300ms
-  3: 400ms
-  4: 500ms
-  5: 600ms
-  6: 700ms
-  7: 800ms
-  8: 900ms
+  PROXIMITY_SYNC_RATE:
+    0: 100ms
+    1: 200ms
+    2: 300ms
+    3: 400ms
+    4: 500ms
+    5: 600ms
+    6: 700ms
+    7: 800ms
+    8: 900ms
 
-ENABLED_STATUS:
-  0: Disabled
-  1: Enabled
+  ENABLED_STATUS:
+    0: Disabled
+    1: Enabled
 
-LOCATOR_FAILURE_TYPES:
-  0: Test Status
-  1: Wave Set
-  2: Battery Voltage
-  3: No FPGA Int
-  4: Driver Dist Diff
-  5: Reserved
-  6: Reserved
-  7: Reserved
+  LOCATOR_FAILURE_TYPES:
+    0: Test Status
+    1: Wave Set
+    2: Battery Voltage
+    3: No FPGA Int
+    4: Driver Dist Diff
+    5: Reserved
+    6: Reserved
+    7: Reserved
 
-LOCATOR_UPDATE_TYPES:
-  0: Remove
-  1: Add
+  LOCATOR_UPDATE_TYPES:
+    0: Remove
+    1: Add
+
+LSM9DS1_CONFIG:
+  ACCELEROMETER_ADDRESS: 0x6B
+
+  ACCELEROMETER_GYROSCOPE_REGISTER:
+    Activity_Threshold: 0x04
+    Activity_Duration: 0x05
+    Acceleration_Sensor_Interrupt_Generator: 0x06
+    Acceleration_Sensor_Interrupt_X_Threshold: 0x07
+    Acceleration_Sensor_Interrupt_Y_Threshold: 0x08
+    Acceleration_Sensor_Interrupt_Z_Threshold: 0x09
+    Acceleration_Sensor_Interrupt_Duration: 0x0A
+    Angular_Rate_Digital_High_Pass_Filter_Reference: 0x0B
+    Interrupt_1_Control: 0x0C
+    Interrupt_2_Control: 0x0D
+    Who_Am_I: 0x0F
+    Gyroscope_Control_1: 0x10
+    Gyroscope_Control_2: 0x11
+    Gyroscope_Control_3: 0x12
+    Gyroscope_Orientation_Configuration: 0x13
+    Gyroscope_Interrupt_Source: 0x14
+    Temperature_Output_Low: 0x15
+    Temperature_Output_High: 0x16
+    Status_Register: 0x17
+    Gyroscope_X_Low: 0x18
+    Gyroscope_X_High: 0x19
+    Gyroscope_Y_Low: 0x1A
+    Gyroscope_Y_High: 0x1B
+    Gyroscope_Z_Low: 0x1C
+    Gyroscope_Z_High: 0x1D
+    Angular_Rate_Control_4: 0x1E
+    Accelerometer_Control_5: 0x1F
+    Accelerometer_Control_6: 0x20
+    Accelerometer_Control_7: 0x21
+    General_Control_8: 0x22
+    Control_9: 0x23
+    Control_10: 0x24
+    Acceleration_Interrupt_Source: 0x26
+    Accelerometer_Status_Register: 0x27
+    Accelerometer_X_Low: 0x28
+    Accelerometer_X_High: 0x29
+    Accelerometer_Y_Low: 0x2A
+    Accelerometer_Y_High: 0x2B
+    Accelerometer_Z_Low: 0x2C
+    Accelerometer_Z_High: 0x2D
+    Fifo_Control: 0x2E
+    Fifo_Source: 0x2F
+    Gyroscope_Interrupt_Generator: 0x30
+    Gyroscope_Interrupt_X_High_Threshold: 0x31
+    Gyroscope_Interrupt_X_Low_Threshold: 0x32
+    Gyroscope_Interrupt_Y_High_Threshold: 0x33
+    Gyroscope_Interrupt_Y_Low_Threshold: 0x34
+    Gyroscope_Interrupt_Z_High_Threshold: 0x35
+    Gyroscope_Interrupt_Z_Low_Threshold: 0x36
+    Gyroscope_Interrupt_Duration: 0x37
+
+  MAGNETOMETER_REGISTER:
+    Offset_X_Low: 0x05
+    Offset_X_High: 0x06
+    Offset_Y_Low: 0x07
+    Offset_Y_High: 0x08
+    Offset_Z_Low: 0x09
+    Offset_Z_High: 0x0A
+    Who_Am_I: 0x0F
+    Magnetic_Control_1: 0x20
+    Magnetic_Control_2: 0x21
+    Magnetic_Control_3: 0x22
+    Magnetic_Control_4: 0x23
+    Magnetic_Control_5: 0x24
+    Status_Register: 0x27
+    Magnetic_X_Low: 0x28
+    Magnetic_X_High: 0x29
+    Magnetic_Y_Low: 0x2A
+    Magnetic_Y_High: 0x2B
+    Magnetic_Z_Low: 0x2C
+    Magnetic_Z_High: 0x2D
+    Magnetic_Interrupt_Configuration: 0x30
+    Magnetic_Interrupt_Source: 0x31
+    Magnetic_Interrupt_Threshold_Low: 0x32
+    Magnetic_Interrupt_Threshold_High: 0x33

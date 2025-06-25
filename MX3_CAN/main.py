@@ -150,6 +150,12 @@ def main() -> None:
     logger.info("Starting IntelliZone CAN device implementation.")
 
     while True:
+        can_notifier = None
+        can_interface = None
+        heartbeat_task = None
+        status_listener = None
+        can_bus = None
+
         try:
             # 1. Initialize CAN
             can_interface = CANInterface()
