@@ -155,6 +155,428 @@ LSM9DS1_CONFIG:
     Gyroscope_Interrupt_Z_Low_Threshold: 0x36
     Gyroscope_Interrupt_Duration: 0x37
 
+    READ_WRITE:
+      ACTIVITY_REGISTER:
+        # Activity threshold register - ACT_THS (0x04)
+        Activity_Threshold_Register:
+          Sleep_On_Inactivity: # bit 7 (SLEEP_ON_INACT_EN)
+            Gyroscope_Power_Down: false # Default
+            Gyroscope_Sleep_Mode: true
+
+      CONTROL_REGISTER:
+        # Angular rate sensor Control Register 1 - CTRL_REG1_G (0x10)
+        Gyroscope_Control_1: 
+          Output_Data_Rate: # bit 7-5 (ODR_G)
+            Power_Down: 0b000 # Default
+            ODR_14_9Hz: 0b001
+            ODR_59_5Hz: 0b001
+            ODR_119Hz: 0b011
+            ODR_238Hz: 0b101
+            ODR_476Hz: 0b110
+            ODR_952Hz: 0b111
+          
+          Full_Scale_Selection: # bit 4-3 (ODR_G)
+            245dps: 0b00 # Default
+            500dps: 0b01
+            2000dps: 0b11
+
+          Bandwidth_Selection: # bit 1-0 (BW_G)
+            BW1: 0b00  # e.g. 14 Hz @ 238 Hz ODR, Default
+            BW2: 0b01  # e.g. 29 Hz @ 238 Hz ODR
+            BW3: 0b10  # e.g. 53 Hz @ 238 Hz ODR
+            BW4: 0b11  # e.g. 78 Hz @ 238 Hz ODR
+
+
+        # Acceleration Sensor Control Register 4 - CTRL_REG4 (0x1E)
+        Accelerometer_Control_4: 
+          Z_Axis_Gyro_Output: # bit 5 (ZEN_G)
+            Enabled: true # Default    
+            Disabled: false
+
+          Y_Axis_Gyro_Output: # bit 4 (YEN_G)
+
+            Enabled: true # Default    
+            Disabled: false
+
+          X_Axis_Gyro_Output: # bit 3 (XEN_G)
+            Enabled: true # Default    
+            Disabled: false
+
+          Latch_Interrupt_Request: # bit 1 (LIR_XL1)
+            Enabled: true    
+            Disabled: false # Default
+
+          4D_Orientation_Detection: # bit 0 (4D_XL1)
+            Enabled: true     
+            Disabled: false # Default
+
+        # Acceleration Sensor Control Register 5 - CTRL_REG5_XL (0x1F)
+        Accelerometer_Control_5: # bit 7-6 (DEC)
+          Decimation_Acceleration_Data:
+            No_Decimation: 0b00 # Default
+            Update_Every_2_Samples: 0b01
+            Update_Every_4_Samples: 0b10
+            Update_Every_8_Samples: 0b11
+          
+          Z_Axis_Output: # bit 5 (Zen_XL)
+            Enabled: true # Default
+            Disabled: false
+          
+          X_Axis_Output: # bit 4 (Xen_XL)
+            Enabled: true # Default
+            Disabled: false
+          
+          Y_Axis_Output: # bit 3 (Yen_XL)
+            Enabled: true # Default
+            Disabled: false
+
+        # Acceleration Sensor Control Register 6 - CTRL_REG6_XL (0x20)
+        Accelerometer_Control_6:
+          Output_Data_Rate: # bit 7-5 (ODR_XL)
+            Power_Down: 0b000 # Default
+            10_Hz: 0b001
+            50_Hz: 0b010
+            119_Hz: 0b011
+            238_Hz: 0b100
+            476_Hz: 0b101
+            952_Hz: 0b110
+
+          Full_Scale_Selection: # bit 4-3 (FS_XL)
+            ±2g: 0b00 # Default
+            ±16g: 0b01
+            ±4g: 0b10
+            ±8g: 0b11
+
+          Bandwidth_Scaling: # bit 2 (BW_SCAL_ODR)
+            Auto: 0 # Default
+            Selected_According_to_ODR: 1
+
+          Bandwidth_Filter: # bit 4-3 (BW_XL)
+            # Only used if Bandwidth_Scaling == 1
+            408Hz: 0b00  # Default
+            211Hz: 0b01
+            105Hz: 0b10
+            50Hz: 0b11
+
+        # Acceleration Sensor Control Register 7 - CTRL_REG7_XL (0x21)
+        Accelerometer_Control_7:
+          High_Resolution_Mode: # bit 7 (HR)
+            Enabled: true     
+            Disabled: false # Default
+
+          # The bandwidth of the high-pass filter depends on the selected Output_Data_Rate
+          Accelerometer_Digital_Filter: # bit 6-5 (DCF)
+            ODR/50: 0b00
+            ODR/100: 0b01
+            ODR/9: 0b10
+            ODR/400: 0b11
+
+          Filtered_Data_Selection: # bit 2 (FDS)
+            Enabled: true # Data from internal filter sent to output register and FIFO
+            Disabled: false # Default
+
+          # High-pass filter enabled for acceleration sensor interrupt function on Interrupt
+          High_Pass_Filter: # bit 0 (HPIS)
+            Enabled: true     
+            Disabled: false # Default
+
+        # Acceleration Sensor Control Register 8 - CTRL_REG8_XL (0x22)
+        Accelerometer_Control_8:
+          Reboot_Memory_Content: # bit 7 (BOOT)
+            Run: false # Default
+            Reboot: true
+
+          Block_Data_Update: # bit 6 (BDU)
+            Continuous: false # Default
+            Wait_Before_Update: true # Output registers not updated until MSB and LSB read
+
+          Interrupt_Activation_Level: # bit 5 (H_LACTIVE)
+            Active_High: false # Default, interrupt output pins active high
+            Active_Low: true # Interrupt output pins active low
+
+          # Push-pull/open-drain selection on the INT1_A/G pin and INT2_A/G pin.
+          Drian_Selection: # bit 4 (PP_OD)
+            Push_Pull: false # Default
+            Open_Drian: true
+
+          SPI_Interface_Selection: # bit 3 (SIM)
+            4_Wire_Interface: false # Default
+            3_Wire_Interface: true
+
+          # Register address automatically incremented during a multiple byte access with a serial interface (I2C or SPI).
+          Register_Address_Increment: # bit 2 (IF_ADD_INC)
+            Automatic_Disabled: false
+            Automatic_Enabled: true # Default
+
+          Endian_Data_Selection: # bit 2 (BLE)
+            LSB_Lower_Address: false # Default
+            MSB_Lower_Address: true
+
+          Software_Reset: # bit 0 (SW_RESET)
+            Normal_Mode: false # Default
+            Reset: true
+
+        # Acceleration Sensor Control Register 9 - CTRL_REG9 (0x23)
+        Accelerometer_Control_9:
+          Gyroscope_Sleep_Mode: # bit 6 (SLEEP_G)
+            Enabled: true     
+            Disabled: false # Default
+
+          Temperature_Data_Storage_FIFO: # bit 4 (FIFO_TEMP_EN)
+            Stored_FIFO: true
+            Not_Stored_FIFO: false # Default
+
+          Data_Available_Timer: # bit 3 (DRDY_mask_bit)
+              Enabled: true     
+              Disabled: false # Default
+          
+          I2C_Interface: # bit 2 (I2C_DISABLE)
+              Enabled: false # Default
+              Disabled: true     
+              
+          FIFO_Memory: # bit 1 (FIFO_EN)
+              Enabled: true     
+              Disabled: false # Default
+
+          FIFO_Threshold_Level_Use: # bit 0 (STOP_ON_FTH)
+              Not_Limited: false # Default
+              Limited: true
+
+        # Acceleration Sensor Control Register 10 - CTRL_REG10 (0x24)
+        Accelerometer_Control_10:
+          Angular_Rate_Sensor_Self_Test: # bit 2 (ST_G)
+              Enabled: true     
+              Disabled: false # Default
+
+          Linear_Acceleration_Sensor_Self_Test: # bit 0 (ST_XL)
+              Enabled: true     
+              Disabled: false # Default
+
+      FIFO:
+        # FIFO Control Register - FIFO_CTRL (0x2E)
+        FIFO_Control_Register:
+          FIFO_Mode: # bit 7-5 (FMODE)
+            Bypass_Mode: 0b000 # Default, FIFO turned off
+            FIFO_Mode: 0b001 # Stops collecting data when FIFO is full.
+            Continuous_Mode_Until_Trigger: 0b011 # Continuous mode until trigger is deasserted, then FIFO mode
+            Bypass_Mode_Until_Trigger: 0b100 # Bypass mode until trigger is deasserted, then FIFO mode
+            Continuous_Mode: 0b110 # If the FIFO is full, the new sample overwrites the older sample.
+
+      INTERRUPT_REGISTER:
+        # Acceleration sensor interrupt generator configuration register - INT_GEN_CFG_XL (0x06)
+        Accelerometer_Sensor_Interrupt:
+          Accelerometer_Interrupt_Events_Combination: # bit 7 (AOI_XL)
+            OR_Combination: false # Default
+            AND_Combination: true
+        
+          6D_Detection_For_Interrupt: # bit 6 (6D)
+              Enabled: false # Default
+              Disabled: true
+
+          Interrupt_Generation_On_Accelerometer_Z_Axis_High: # bit 5 (ZHIE_XL)
+              Enabled: true # Interrupt request on measured angular rate value higher than preset threshold
+              Disabled: false # Default
+
+          Interrupt_Generation_On_Accelerometer_Z_Axis_Low: # bit 4 (ZLIE_XL)
+              Enabled: true # Interrupt request on measured angular rate value lower than preset threshold
+              Disabled: false # Default
+
+          Interrupt_Generation_On_Accelerometer_Y_Axis_High: # bit 3 (YHIE_XL)
+              Enabled: true # Interrupt request on measured angular rate value higher than preset threshold     
+              Disabled: false # Default
+
+          Interrupt_Generation_On_Accelerometer_Y_Axis_Low: # bit 2 (YLIE_XL)
+              Enabled: true # Interrupt request on measured angular rate value lower than preset threshold     
+              Disabled: false # Default
+
+          Interrupt_Generation_On_Accelerometer_X_Axis_High: # bit 1 (XHIE_XL)
+              Enabled: true # Interrupt request on measured angular rate value higher than preset threshold     
+              Disabled: false # Default
+
+          Interrupt_Generation_On_Accelerometer_X_Axis_Low: # bit 0 (XLIE_XL)
+              Enabled: true # Interrupt request on measured angular rate value lower than preset threshold     
+              Disabled: false # Default 
+
+        # Linear acceleration sensor interrupt duration register - INT_GEN_DUR_XL (0x0A)
+        Acceleration_Sensor_Interrupt_Duration:
+          Wait_Function: # bit 7 (ZHIE_XL)
+              Enabled: true # Wait for DUR_XL [6:0] samples before exiting interrupt
+              Disabled: false # Default
+
+        # INT1_A/G pin control register - INT1_CTRL (0x0C)
+        Interrupt_1_Control_Register:
+          Gyroscope_Interrupt: # bit 7 (INT1_IG_G)
+              Enabled: true
+              Disabled: false # Default
+
+          Accelerometer_Interrupt: # bit 6 (INT_IG_XL)
+              Enabled: true
+              Disabled: false # Default
+
+          FSS5_Interrupt: # bit 5 (INT_FSS5)
+              Enabled: true
+              Disabled: false # Default
+
+          Overrun_Interrupt: # bit 4 (INT_OVR)
+              Enabled: true
+              Disabled: false # Default
+
+          FIFO_hreshold_Interrupt: # bit 3 (INT_FTH)
+              Enabled: true
+              Disabled: false # Default
+          
+          Boot_Status_Available_On_Pin: # bit 2 (INT_Boot)
+              Enabled: true
+              Disabled: false # Default
+
+          Gyroscope_Data_Ready_On_Pin: # bit 1 (INT_DRDY_G)
+              Enabled: true
+              Disabled: false # Default
+
+          Accelerometer_Data_Ready_On_Pin: # bit 0 (INT_DRDY_XL)
+              Enabled: true
+              Disabled: false # Default
+
+        # INT2_A/G pin control register - INT2_CTRL (0x0D)
+        Interrupt_2_Control_Register_Write:
+            FSS5_Interrupt: # bit 5 (INT2_FSS5)
+              Enabled: true
+              Disabled: false # Default
+
+            Overrun_Interrupt: # bit 4 (INT2_OVR)
+              Enabled: true
+              Disabled: false # Default
+
+            FIFO_hreshold_Interrupt: # bit 3 (INT2_FTH)
+              Enabled: true
+              Disabled: false # Default
+
+            Temperature_Data_Ready_On_Pin: # bit 2 (INT2_DRDY_TEMP)
+              Enabled: true
+              Disabled: false # Default
+
+            Gyroscope_Data_Ready_On_Pin: # bit 1 (INT2_DRDY_G)
+              Enabled: true
+              Disabled: false # Default
+
+            Accelerometer_Data_Ready_On_Pin: # bit 0 (INT2_DRDY_XL)
+              Enabled: true
+              Disabled: false # Default
+
+        # Angular rate sensor interrupt generator configuration register - INT_GEN_CFG_G (0x30)
+        Angular_Rate_Sensor_Interrupt:
+          Gyroscope_Interrupt_Events_Combination: # bit 7 (AOI_G)
+            OR_Combination: false # Default
+            AND_Combination: true
+          
+          Latch_Gyroscope_Interrupt: # bit 6 (LIR_G)
+            Not_Latched: false # Default
+            Latched: true
+
+          Interrupt_Generation_On_Gyroscope_Z_Axis_High: # bit 5 (ZHIE_G) - Yaw
+              Enabled: true # Interrupt request on measured angular rate value higher than preset threshold
+              Disabled: false # Default
+
+          Interrupt_Generation_On_Gyroscope_Z_Axis_Low: # bit 4 (ZLIE_G) - Yaw
+              Enabled: true # Interrupt request on measured angular rate value lower than preset threshold
+              Disabled: false # Default
+
+          Interrupt_Generation_On_Gyroscope_Y_Axis_High: # bit 3 (YHIE_G) - Roll
+              Enabled: true # Interrupt request on measured angular rate value higher than preset threshold     
+              Disabled: false # Default
+
+          Interrupt_Generation_On_Gyroscope_Y_Axis_Low: # bit 2 (YLIE_G) - Roll
+              Enabled: true # Interrupt request on measured angular rate value lower than preset threshold     
+              Disabled: false # Default
+
+          Interrupt_Generation_On_Gyroscope_X_Axis_High: # bit 1 (XHIE_G) - Pitch
+              Enabled: true # Interrupt request on measured angular rate value higher than preset threshold     
+              Disabled: false # Default
+
+          Interrupt_Generation_On_Gyroscope_X_Axis_Low: # bit 0 (XLIE_G) - Pitch
+              Enabled: true # Interrupt request on measured angular rate value lower than preset threshold     
+              Disabled: false # Default
+
+    READ_ONLY:
+      INTERRUPTS:
+        # INT2_A/G pin control register - INT2_CTRL (0x0D)
+        Interrupt_2_Control_Register_Read:
+          Inactivity_Interrupt_Output_Signal: # bit 7 (INT2_INACT)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+        # Acceleration sensor interrupt source register - INT_GEN_SRC_XL (0x26)
+        Interrupt_Source_Register:
+          Interrupt_Active: # bit 6 (IA_XL)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+          Z_High_Event: # bit 5 (ZH_XL)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+          Z_Low_Event: # bit 4 (ZL_XL)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+          Y_High_Event: # bit 3 (YH_XL)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+          Y_Low_Event: # bit 2 (YL_XL)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+          X_High_Event: # bit 1 (XH_XL)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+          X_Low_Event: # bit 0 (XL_XL)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+        # Status register - STATUS_REGISTER (0x27)
+        Status_Register:
+          Accelerometer_Interrupt_Active: # bit 6 (IG_XL)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+          Gyroscope_Interrupt_Active: # bit 5 (IG_G)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+          Inactivity_Interrupt_Active: # bit 4 (INACT)
+            No_Intterupt: false # Default
+            Currently_Active: true
+
+          Boot_Running_Flag: # bit 3 (BOOT_STATUS)
+            Not_Running: false # Default
+            Running: true
+
+          New_Temperature_Data: # bit 2 (TDA)
+            Not_Available: false # Default
+            Available: true
+
+          New_Gyroscope_Data: # bit 1 (GDA)
+            Not_Available: false # Default
+            Available: true
+
+          New_Accelerometer_Data: # bit 0 (XLDA)
+            Not_Available: false # Default
+            Available: true
+        
+      FIFO:
+        # FIFO status control register - FIFO_SRC (0x2F)
+        FIFO_Status_Control_Register:
+          FIFO_Threshold_Status: # bit 7 (FTH)
+            Lower_Than_Threshold: false # FIFO filling is lower than threshold level
+            Equal_Higher_Than_Threshold: true # FIFO filling is equal or higher than threshold level
+          
+          FIFO_Overrun_Status: # bit 6 (OVRN)
+            Not_Filled: false # FIFO is not completely filled
+            Filled: true # FIFO is completely filled and at least one samples has been overwritten
+
+
   MAGNETOMETER_REGISTER:
     Offset_X_Low: 0x05
     Offset_X_High: 0x06
@@ -179,3 +601,4 @@ LSM9DS1_CONFIG:
     Magnetic_Interrupt_Source: 0x31
     Magnetic_Interrupt_Threshold_Low: 0x32
     Magnetic_Interrupt_Threshold_High: 0x33
+
