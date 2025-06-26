@@ -181,10 +181,10 @@ LSM9DS1_CONFIG:
             2000dps: 0b11
 
           Bandwidth_Selection: # bit 1-0 (BW_G)
-            BW1: 0b00  # e.g. 14 Hz @ 238 Hz ODR, Default
-            BW2: 0b01  # e.g. 29 Hz @ 238 Hz ODR
-            BW3: 0b10  # e.g. 53 Hz @ 238 Hz ODR
-            BW4: 0b11  # e.g. 78 Hz @ 238 Hz ODR
+            BW1: 0b00  # Narrow, Default
+            BW2: 0b01
+            BW3: 0b10
+            BW4: 0b11  # Wide
 
 
         # Acceleration Sensor Control Register 4 - CTRL_REG4 (0x1E)
