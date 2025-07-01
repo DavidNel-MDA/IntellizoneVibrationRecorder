@@ -1,80 +1,84 @@
 from config_yaml import LSM9DS1_CONFIG
 
-# Extract nested dictionaries
-ACCELEROMETER_CONTROL_6 = LSM9DS1_CONFIG.get("Accelerometer_Control_6", {})
-ACCELEROMETER_GYROSCOPE_REGISTERS = LSM9DS1_CONFIG.get("ACCELEROMETER_GYROSCOPE_REGISTER", {})
-MAGNETOMETER_REGISTERS = LSM9DS1_CONFIG.get("MAGNETOMETER_REGISTER", {})
-MAGNETOMETER_CONTROL = LSM9DS1_CONFIG.get("Magnetometer_Control", {})
+# Shortcuts to nested blocks
+REG = LSM9DS1_CONFIG.get("ACCELEROMETER_GYROSCOPE_REGISTER", {})
+MAG_REG = LSM9DS1_CONFIG.get("MAGNETOMETER_REGISTER", {})
+ACC6 = LSM9DS1_CONFIG.get("Accelerometer_Control_6", {})
+MAG_CTL = LSM9DS1_CONFIG.get("Magnetometer_Control", {})
+GYRO_CTL = REG.get("READ_WRITE", {}).get("CONTROL_REGISTER", {}).get("Gyroscope_Control_1", {})
 
 # ----------------------------------------
 # ACCELEROMETER CONFIGURATION
 # ----------------------------------------
 
-Output_Data_Rate = ACCELEROMETER_CONTROL_6.get("Output_Data_Rate", {}).get("952_Hz", 0b110)
-Full_Scale_Selection = ACCELEROMETER_CONTROL_6.get("Full_Scale_Selection", {}).get("±2g", 0b00)
-Bandwidth_Scaling = 1 if ACCELEROMETER_CONTROL_6.get("Bandwidth_Scaling", {}).get("Auto", False) else 0
-Bandwidth_Filter = ACCELEROMETER_CONTROL_6.get("Bandwidth_Filter", {}).get("408Hz", 0b00)
+ACC_ODR = ACC6.get("Output_Data_Rate", {}).get("952_Hz", 0b110)
+ACC_FS = ACC6.get("Full_Scale_Selection", {}).get("±2g", 0b00)
+ACC_BW_SCALE = 1 if ACC6.get("Bandwidth_Scaling", {}).get("Auto", False) else 0
+ACC_BW = ACC6.get("Bandwidth_Filter", {}).get("408Hz", 0b00)
 
-Accelerometer_Control_6_Value = (
-    (Output_Data_Rate & 0b111) << 5 |
-    (Full_Scale_Selection & 0b11) << 3 |
-    (Bandwidth_Scaling & 0b1) << 2 |
-    (Bandwidth_Filter & 0b11)
+ACC_CTRL6_VAL = (
+    (ACC_ODR & 0b111) << 5 |
+    (ACC_FS & 0b11) << 3 |
+    (ACC_BW_SCALE & 0b1) << 2 |
+    (ACC_BW & 0b11)
 )
 
 ACCELEROMETER_CONFIG = {
-    "Accelerometer_Control_6_Value": Accelerometer_Control_6_Value,
-    "Accelerometer_X_Low": ACCELEROMETER_GYROSCOPE_REGISTERS.get("Accelerometer_X_Low", 0x28),
-    "Accelerometer_Control_6": ACCELEROMETER_GYROSCOPE_REGISTERS.get("Accelerometer_Control_6", 0x20)
+    "Accelerometer_Control_6_Value": ACC_CTRL6_VAL,
+    "Accelerometer_Control_6": REG.get("Accelerometer_Control_6", 0x20),
+    "Accelerometer_X_Low": REG.get("Accelerometer_X_Low", 0x28)
 }
 
 # ----------------------------------------
 # MAGNETOMETER CONFIGURATION
 # ----------------------------------------
 
-Magnetic_Output_Data_Rate = MAGNETOMETER_CONTROL.get("Output_Data_Rate", {}).get("80Hz", 0b111)
-Magnetic_Full_Scale_Selection = MAGNETOMETER_CONTROL.get("Full_Scale_Selection", {}).get("±4gauss", 0b00)
-XY_Operating_Mode = MAGNETOMETER_CONTROL.get("XY_Operating_Mode", {}).get("HighPerformance", 0b10)
-Z_Operating_Mode = MAGNETOMETER_CONTROL.get("Z_Operating_Mode", {}).get("HighPerformance", 0b10)
-Mode_Select = MAGNETOMETER_CONTROL.get("Mode", {}).get("Continuous", 0b00)
+MAG_ODR = MAG_CTL.get("Output_Data_Rate", {}).get("80Hz", 0b111)
+MAG_FS = MAG_CTL.get("Full_Scale_Selection", {}).get("±4gauss", 0b00)
+MAG_XY_MODE = MAG_CTL.get("XY_Operating_Mode", {}).get("HighPerformance", 0b10)
+MAG_Z_MODE = MAG_CTL.get("Z_Operating_Mode", {}).get("HighPerformance", 0b10)
+MAG_MODE_SELECT = MAG_CTL.get("Mode", {}).get("Continuous", 0b00)
 
-Magnetic_Control_1_Value = (1 << 7) | (XY_Operating_Mode << 5) | (Magnetic_Output_Data_Rate << 2)
-Magnetic_Control_2_Value = (Magnetic_Full_Scale_Selection << 5)
-Magnetic_Control_3_Value = Mode_Select
+MAG_CTRL1_VAL = (1 << 7) | (MAG_XY_MODE << 5) | (MAG_ODR << 2)
+MAG_CTRL2_VAL = MAG_FS << 5
+MAG_CTRL3_VAL = MAG_MODE_SELECT
 
 LSM9DS1_MAG_CONFIG = {
-    "Magnetic_Control_1": MAGNETOMETER_REGISTERS.get("Magnetic_Control_1", 0x20),
-    "Magnetic_Control_2": MAGNETOMETER_REGISTERS.get("Magnetic_Control_2", 0x21),
-    "Magnetic_Control_3": MAGNETOMETER_REGISTERS.get("Magnetic_Control_3", 0x22),
-    "Magnetic_X_Low": MAGNETOMETER_REGISTERS.get("Magnetic_X_Low", 0x28),
-    "Magnetic_Control_1_Value": Magnetic_Control_1_Value,
-    "Magnetic_Control_2_Value": Magnetic_Control_2_Value,
-    "Magnetic_Control_3_Value": Magnetic_Control_3_Value
+    "Magnetic_Control_1_Value": MAG_CTRL1_VAL,
+    "Magnetic_Control_2_Value": MAG_CTRL2_VAL,
+    "Magnetic_Control_3_Value": MAG_CTRL3_VAL,
+    "Magnetic_Control_1": MAG_REG.get("Magnetic_Control_1", 0x20),
+    "Magnetic_Control_2": MAG_REG.get("Magnetic_Control_2", 0x21),
+    "Magnetic_Control_3": MAG_REG.get("Magnetic_Control_3", 0x22),
+    "Magnetic_X_Low": MAG_REG.get("Magnetic_X_Low", 0x28)
 }
 
 # ----------------------------------------
 # GYROSCOPE CONFIGURATION
 # ----------------------------------------
 
-GYRO_CONTROL = ACCELEROMETER_GYROSCOPE_REGISTERS.get("READ_WRITE", {}).get("CONTROL_REGISTER", {}).get("Gyroscope_Control_1", {})
+GYRO_ODR = GYRO_CTL.get("Output_Data_Rate", {}).get("952Hz", 0b111)
+GYRO_FS = GYRO_CTL.get("Full_Scale_Selection", {}).get("245dps", 0b00)
+GYRO_BW = GYRO_CTL.get("Bandwidth_Selection", {}).get("BW1", 0b00)
 
-Gyroscope_Output_Data_Rate = GYRO_CONTROL.get("Output_Data_Rate", {}).get("952Hz", 0b111)
-Gyroscope_Full_Scale_Selection = GYRO_CONTROL.get("Full_Scale_Selection", {}).get("245dps", 0b00)
-Gyroscope_Bandwidth_Selection = GYRO_CONTROL.get("Bandwidth_Selection", {}).get("BW1", 0b00)
-
-Gyroscope_Control_1_Value = (
-    (Gyroscope_Output_Data_Rate & 0b111) << 5 |
-    (Gyroscope_Full_Scale_Selection & 0b11) << 3 |
-    (Gyroscope_Bandwidth_Selection & 0b11)
+GYRO_CTRL1_VAL = (
+    (GYRO_ODR & 0b111) << 5 |
+    (GYRO_FS & 0b11) << 3 |
+    (GYRO_BW & 0b11)
 )
 
 GYROSCOPE_CONFIG = {
-    "Gyroscope_Control_1": ACCELEROMETER_GYROSCOPE_REGISTERS.get("Gyroscope_Control_1", 0x10),
-    "Gyroscope_Control_1_Value": Gyroscope_Control_1_Value,
-    "Gyroscope_X_Low": ACCELEROMETER_GYROSCOPE_REGISTERS.get("Gyroscope_X_Low", 0x18)
+    "Gyroscope_Control_1_Value": GYRO_CTRL1_VAL,
+    "Gyroscope_Control_1": REG.get("Gyroscope_Control_1", 0x10),
+    "Gyroscope_X_Low": REG.get("Gyroscope_X_Low", 0x18)
 }
 
+# ----------------------------------------
+# TEMPERATURE CONFIGURATION
+# ----------------------------------------
+
 TEMPERATURE_CONFIG = {
-    "Temperature_Output_Low": ACCELEROMETER_GYROSCOPE_REGISTERS.get("Temperature_Output_Low", 0x15),
-    "Temperature_Output_High": ACCELEROMETER_GYROSCOPE_REGISTERS.get("Temperature_Output_High", 0x16)
+    "Temperature_Output_Low": REG.get("Temperature_Output_Low", 0x15),
+    "Temperature_Output_High": REG.get("Temperature_Output_High", 0x16),
+    "Temperature_Base_Register": REG.get("Temperature_Output_Low", 0x15)
 }
