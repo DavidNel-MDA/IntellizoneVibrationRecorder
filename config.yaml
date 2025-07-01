@@ -101,7 +101,10 @@ MCP2515_CONFIG:
     1: Add
 
 LSM9DS1_CONFIG:
-  ACCELEROMETER_ADDRESS: 0x6B
+  I2C:
+    accel_gyro_address: 0x6B
+    magnetometer_address: 0x1E
+    bus: 1
 
   ACCELEROMETER_GYROSCOPE_REGISTER:
     Activity_Threshold: 0x04
@@ -341,8 +344,8 @@ LSM9DS1_CONFIG:
             ±8g: 0b11
 
           Bandwidth_Scaling: # bit 2 (BW_SCAL_ODR)
-            Auto: 0 # Default
-            Selected_According_to_ODR: 1
+            Auto: false # Default
+            Selected_According_to_ODR: true
 
           Bandwidth_Filter: # bit 4-3 (BW_XL)
             # Only used if Bandwidth_Scaling == 1
@@ -795,5 +798,150 @@ LSM9DS1_CONFIG:
             Enabled: true
             Disabled: false # Default
 
-    READ_ONLY:
+        # Magnetic Control Register 2 - CTRL_REG2_M (0x21)
+        Magnetic_Control_2:
+          Full_Scale_Configuration: # bit 6-5 (FS)
+            4_Gauss: 0b00 # Default
+            8_Gauss: 0b01
+            12_Gauss: 0b10
+            16_Gauss: 0b11
 
+          Reboot_Memory: # bit 3 (REBOOT)
+            Reboot: true
+            Normal_operation: false # Default
+
+          Reset_Register_Memory: # bit 2 (SOFT_RST)
+            Reset: true
+            Normal_operation: false # Default
+
+        # Magnetic Control Register 3 - CTRL_REG3_M (0x22)
+        Magnetic_Control_3:         
+          I2C_Interface: # bit 7 (I2C_DISABLE)
+            Enabled: false # Default
+            Disabled: true  
+
+          SPI_Interface_Mode_Selection: # bit 5 (SIM)
+            Write_Only: false # Default
+            Read_And_Write: true
+
+          Operating_Mode: # bit 1-0 (MD)
+            Continuous_Conversion: 0b00
+            Single_Conversion: 0b01
+            Power_Down: 0b10
+            Power_Down: 0b11 # Default
+
+        # Magnetic Control Register 4 - CTRL_REG4_M (0x23)
+        Magnetic_Control_4:
+          Z_Axis_Operative_Mode: # bit 3-2 (MD)
+            Low_Power: 0b00 # Default
+            Medium_Performance: 0b01
+            High_Performance: 0b10
+            Ultra_High_Performance: 0b11
+
+          Endian_Data_Selection: # bit 1 (BLE)
+            LSB_Lower_Address: false # Default
+            MSB_Lower_Address: true
+
+        # Magnetic Control Register 4 - CTRL_REG5_M (0x24)
+        Magnetic_Control_5:
+          Block_Data_Update: # bit 6 (BDU)
+            Continuous: false # Default
+            Wait_Before_Update: true # Output registers not updated until MSB and LSB read
+
+      INTERRUPT_REGISTER:
+        # Magnetic interrupt configuration register - INT_CFG_M (0x30)
+        Magnetic_Interrupt_Configuration:
+          Interrupt_Generation_X_Axis: # bit 7 (XIEN)
+            Enabled: true
+            Disabled: false # Default
+
+          Interrupt_Generation_Y_Axis: # bit 6 (YIEN)
+            Enabled: true
+            Disabled: false # Default
+
+          Interrupt_Generation_Z_Axis: # bit 5 (ZIEN)
+            Enabled: true
+            Disabled: false # Default
+
+          Interrupt_Active_Configuration: # bit 2 (IEA)
+            High: true
+            Low: false # Default
+
+          Latch_Interrupt_Request: # bit 1 (IEL) 
+            Not_Latched: true
+            Latched: false # Default, once latched, the INT_M pin remains in the same state until INT_SRC_M (0x31) is read.
+
+          Interrupt_Enable_INT_M_Pin: # bit 0 (IEN)
+            Enabled: true
+            Disabled: false # Default
+
+    READ_ONLY:
+      STATUS_REGISTER:
+        # Magnetic Status Register - STATUS_REG_M (0x27)
+        Magnetic_Status_Register:
+          X_Y_Z_Axis_Data_Overrun: # bit 7 (ZYXOR)
+            No_Overrun: false # Default
+            New_Data_Overwritten_Old: true
+
+          Z_Axis_Data_Overrun: # bit 6 (ZOR)
+            No_Overrun: false # Default
+            New_Data_Overwritten_Old: true
+
+          Y_Axis_Data_Overrun: # bit 5 (YOR)
+            No_Overrun: false # Default
+            New_Data_Overwritten_Old: true
+
+          X_Axis_Data_Overrun: # bit 4 (XOR)
+            No_Overrun: false # Default
+            New_Data_Overwritten_Old: true
+
+          X_Y_Z_Axis_New_Data: # bit 3 (ZYXDA)
+            No_New_Data: false # Default
+            New_Data_Available: true
+
+          Z_Axis_New_Data: # bit 2 (ZDA)
+            No_New_Data: false # Default
+            New_Data_Available: true
+
+          Y_Axis_New_Data: # bit 1 (YDA)
+            No_New_Data: false # Default
+            New_Data_Available: true
+
+          X_Axis_New_Data: # bit 0 (XDA)
+            No_New_Data: false # Default
+            New_Data_Available: true
+
+      INTERRUPTS:
+        # Magnetic Interrupt Source - INT_SRC_M (0x31)
+        Magnetic_Interrupt_Source:
+          X_Axis_Exceeds_Positive_Threshold: # bit 7 (PTH_X)
+            Exceded: true
+            Not_Exceded: false # Default
+
+          Y_Axis_Exceeds_Positive_Threshold: # bit 6 (PTH_Y)
+            Exceded: true
+            Not_Exceded: false # Default
+
+          Z_Axis_Exceeds_Positive_Threshold: # bit 5 (PTH_Z)
+            Exceded: true
+            Not_Exceded: false # Default
+
+          X_Axis_Exceeds_Negative_Threshold: # bit 4 (NTH_X)
+            Exceded: true
+            Not_Exceded: false # Default
+
+          Y_Axis_Exceeds_Negative_Threshold: # bit 3 (NTH_Y)
+            Exceded: true
+            Not_Exceded: false # Default
+
+          Z_Axis_Exceeds_Negative_Threshold: # bit 2 (NTH_Z)
+            Exceded: true
+            Not_Exceded: false # Default
+
+          Internal_Magnetic_Value_Overflow: # bit 1 (MROI)
+            Exceded: true
+            Not_Exceded: false # Default
+
+          Interrupt_Active: # bit 0 (INT)
+            Active: true
+            Not_Active: false # Default
