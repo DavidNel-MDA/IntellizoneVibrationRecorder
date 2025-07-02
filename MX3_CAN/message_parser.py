@@ -267,7 +267,7 @@ def parse_rf_module_status(
         )
 
         # Get the wireless AVR error code status
-        parsed_status["Wireless_Avr_Error_CodeS_tatus"] = GLOBAL_ZONE_STATUS.get(
+        parsed_status["Wireless_Avr_Error_Code_Status"] = GLOBAL_ZONE_STATUS.get(
             safe_get(data_bytes, 3), "Unknown"
         )
 
