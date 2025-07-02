@@ -2,6 +2,9 @@ import yaml
 import argparse
 from typing import Any
 
+# Default empty configuration holders
+raw_config: dict[str, Any] = {}
+LSM9DS1_CONFIG: dict[str, Any] = {}
 
 def get_config_path() -> str:
     parser = argparse.ArgumentParser(
@@ -16,7 +19,6 @@ def get_config_path() -> str:
     args, _ = parser.parse_known_args()
     return args.config
 
-
 def load_yaml_config(path: str) -> dict[str, Any]:
     try:
         with open(path, "r") as f:
@@ -26,8 +28,13 @@ def load_yaml_config(path: str) -> dict[str, Any]:
     except yaml.YAMLError as e:
         raise ValueError(f"Error parsing YAML file: {e}")
 
-config_path = get_config_path()
-raw_config = load_yaml_config(config_path)
+def reload_config(path: str) -> None:
+    """Reload the config from a given YAML path and update global vars."""
+    global raw_config, LSM9DS1_CONFIG
+    raw_config = load_yaml_config(path)
+    LSM9DS1_CONFIG = raw_config.get("LSM9DS1_CONFIG", {})
 
-# Top-level LSM9DS1 configuration dictionary
-LSM9DS1_CONFIG: dict[str, Any] = raw_config.get("LSM9DS1_CONFIG", {})
+# Load default config on import
+if __name__ == "__main__" or True:  # Always load on import for now
+    default_path = get_config_path()
+    reload_config(default_path)

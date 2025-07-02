@@ -171,12 +171,12 @@ LSM9DS1_CONFIG:
         Gyroscope_Control_1: 
           Output_Data_Rate: # bit 7-5 (ODR_G)
             Power_Down: 0b000 # Default
-            ODR_14_9Hz: 0b001
-            ODR_59_5Hz: 0b001
-            ODR_119Hz: 0b011
-            ODR_238Hz: 0b101
-            ODR_476Hz: 0b110
-            ODR_952Hz: 0b111
+            14.9Hz: 0b001
+            59.5Hz: 0b001
+            119Hz: 0b011
+            238Hz: 0b101
+            476Hz: 0b110
+            952Hz: 0b111
           
           Full_Scale_Selection: # bit 4-3 (ODR_G)
             245dps: 0b00 # Default
@@ -330,12 +330,12 @@ LSM9DS1_CONFIG:
         Accelerometer_Control_6:
           Output_Data_Rate: # bit 7-5 (ODR_XL)
             Power_Down: 0b000 # Default
-            10_Hz: 0b001
-            50_Hz: 0b010
-            119_Hz: 0b011
-            238_Hz: 0b100
-            476_Hz: 0b101
-            952_Hz: 0b110
+            10Hz: 0b001
+            50Hz: 0b010
+            119Hz: 0b011
+            238Hz: 0b100
+            476Hz: 0b101
+            952Hz: 0b110
 
           Full_Scale_Selection: # bit 4-3 (FS_XL)
             ±2g: 0b00 # Default
