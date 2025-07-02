@@ -12,10 +12,10 @@ ACC_BW = ACC6["Bandwidth_Filter"]["408Hz"]
 
 # Bit-pack the control register value
 ACC_CTRL6_VAL = (
-    (ACC_ODR & 0b111) << 5 |
-    (ACC_FS_BITVAL & 0b11) << 3 |
-    (ACC_BW_SCALE & 0b1) << 2 |
-    (ACC_BW & 0b11)
+    (ACC_ODR & 0b111) << 5
+    | (ACC_FS_BITVAL & 0b11) << 3
+    | (ACC_BW_SCALE & 0b1) << 2
+    | (ACC_BW & 0b11)
 )
 
 # Invert Full_Scale_Selection to lookup string key from bit value
@@ -37,5 +37,5 @@ ACCELEROMETER_CONFIG = {
     "Accelerometer_Control_6": REG["Accelerometer_Control_6"],
     "Accelerometer_Control_6_Value": ACC_CTRL6_VAL,
     "Accelerometer_X_Low": REG["Accelerometer_X_Low"],
-    "Sensitivity_mg_per_lsb": sensitivity
+    "Sensitivity_mg_per_lsb": sensitivity,
 }

@@ -1,5 +1,6 @@
 from DeviceSettings.accel_settings import ACCELEROMETER_CONFIG
 
+
 class Accelerometer:
     def __init__(self, device):
         self.device = device

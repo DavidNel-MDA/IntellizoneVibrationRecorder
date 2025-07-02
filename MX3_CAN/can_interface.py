@@ -47,10 +47,10 @@ class CANInterface:
         self._set_bitrate()
 
         # Create and return the CAN bus object
-        self._bus = can.Bus(
+        self.bus = can.Bus(
             interface="socketcan", channel=self.channel, bitrate=self.bitrate
         )
-        return self._bus
+        return self.bus
 
     def _bring_interface_down(self) -> None:
         """Bring down the CAN interface.

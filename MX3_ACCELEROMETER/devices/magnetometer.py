@@ -1,5 +1,6 @@
 from DeviceSettings.mag_settings import LSM9DS1_MAG_CONFIG
 
+
 class Magnetometer:
     def __init__(self, device):
         self.device = device
@@ -7,9 +8,15 @@ class Magnetometer:
 
     def configure(self):
         cfg = LSM9DS1_MAG_CONFIG
-        self.device.write_byte("MAG", cfg["Magnetic_Control_1"], cfg["Magnetic_Control_1_Value"])
-        self.device.write_byte("MAG", cfg["Magnetic_Control_2"], cfg["Magnetic_Control_2_Value"])
-        self.device.write_byte("MAG", cfg["Magnetic_Control_3"], cfg["Magnetic_Control_3_Value"])
+        self.device.write_byte(
+            "MAG", cfg["Magnetic_Control_1"], cfg["Magnetic_Control_1_Value"]
+        )
+        self.device.write_byte(
+            "MAG", cfg["Magnetic_Control_2"], cfg["Magnetic_Control_2_Value"]
+        )
+        self.device.write_byte(
+            "MAG", cfg["Magnetic_Control_3"], cfg["Magnetic_Control_3_Value"]
+        )
 
     def read_magnetic_field(self):
         reg = LSM9DS1_MAG_CONFIG["Magnetic_X_Low"]

@@ -13,9 +13,10 @@ from config_yaml import LSM9DS1_CONFIG
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S"
+    datefmt="%Y-%m-%d %H:%M:%S",
 )
 logger = logging.getLogger(__name__)
+
 
 def main():
     # Load I2C configuration
@@ -25,7 +26,7 @@ def main():
     device = LSM9DS1Device(
         i2c_bus=i2c_cfg["bus"],
         accel_gyro_address=i2c_cfg["accel_gyro_address"],
-        magnetometer_address=i2c_cfg["magnetometer_address"]
+        magnetometer_address=i2c_cfg["magnetometer_address"],
     )
 
     # Set up sensors
@@ -33,18 +34,28 @@ def main():
     accel = Accelerometer(device)
     mag = Magnetometer(device)
     gyro = Gyroscope(device)
-    
+
     gyro.configure()
     accel.configure()
     mag.configure()
 
-    logger.info("Reading LSM9DS1 accelerometer, gyroscope, magnetometer, and temperature...")
+    logger.info(
+        "Reading LSM9DS1 accelerometer, gyroscope, magnetometer, and temperature..."
+    )
     try:
         while True:
             temperature_c = temp_sensor.read_temperature_celsius()
-            gyro_dps = {axis: round(val, 3) for axis, val in gyro.read_angular_velocity_dps().items()}
-            mg_values = {axis: round(val, 3) for axis, val in accel.read_acceleration().items()}
-            mag_field = {axis: round(val, 3) for axis, val in mag.read_magnetic_field_uT().items()}
+            gyro_dps = {
+                axis: round(val, 3)
+                for axis, val in gyro.read_angular_velocity_dps().items()
+            }
+            mg_values = {
+                axis: round(val, 3) for axis, val in accel.read_acceleration().items()
+            }
+            mag_field = {
+                axis: round(val, 3)
+                for axis, val in mag.read_magnetic_field_uT().items()
+            }
 
             logger.info(
                 f"Temp [°C]: {temperature_c:.2f} | "
@@ -58,6 +69,7 @@ def main():
         logger.info("Exiting on user request.")
     except Exception as e:
         logger.exception("Unexpected error occurred:")
+
 
 if __name__ == "__main__":
     main()

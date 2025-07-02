@@ -1,7 +1,10 @@
 import smbus2
 
+
 class LSM9DS1Device:
-    def __init__(self, i2c_bus: int, accel_gyro_address: int, magnetometer_address: int):
+    def __init__(
+        self, i2c_bus: int, accel_gyro_address: int, magnetometer_address: int
+    ):
         """
         Initialize the LSM9DS1 device with the specified I2C bus and addresses.
 
@@ -16,7 +19,7 @@ class LSM9DS1Device:
         """
         # Initialize the I2C bus
         self.bus = smbus2.SMBus(i2c_bus)
-        
+
         # Store the I2C addresses for the accelerometer/gyroscope and magnetometer
         self.addr_ag = accel_gyro_address
         self.addr_mag = magnetometer_address
@@ -128,10 +131,10 @@ class LSM9DS1Device:
         """
         # Read two consecutive bytes from the device
         raw = self.read_bytes(addr_type, reg, 2)
-        
+
         # Interpret the bytes as a 16-bit little-endian value
         value = int.from_bytes(raw, byteorder="little", signed=signed)
-        
+
         # Return the read value
         return value
 

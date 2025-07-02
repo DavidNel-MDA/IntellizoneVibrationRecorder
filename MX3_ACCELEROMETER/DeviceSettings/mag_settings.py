@@ -18,7 +18,7 @@ ctrl2_val = (fs & 0x3) << 5
 # Magnetic Control 3
 CTRL3 = CTRL["Magnetic_Control_3"]
 mode = CTRL3["Operating_Mode"]["Continuous_Conversion"]
-ctrl3_val = (mode & 0x3)
+ctrl3_val = mode & 0x3
 
 # Sensitivity (from FS string)
 fs_key = {v: k for k, v in CTRL2["Full_Scale_Configuration"].items()}[fs]

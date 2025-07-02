@@ -1,5 +1,6 @@
 from DeviceSettings.temp_settings import TEMPERATURE_CONFIG
 
+
 class TemperatureSensor:
     def __init__(self, device):
         self.device = device

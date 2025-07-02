@@ -1,5 +1,6 @@
 from DeviceSettings.gyro_settings import GYROSCOPE_CONFIG
 
+
 class Gyroscope:
     def __init__(self, device):
         self.device = device

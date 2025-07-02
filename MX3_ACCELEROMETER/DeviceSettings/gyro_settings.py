@@ -9,7 +9,7 @@ fs_bit_value = GYRO["Full_Scale_Selection"]["245dps"]  # or dynamic if needed
 fs_key = {v: k for k, v in GYRO["Full_Scale_Selection"].items()}[fs_bit_value]
 
 scale_map = {
-    "245dps": 8.75,    # mdps/LSB
+    "245dps": 8.75,  # mdps/LSB
     "500dps": 17.5,
     "2000dps": 70.0,
 }
@@ -17,10 +17,10 @@ scale_map = {
 GYROSCOPE_CONFIG = {
     "Gyroscope_Control_1": REG["Gyroscope_Control_1"],
     "Gyroscope_Control_1_Value": (
-        (GYRO["Output_Data_Rate"]["952Hz"] << 5) |
-        (fs_bit_value << 3) |
-        (GYRO["Bandwidth_Selection"]["BW1"])
+        (GYRO["Output_Data_Rate"]["952Hz"] << 5)
+        | (fs_bit_value << 3)
+        | (GYRO["Bandwidth_Selection"]["BW1"])
     ),
     "Gyroscope_X_Low": REG["Gyroscope_X_Low"],
-    "Sensitivity_mdps_per_lsb": scale_map[fs_key]
+    "Sensitivity_mdps_per_lsb": scale_map[fs_key],
 }
