@@ -1,5 +1,7 @@
 # IntelliZone CAN Device Implementation
+
 ## Overview
+
 This project implements an IntelliZone CAN device using Python. It provides a basic framework for communicating with a controller via the CAN bus protocol.
 
 ## Features
