@@ -1,6 +1,7 @@
-import yaml
 import argparse
 from typing import Any
+
+import yaml
 
 # Default empty configuration holders
 raw_config: dict[str, Any] = {}

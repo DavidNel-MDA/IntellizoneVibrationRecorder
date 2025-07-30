@@ -2,13 +2,12 @@
 import logging
 import time
 
-from devices.lsm9ds1_device import LSM9DS1Device
-from devices.accelerometer import Accelerometer
-from devices.magnetometer import Magnetometer
-from devices.gyroscope import Gyroscope
-from devices.temperature import TemperatureSensor
 from config_yaml import LSM9DS1_CONFIG
-
+from devices.accelerometer import Accelerometer
+from devices.gyroscope import Gyroscope
+from devices.lsm9ds1_device import LSM9DS1Device
+from devices.magnetometer import Magnetometer
+from devices.temperature import TemperatureSensor
 
 logging.basicConfig(
     level=logging.INFO,
@@ -68,7 +67,7 @@ def main():
     except KeyboardInterrupt:
         logger.info("Exiting on user request.")
     except Exception as e:
-        logger.exception("Unexpected error occurred:")
+        logger.exception(f"Unexpected error occurred: {e}")
 
 
 if __name__ == "__main__":
