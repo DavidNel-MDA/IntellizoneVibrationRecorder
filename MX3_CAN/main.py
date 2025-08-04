@@ -1,20 +1,18 @@
 #!/home/matrixdesign/IntellizoneVibrationRecorder/.venv/bin/python3
+import argparse
 import logging
 import time
-import can
-import argparse
 
-from MX3_CAN.config_yaml import UID, MODULE_TYPE, CONTROLLER_MESSAGE_TYPE
+import can
+
 from MX3_CAN.can_interface import CANInterface
+from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE, UID
 from MX3_CAN.messages import SendMessage
+from MX3_CAN.node_discovery import (log_timeout_error,
+                                    send_periodic_node_discovery,
+                                    wait_for_configuration_write)
 from MX3_CAN.status_listener import StatusListener
 from MX3_CAN.status_request import request_controller_status
-from MX3_CAN.node_discovery import (
-    wait_for_configuration_write,
-    send_periodic_node_discovery,
-    log_timeout_error,
-)
-
 
 # Command-line interface for verbosity
 parser = argparse.ArgumentParser(description="MX3 IntelliZone CAN Device")

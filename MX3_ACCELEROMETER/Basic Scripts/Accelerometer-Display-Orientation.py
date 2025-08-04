@@ -1,15 +1,16 @@
 #!/home/matrixdesign/IntellizoneVibrationRecorder/.venv/bin/python3
 
-import time
 import math
+import time
+from typing import cast
+
+import adafruit_lsm9ds1
 import board
 import busio
-import adafruit_lsm9ds1
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from ahrs.filters import Madgwick
 from mpl_toolkits.mplot3d import Axes3D  # still import for type hints
-from typing import cast
 
 # Setup I2C and sensor
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -25,41 +26,51 @@ UT_TO_GAUSS = 0.01
 # Setup 3D plot
 plt.ion()
 fig = plt.figure(figsize=(8, 8))
-ax = cast(Axes3D, fig.add_subplot(111, projection='3d'))
+ax = cast(Axes3D, fig.add_subplot(111, projection="3d"))
 
 # Define cube vertices (unit cube centered at origin)
 cube_definition = [
     np.array([-0.5, -0.5, -0.5]),
-    np.array([-0.5, -0.5,  0.5]),
-    np.array([-0.5,  0.5, -0.5]),
-    np.array([-0.5,  0.5,  0.5]),
-    np.array([ 0.5, -0.5, -0.5]),
-    np.array([ 0.5, -0.5,  0.5]),
-    np.array([ 0.5,  0.5, -0.5]),
-    np.array([ 0.5,  0.5,  0.5])
+    np.array([-0.5, -0.5, 0.5]),
+    np.array([-0.5, 0.5, -0.5]),
+    np.array([-0.5, 0.5, 0.5]),
+    np.array([0.5, -0.5, -0.5]),
+    np.array([0.5, -0.5, 0.5]),
+    np.array([0.5, 0.5, -0.5]),
+    np.array([0.5, 0.5, 0.5]),
 ]
+
 
 def get_cube_lines(cube):
     lines = [
-        (cube[0], cube[1]), (cube[0], cube[2]), (cube[0], cube[4]),
-        (cube[1], cube[3]), (cube[1], cube[5]),
-        (cube[2], cube[3]), (cube[2], cube[6]),
+        (cube[0], cube[1]),
+        (cube[0], cube[2]),
+        (cube[0], cube[4]),
+        (cube[1], cube[3]),
+        (cube[1], cube[5]),
+        (cube[2], cube[3]),
+        (cube[2], cube[6]),
         (cube[3], cube[7]),
-        (cube[4], cube[5]), (cube[4], cube[6]),
+        (cube[4], cube[5]),
+        (cube[4], cube[6]),
         (cube[5], cube[7]),
-        (cube[6], cube[7])
+        (cube[6], cube[7]),
     ]
     return lines
+
 
 def rotate_vector(q, v):
     """Rotate vector v by quaternion q"""
     q0, q1, q2, q3 = q
-    r = np.array([
-        [1 - 2*(q2**2 + q3**2), 2*(q1*q2 - q0*q3), 2*(q1*q3 + q0*q2)],
-        [2*(q1*q2 + q0*q3), 1 - 2*(q1**2 + q3**2), 2*(q2*q3 - q0*q1)],
-        [2*(q1*q3 - q0*q2), 2*(q2*q3 + q0*q1), 1 - 2*(q1**2 + q2**2)]
-    ])
+    r = np.array(
+        [
+            [1 - 2 * (q2**2 + q3**2), 2 * (q1 * q2 - q0 * q3), 2 * (q1 * q3 + q0 * q2)],
+            [2 * (q1 * q2 + q0 * q3), 1 - 2 * (q1**2 + q3**2), 2 * (q2 * q3 - q0 * q1)],
+            [2 * (q1 * q3 - q0 * q2), 2 * (q2 * q3 + q0 * q1), 1 - 2 * (q1**2 + q2**2)],
+        ]
+    )
     return np.dot(r, v)
+
 
 while True:
     try:
@@ -101,7 +112,7 @@ while True:
 
         for line in get_cube_lines(rotated_cube):
             xs, ys, zs = zip(*line)
-            ax.plot(xs, ys, zs, color='b')
+            ax.plot(xs, ys, zs, color="b")
 
         plt.pause(0.001)
         time.sleep(0.05)
@@ -109,4 +120,3 @@ while True:
     except Exception as e:
         print("Error:", e)
         time.sleep(1)
-

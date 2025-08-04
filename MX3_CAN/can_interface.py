@@ -1,5 +1,7 @@
-import can
 import subprocess
+
+import can
+
 from MX3_CAN.config_yaml import BITRATE
 
 

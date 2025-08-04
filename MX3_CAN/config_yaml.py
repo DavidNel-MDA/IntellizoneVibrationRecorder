@@ -1,6 +1,7 @@
+import argparse
+
 import yaml
 from bidict import bidict
-import argparse
 
 
 # Parse command-line arguments for config path
@@ -31,8 +32,8 @@ config_path = get_config_path()
 
 with open(config_path, "r") as f:
     raw_config = yaml.safe_load(f)
-    
-MCP2515_CONFIG = raw_config["MCP2515_CONFIG"] 
+
+MCP2515_CONFIG = raw_config["MCP2515_CONFIG"]
 
 DISCOVERY_TIMEOUT = MCP2515_CONFIG.get("DISCOVERY_TIMEOUT", 300.0)
 UID = MCP2515_CONFIG["UID"]

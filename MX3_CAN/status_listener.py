@@ -1,9 +1,11 @@
-import threading
-import can
 import copy
-import json
 import datetime
+import json
 import os
+import threading
+
+import can
+
 from MX3_CAN.config_yaml import *
 from MX3_CAN.message_parser import parse_message
 

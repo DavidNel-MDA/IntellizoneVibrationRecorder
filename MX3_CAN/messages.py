@@ -1,6 +1,9 @@
 import can
+import logging
+
 from MX3_CAN.config_yaml import MODULE_TYPE
 
+logger = logging.getLogger(__name__)
 
 class SendMessage:
     def __init__(
@@ -142,7 +145,7 @@ class SendMessage:
             bus.send(message)
             return message
         except can.CanError as error:
-            # If the send fails, return None
+            logger.warning(f"Failed to send CAN message: {error}")
             return None
 
     def send_periodic(

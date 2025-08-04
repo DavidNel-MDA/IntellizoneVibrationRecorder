@@ -1,10 +1,10 @@
 import logging
+
 from can import BusABC, CanError
 
+from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE
 from MX3_CAN.messages import SendMessage
 from MX3_CAN.status_listener import StatusListener
-from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE
-
 
 logger = logging.getLogger(__name__)
 
@@ -33,10 +33,10 @@ def request_controller_status(
     -------
     None
     """
-    if can_bus is None or node_id is None:
-        # Check for valid CAN bus and Node ID
-        logger.error("Invalid CAN bus or node ID.")
-        return
+    # if can_bus is None or node_id is None:
+    #     # Check for valid CAN bus and Node ID
+    #     logger.error("Invalid CAN bus or node ID.")
+    #     return
 
     # Create a SendMessage object for Status_Read_Request
     sender = SendMessage(

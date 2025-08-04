@@ -1,10 +1,12 @@
-import can
 import os
-from datetime import datetime
 import time
+from datetime import datetime
 
+import can
+
+from MX3_CAN.config_yaml import (CONTROLLER_MESSAGE_TYPE, DISCOVERY_TIMEOUT,
+                                 MODULE_TYPE)
 from MX3_CAN.messages import SendMessage
-from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE, DISCOVERY_TIMEOUT
 
 ERROR_LOG_BASE = "error_log_"
 

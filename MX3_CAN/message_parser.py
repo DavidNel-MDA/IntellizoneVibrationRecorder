@@ -1,5 +1,6 @@
-from MX3_CAN.config_yaml import *
 import logging
+
+from MX3_CAN.config_yaml import *
 
 logger = logging.getLogger(__name__)
 
