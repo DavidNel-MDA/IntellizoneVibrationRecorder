@@ -1,8 +1,22 @@
 # IntelliZone CAN Device Implementation
 
+<!--toc:start-->
+- [IntelliZone CAN Device Implementation](#intellizone-can-device-implementation)
+  - [Overview](#overview)
+  - [Features](#features)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Modules](#modules)
+  - [Configuration](#configuration)
+  - [Troubleshooting](#troubleshooting)
+  - [Contributing](#contributing)
+<!--toc:end-->
+
 ## Overview
 
-This project implements an IntelliZone CAN device using Python. It provides a basic framework for communicating with a controller via the CAN bus protocol.
+This project implements an IntelliZone CAN device using Python. It provides a
+basic framework for communicating with a controller via the CAN bus protocol.
 
 ## Features
 
@@ -22,13 +36,16 @@ Support for multiple module types and message types
 
 1. Clone the repository: [git clone https://github.com/your-repo/intellizone-can-device.git](https://github.com/your-repo/intellizone-can-device.git)
 2. Install the required libraries: pip install -r requirements.txt
-3. Configure the config_yaml.py file with your device's Unique ID (UID) and other settings.
+3. Configure the config_yaml.py file with your device's Unique ID (UID) and
+other settings.
 
 ## Usage
 
 1. Run the main script: python main.py
-2. The device will perform node discovery and start sending heartbeat messages to the controller.
-3. Use the status_request module to send status requests to the controller and receive responses.
+2. The device will perform node discovery and start sending heartbeat messages
+to the controller.
+3. Use the status_request module to send status requests to the controller
+receive responses.
 
 ## Modules
 
@@ -40,7 +57,8 @@ Support for multiple module types and message types
 
 ## Configuration
 
-The config_yaml.py file contains settings for the device, including the UID, module type, and message types. Modify this file to suit your device's needs.
+The config_yaml.py file contains settings for the device, including the UID,
+module type, and message types. Modify this file to suit your device's needs.
 
 ## Troubleshooting
 
@@ -50,4 +68,5 @@ The config_yaml.py file contains settings for the device, including the UID, mod
 
 ## Contributing
 
-Contributions are welcome! Please submit pull requests with clear descriptions of the changes made.
+Contributions are welcome! Please submit pull requests with clear descriptions
+of the changes made.
