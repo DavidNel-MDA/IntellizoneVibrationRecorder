@@ -1,5 +1,7 @@
 import pytest
+
 from MX3_CAN.message_parser import parse_tracking_status
+
 
 def test_parse_tracking_status_valid():
     # Sample valid data_bytes (based on spec)
@@ -17,6 +19,7 @@ def test_parse_tracking_status_valid():
     assert tracking["Octant_Location"] != "Unknown"
     assert tracking["Screen_Orientation"] != "Unknown"
 
+
 def test_parse_tracking_status_empty():
     data_bytes = []
     status_store = {}
@@ -25,3 +28,11 @@ def test_parse_tracking_status_empty():
 
     # Expect no changes
     assert updated == {}
+
+
+def test_parse_tracking_status_invalid_length():
+    data_bytes = [0x10, 0x01]
+    status_store = {}
+
+    with pytest.raises((IndexError, ValueError)):  # Adjust as needed
+        parse_tracking_status(data_bytes, status_store)
