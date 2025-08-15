@@ -1,88 +1,1351 @@
-{"timestamp": "2025-06-13T09:59:15.598083", "changes": {"Tracking Status": {"Global Zone Status": "Safe/Normal", "Operator Present": "Not Present", "Closest Locator ID": "007C6D", "Octant Location": "180-225 Octant", "Screen Orientation": "Front"}}}
-{"timestamp": "2025-06-13T09:59:15.893896", "changes": {"Operator MNID": {"Operator MNID 1": "0000", "Operator MNID 2": "0000", "Operator MNID 3": "0000"}}}
-{"timestamp": "2025-06-13T09:59:15.937644", "changes": {"Diagnostic Information": {"Global System Status": "Shutdown/Error", "Driver 0 Status": "Shutdown/Error", "Driver 1 Status": "Shutdown/Error", "Driver 2 Status": "Shutdown/Error", "Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T09:59:15.993978", "changes": {"Controller Status": {"Controller Version Status": "Safe/Normal", "Vortex Board Version Status": "Safe/Normal", "KeyLok Authentication Status": "Safe/Normal", "Soft PLC Comms Status": "Safe/Normal", "CAN Serial Number Status": "Safe/Normal", "MML RF Signal Detection Status": "Shutdown/Error", "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T09:59:16.013786", "changes": {"ProximitySensorStatus": {"SyncRate": "200ms", "LocatorTestStatus": "Safe/Normal", "SyncRateStatus": "Safe/Normal", "LocatorWaveSetStatus": "Safe/Normal", "LocatorBatteryVoltageStatus": "Safe/Normal", "LocatorNoFPGAIntStatus": "Safe/Normal", "LocatorDriverDistanceStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T09:59:16.033768", "changes": {"Digital IO Status": {"Input 0": "Disabled", "Input 1": "Disabled", "Input 2": "Enabled", "Input 3": "Disabled", "Input 4": "Disabled", "Input 5": "Disabled", "Input 6": "Enabled", "Input 7": "Disabled", "Input 8": "Disabled", "Input 9": "Disabled", "Output 0": "Enabled", "Output 1": "Disabled", "Output 2": "Disabled", "Output 3": "Disabled"}}}
-{"timestamp": "2025-06-13T09:59:16.054219", "changes": {"Coil Driver Status": {"Serial Comms Driver 0": "Safe/Normal", "Serial Comms Driver 1": "Safe/Normal", "Serial Comms Driver 2": "Safe/Normal", "Serial Comms Driver 3": "Safe/Normal", "Signal Open Driver 0": "Safe/Normal", "Signal Open Driver 1": "Safe/Normal", "Signal Open Driver 2": "Safe/Normal", "Signal Open Driver 3": "Safe/Normal", "Signal Short Driver 0": "Safe/Normal", "Signal Short Driver 1": "Safe/Normal", "Signal Short Driver 2": "Safe/Normal", "Signal Short Driver 3": "Safe/Normal", "Power Open Driver 0": "Safe/Normal", "Power Open Driver 1": "Safe/Normal", "Power Open Driver 2": "Safe/Normal", "Power Open Driver 3": "Safe/Normal", "Power Short Driver 0": "Safe/Normal", "Power Short Driver 1": "Safe/Normal", "Power Short Driver 2": "Safe/Normal", "Power Short Driver 3": "Safe/Normal", "Driver Enable 0": "Enabled", "Driver Enable 1": "Enabled", "Driver Enable 2": "Enabled", "Driver Enable 3": "Enabled", "72V Supply Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:21:52.295728", "changes": {"Tracking Status": {"Global Zone Status": "Safe/Normal", "Operator Present": "Not Present", "Closest Locator ID": "007C6D", "Octant Location": "180-225 Octant", "Screen Orientation": "Front"}}}
-{"timestamp": "2025-06-13T11:21:52.595141", "changes": {"Operator MNID": {"Operator MNID 1": "0000", "Operator MNID 2": "0000", "Operator MNID 3": "0000"}}}
-{"timestamp": "2025-06-13T11:21:52.634868", "changes": {"Diagnostic Information": {"Global System Status": "Shutdown/Error", "Driver 0 Status": "Shutdown/Error", "Driver 1 Status": "Shutdown/Error", "Driver 2 Status": "Shutdown/Error", "Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T11:21:52.696169", "changes": {"Controller Status": {"Controller Version Status": "Safe/Normal", "Vortex Board Version Status": "Safe/Normal", "KeyLok Authentication Status": "Safe/Normal", "Soft PLC Comms Status": "Safe/Normal", "CAN Serial Number Status": "Safe/Normal", "MML RF Signal Detection Status": "Shutdown/Error", "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T11:21:52.714947", "changes": {"ProximitySensorStatus": {"SyncRate": "200ms", "LocatorTestStatus": "Safe/Normal", "SyncRateStatus": "Safe/Normal", "LocatorWaveSetStatus": "Safe/Normal", "LocatorBatteryVoltageStatus": "Safe/Normal", "LocatorNoFPGAIntStatus": "Safe/Normal", "LocatorDriverDistanceStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:21:52.734980", "changes": {"Digital IO Status": {"Input 0": "Disabled", "Input 1": "Disabled", "Input 2": "Enabled", "Input 3": "Disabled", "Input 4": "Disabled", "Input 5": "Disabled", "Input 6": "Enabled", "Input 7": "Disabled", "Input 8": "Disabled", "Input 9": "Disabled", "Output 0": "Enabled", "Output 1": "Disabled", "Output 2": "Disabled", "Output 3": "Disabled"}}}
-{"timestamp": "2025-06-13T11:21:52.755517", "changes": {"Coil Driver Status": {"Serial Comms Driver 0": "Safe/Normal", "Serial Comms Driver 1": "Safe/Normal", "Serial Comms Driver 2": "Safe/Normal", "Serial Comms Driver 3": "Safe/Normal", "Signal Open Driver 0": "Safe/Normal", "Signal Open Driver 1": "Safe/Normal", "Signal Open Driver 2": "Safe/Normal", "Signal Open Driver 3": "Safe/Normal", "Signal Short Driver 0": "Safe/Normal", "Signal Short Driver 1": "Safe/Normal", "Signal Short Driver 2": "Safe/Normal", "Signal Short Driver 3": "Safe/Normal", "Power Open Driver 0": "Safe/Normal", "Power Open Driver 1": "Safe/Normal", "Power Open Driver 2": "Safe/Normal", "Power Open Driver 3": "Safe/Normal", "Power Short Driver 0": "Safe/Normal", "Power Short Driver 1": "Safe/Normal", "Power Short Driver 2": "Safe/Normal", "Power Short Driver 3": "Safe/Normal", "Driver Enable 0": "Enabled", "Driver Enable 1": "Enabled", "Driver Enable 2": "Enabled", "Driver Enable 3": "Enabled", "72V Supply Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:31:45.182772", "changes": {"Tracking Status": {"Global Zone Status": "Safe/Normal", "Operator Present": "Not Present", "Closest Locator ID": "007C6D", "Octant Location": "180-225 Octant", "Screen Orientation": "Front"}}}
-{"timestamp": "2025-06-13T11:31:45.482503", "changes": {"Operator MNID": {"Operator MNID 1": "0000", "Operator MNID 2": "0000", "Operator MNID 3": "0000"}}}
-{"timestamp": "2025-06-13T11:31:45.523039", "changes": {"Diagnostic Information": {"Global System Status": "Shutdown/Error", "Driver 0 Status": "Shutdown/Error", "Driver 1 Status": "Shutdown/Error", "Driver 2 Status": "Shutdown/Error", "Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T11:31:45.541922", "changes": {"CANBus Status": {"Vortex CAN Bus Status": "Safe/Normal", "AVR CAN Bus Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:31:45.558258", "changes": {"RFModuleStatus": {"SerialCommsStatus": "Safe/Normal", "MnetConnectionStatus": "Safe/Normal", "WirelessAvrErrorCodeStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:31:45.583382", "changes": {"Controller Status": {"Controller Version Status": "Safe/Normal", "Vortex Board Version Status": "Safe/Normal", "KeyLok Authentication Status": "Safe/Normal", "Soft PLC Comms Status": "Safe/Normal", "CAN Serial Number Status": "Safe/Normal", "MML RF Signal Detection Status": "Shutdown/Error", "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T11:31:45.603386", "changes": {"ProximitySensorStatus": {"SyncRate": "200ms", "LocatorTestStatus": "Safe/Normal", "SyncRateStatus": "Safe/Normal", "LocatorWaveSetStatus": "Safe/Normal", "LocatorBatteryVoltageStatus": "Safe/Normal", "LocatorNoFPGAIntStatus": "Safe/Normal", "LocatorDriverDistanceStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:31:45.622070", "changes": {"Digital IO Status": {"Input 0": "Disabled", "Input 1": "Disabled", "Input 2": "Enabled", "Input 3": "Disabled", "Input 4": "Disabled", "Input 5": "Disabled", "Input 6": "Enabled", "Input 7": "Disabled", "Input 8": "Disabled", "Input 9": "Disabled", "Output 0": "Enabled", "Output 1": "Disabled", "Output 2": "Disabled", "Output 3": "Disabled"}}}
-{"timestamp": "2025-06-13T11:31:45.642661", "changes": {"Coil Driver Status": {"Serial Comms Driver 0": "Safe/Normal", "Serial Comms Driver 1": "Safe/Normal", "Serial Comms Driver 2": "Safe/Normal", "Serial Comms Driver 3": "Safe/Normal", "Signal Open Driver 0": "Safe/Normal", "Signal Open Driver 1": "Safe/Normal", "Signal Open Driver 2": "Safe/Normal", "Signal Open Driver 3": "Safe/Normal", "Signal Short Driver 0": "Safe/Normal", "Signal Short Driver 1": "Safe/Normal", "Signal Short Driver 2": "Safe/Normal", "Signal Short Driver 3": "Safe/Normal", "Power Open Driver 0": "Safe/Normal", "Power Open Driver 1": "Safe/Normal", "Power Open Driver 2": "Safe/Normal", "Power Open Driver 3": "Safe/Normal", "Power Short Driver 0": "Safe/Normal", "Power Short Driver 1": "Safe/Normal", "Power Short Driver 2": "Safe/Normal", "Power Short Driver 3": "Safe/Normal", "Driver Enable 0": "Enabled", "Driver Enable 1": "Enabled", "Driver Enable 2": "Enabled", "Driver Enable 3": "Enabled", "72V Supply Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:35:28.794150", "changes": {"Tracking Status": {"Global Zone Status": "Safe/Normal", "Operator Present": "Not Present", "Closest Locator ID": "007C6D", "Octant Location": "180-225 Octant", "Screen Orientation": "Front"}}}
-{"timestamp": "2025-06-13T11:35:29.094142", "changes": {"Operator MNID": {"Operator MNID 1": "0000", "Operator MNID 2": "0000", "Operator MNID 3": "0000"}}}
-{"timestamp": "2025-06-13T11:35:29.133931", "changes": {"Diagnostic Information": {"Global System Status": "Shutdown/Error", "Driver 0 Status": "Shutdown/Error", "Driver 1 Status": "Shutdown/Error", "Driver 2 Status": "Shutdown/Error", "Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T11:35:29.153885", "changes": {"CANBus Status": {"Vortex CAN Bus Status": "Safe/Normal", "AVR CAN Bus Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:35:29.174194", "changes": {"RFModuleStatus": {"SerialCommsStatus": "Safe/Normal", "MnetConnectionStatus": "Safe/Normal", "WirelessAvrErrorCodeStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:35:29.195003", "changes": {"Controller Status": {"Controller Version Status": "Safe/Normal", "Vortex Board Version Status": "Safe/Normal", "KeyLok Authentication Status": "Safe/Normal", "Soft PLC Comms Status": "Safe/Normal", "CAN Serial Number Status": "Safe/Normal", "MML RF Signal Detection Status": "Shutdown/Error", "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T11:35:29.214005", "changes": {"ProximitySensorStatus": {"SyncRate": "200ms", "LocatorTestStatus": "Safe/Normal", "SyncRateStatus": "Safe/Normal", "LocatorWaveSetStatus": "Safe/Normal", "LocatorBatteryVoltageStatus": "Safe/Normal", "LocatorNoFPGAIntStatus": "Safe/Normal", "LocatorDriverDistanceStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:35:29.237091", "changes": {"Digital IO Status": {"Input 0": "Disabled", "Input 1": "Disabled", "Input 2": "Enabled", "Input 3": "Disabled", "Input 4": "Disabled", "Input 5": "Disabled", "Input 6": "Enabled", "Input 7": "Disabled", "Input 8": "Disabled", "Input 9": "Disabled", "Output 0": "Enabled", "Output 1": "Disabled", "Output 2": "Disabled", "Output 3": "Disabled"}}}
-{"timestamp": "2025-06-13T11:35:29.254519", "changes": {"Coil Driver Status": {"Serial Comms Driver 0": "Safe/Normal", "Serial Comms Driver 1": "Safe/Normal", "Serial Comms Driver 2": "Safe/Normal", "Serial Comms Driver 3": "Safe/Normal", "Signal Open Driver 0": "Safe/Normal", "Signal Open Driver 1": "Safe/Normal", "Signal Open Driver 2": "Safe/Normal", "Signal Open Driver 3": "Safe/Normal", "Signal Short Driver 0": "Safe/Normal", "Signal Short Driver 1": "Safe/Normal", "Signal Short Driver 2": "Safe/Normal", "Signal Short Driver 3": "Safe/Normal", "Power Open Driver 0": "Safe/Normal", "Power Open Driver 1": "Safe/Normal", "Power Open Driver 2": "Safe/Normal", "Power Open Driver 3": "Safe/Normal", "Power Short Driver 0": "Safe/Normal", "Power Short Driver 1": "Safe/Normal", "Power Short Driver 2": "Safe/Normal", "Power Short Driver 3": "Safe/Normal", "Driver Enable 0": "Enabled", "Driver Enable 1": "Enabled", "Driver Enable 2": "Enabled", "Driver Enable 3": "Enabled", "72V Supply Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:40:00.964469", "changes": {"Tracking Status": {"Global Zone Status": "Shutdown/Error", "Closest Locator ID": "007685", "Octant Location": "0-45 Octant"}}}
-{"timestamp": "2025-06-13T11:40:10.985360", "changes": {"Tracking Status": {"Global Zone Status": "Safe/Normal", "Octant Location": "180-225 Octant"}}}
-{"timestamp": "2025-06-13T11:47:20.222375", "changes": {"Tracking Status": {"Global Zone Status": "Safe/Normal", "Operator Present": "Not Present", "Closest Locator ID": "007685", "Octant Location": "180-225 Octant", "Screen Orientation": "Front"}}}
-{"timestamp": "2025-06-13T11:47:20.522240", "changes": {"Operator MNID": {"Operator MNID 1": "0000", "Operator MNID 2": "0000", "Operator MNID 3": "0000"}}}
-{"timestamp": "2025-06-13T11:47:20.562161", "changes": {"Diagnostic Information": {"Global System Status": "Shutdown/Error", "Driver 0 Status": "Shutdown/Error", "Driver 1 Status": "Shutdown/Error", "Driver 2 Status": "Shutdown/Error", "Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T11:47:20.583210", "changes": {"CANBus Status": {"Vortex CAN Bus Status": "Safe/Normal", "AVR CAN Bus Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:47:20.602221", "changes": {"RFModuleStatus": {"SerialCommsStatus": "Safe/Normal", "MnetConnectionStatus": "Safe/Normal", "WirelessAvrErrorCodeStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:47:20.623348", "changes": {"Controller Status": {"Controller Version Status": "Safe/Normal", "Vortex Board Version Status": "Safe/Normal", "KeyLok Authentication Status": "Safe/Normal", "Soft PLC Comms Status": "Safe/Normal", "CAN Serial Number Status": "Safe/Normal", "MML RF Signal Detection Status": "Shutdown/Error", "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T11:47:20.642335", "changes": {"ProximitySensorStatus": {"SyncRate": "200ms", "LocatorTestStatus": "Safe/Normal", "SyncRateStatus": "Safe/Normal", "LocatorWaveSetStatus": "Safe/Normal", "LocatorBatteryVoltageStatus": "Safe/Normal", "LocatorNoFPGAIntStatus": "Safe/Normal", "LocatorDriverDistanceStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:47:20.662812", "changes": {"Digital IO Status": {"Input 0": "Disabled", "Input 1": "Disabled", "Input 2": "Enabled", "Input 3": "Disabled", "Input 4": "Disabled", "Input 5": "Disabled", "Input 6": "Enabled", "Input 7": "Disabled", "Input 8": "Disabled", "Input 9": "Disabled", "Output 0": "Enabled", "Output 1": "Disabled", "Output 2": "Disabled", "Output 3": "Disabled"}}}
-{"timestamp": "2025-06-13T11:47:20.683041", "changes": {"Coil Driver Status": {"Serial Comms Driver 0": "Safe/Normal", "Serial Comms Driver 1": "Safe/Normal", "Serial Comms Driver 2": "Safe/Normal", "Serial Comms Driver 3": "Safe/Normal", "Signal Open Driver 0": "Safe/Normal", "Signal Open Driver 1": "Safe/Normal", "Signal Open Driver 2": "Safe/Normal", "Signal Open Driver 3": "Safe/Normal", "Signal Short Driver 0": "Safe/Normal", "Signal Short Driver 1": "Safe/Normal", "Signal Short Driver 2": "Safe/Normal", "Signal Short Driver 3": "Safe/Normal", "Power Open Driver 0": "Safe/Normal", "Power Open Driver 1": "Safe/Normal", "Power Open Driver 2": "Safe/Normal", "Power Open Driver 3": "Safe/Normal", "Power Short Driver 0": "Safe/Normal", "Power Short Driver 1": "Safe/Normal", "Power Short Driver 2": "Safe/Normal", "Power Short Driver 3": "Safe/Normal", "Driver Enable 0": "Enabled", "Driver Enable 1": "Enabled", "Driver Enable 2": "Enabled", "Driver Enable 3": "Enabled", "72V Supply Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:48:19.714866", "changes": {"Tracking Status": {"Global Zone Status": "Safe/Normal", "Operator Present": "Not Present", "Closest Locator ID": "007685", "Octant Location": "180-225 Octant", "Screen Orientation": "Front"}}}
-{"timestamp": "2025-06-13T11:48:20.017068", "changes": {"Operator MNID": {"Operator MNID 1": "0000", "Operator MNID 2": "0000", "Operator MNID 3": "0000"}}}
-{"timestamp": "2025-06-13T11:48:20.054619", "changes": {"Diagnostic Information": {"Global System Status": "Shutdown/Error", "Driver 0 Status": "Shutdown/Error", "Driver 1 Status": "Shutdown/Error", "Driver 2 Status": "Shutdown/Error", "Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T11:48:20.074245", "changes": {"CANBus Status": {"Vortex CAN Bus Status": "Safe/Normal", "AVR CAN Bus Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:48:20.094308", "changes": {"RFModuleStatus": {"SerialCommsStatus": "Safe/Normal", "MnetConnectionStatus": "Safe/Normal", "WirelessAvrErrorCodeStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:48:20.115227", "changes": {"Controller Status": {"Controller Version Status": "Safe/Normal", "Vortex Board Version Status": "Safe/Normal", "KeyLok Authentication Status": "Safe/Normal", "Soft PLC Comms Status": "Safe/Normal", "CAN Serial Number Status": "Safe/Normal", "MML RF Signal Detection Status": "Shutdown/Error", "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T11:48:20.134385", "changes": {"ProximitySensorStatus": {"SyncRate": "200ms", "LocatorTestStatus": "Safe/Normal", "SyncRateStatus": "Safe/Normal", "LocatorWaveSetStatus": "Safe/Normal", "LocatorBatteryVoltageStatus": "Safe/Normal", "LocatorNoFPGAIntStatus": "Safe/Normal", "LocatorDriverDistanceStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T11:48:20.154214", "changes": {"Digital IO Status": {"Input 0": "Disabled", "Input 1": "Disabled", "Input 2": "Enabled", "Input 3": "Disabled", "Input 4": "Disabled", "Input 5": "Disabled", "Input 6": "Enabled", "Input 7": "Disabled", "Input 8": "Disabled", "Input 9": "Disabled", "Output 0": "Enabled", "Output 1": "Disabled", "Output 2": "Disabled", "Output 3": "Disabled"}}}
-{"timestamp": "2025-06-13T11:48:20.174673", "changes": {"Coil Driver Status": {"Serial Comms Driver 0": "Safe/Normal", "Serial Comms Driver 1": "Safe/Normal", "Serial Comms Driver 2": "Safe/Normal", "Serial Comms Driver 3": "Safe/Normal", "Signal Open Driver 0": "Safe/Normal", "Signal Open Driver 1": "Safe/Normal", "Signal Open Driver 2": "Safe/Normal", "Signal Open Driver 3": "Safe/Normal", "Signal Short Driver 0": "Safe/Normal", "Signal Short Driver 1": "Safe/Normal", "Signal Short Driver 2": "Safe/Normal", "Signal Short Driver 3": "Safe/Normal", "Power Open Driver 0": "Safe/Normal", "Power Open Driver 1": "Safe/Normal", "Power Open Driver 2": "Safe/Normal", "Power Open Driver 3": "Safe/Normal", "Power Short Driver 0": "Safe/Normal", "Power Short Driver 1": "Safe/Normal", "Power Short Driver 2": "Safe/Normal", "Power Short Driver 3": "Safe/Normal", "Driver Enable 0": "Enabled", "Driver Enable 1": "Enabled", "Driver Enable 2": "Enabled", "Driver Enable 3": "Enabled", "72V Supply Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:06:40.592610", "changes": {"Tracking Status": {"Global Zone Status": "Safe/Normal", "Operator Present": "Not Present", "Closest Locator ID": "007685", "Octant Location": "180-225 Octant", "Screen Orientation": "Front"}}}
-{"timestamp": "2025-06-13T12:06:40.895297", "changes": {"Operator MNID": {"Operator MNID 1": "0000", "Operator MNID 2": "0000", "Operator MNID 3": "0000"}}}
-{"timestamp": "2025-06-13T12:06:40.935281", "changes": {"Diagnostic Information": {"Global System Status": "Shutdown/Error", "Driver 0 Status": "Shutdown/Error", "Driver 1 Status": "Shutdown/Error", "Driver 2 Status": "Shutdown/Error", "Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T12:06:40.955011", "changes": {"CANBus Status": {"Vortex CAN Bus Status": "Safe/Normal", "AVR CAN Bus Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:06:40.974957", "changes": {"RFModuleStatus": {"SerialCommsStatus": "Safe/Normal", "MnetConnectionStatus": "Safe/Normal", "WirelessAvrErrorCodeStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:06:40.993238", "changes": {"Controller Status": {"Controller Version Status": "Safe/Normal", "Vortex Board Version Status": "Safe/Normal", "KeyLok Authentication Status": "Safe/Normal", "Soft PLC Comms Status": "Safe/Normal", "CAN Serial Number Status": "Safe/Normal", "MML RF Signal Detection Status": "Shutdown/Error", "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T12:06:41.015166", "changes": {"ProximitySensorStatus": {"SyncRate": "200ms", "LocatorTestStatus": "Safe/Normal", "SyncRateStatus": "Safe/Normal", "LocatorWaveSetStatus": "Safe/Normal", "LocatorBatteryVoltageStatus": "Safe/Normal", "LocatorNoFPGAIntStatus": "Safe/Normal", "LocatorDriverDistanceStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:06:41.035201", "changes": {"Digital IO Status": {"Input 0": "Disabled", "Input 1": "Disabled", "Input 2": "Enabled", "Input 3": "Disabled", "Input 4": "Disabled", "Input 5": "Disabled", "Input 6": "Enabled", "Input 7": "Disabled", "Input 8": "Disabled", "Input 9": "Disabled", "Output 0": "Enabled", "Output 1": "Disabled", "Output 2": "Disabled", "Output 3": "Disabled"}}}
-{"timestamp": "2025-06-13T12:06:41.055474", "changes": {"Coil Driver Status": {"Serial Comms Driver 0": "Safe/Normal", "Serial Comms Driver 1": "Safe/Normal", "Serial Comms Driver 2": "Safe/Normal", "Serial Comms Driver 3": "Safe/Normal", "Signal Open Driver 0": "Safe/Normal", "Signal Open Driver 1": "Safe/Normal", "Signal Open Driver 2": "Safe/Normal", "Signal Open Driver 3": "Safe/Normal", "Signal Short Driver 0": "Safe/Normal", "Signal Short Driver 1": "Safe/Normal", "Signal Short Driver 2": "Safe/Normal", "Signal Short Driver 3": "Safe/Normal", "Power Open Driver 0": "Safe/Normal", "Power Open Driver 1": "Safe/Normal", "Power Open Driver 2": "Safe/Normal", "Power Open Driver 3": "Safe/Normal", "Power Short Driver 0": "Safe/Normal", "Power Short Driver 1": "Safe/Normal", "Power Short Driver 2": "Safe/Normal", "Power Short Driver 3": "Safe/Normal", "Driver Enable 0": "Enabled", "Driver Enable 1": "Enabled", "Driver Enable 2": "Enabled", "Driver Enable 3": "Enabled", "72V Supply Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:21:29.510303", "changes": {"Tracking Status": {"Global Zone Status": "Safe/Normal", "Operator Present": "Not Present", "Closest Locator ID": "007685", "Octant Location": "180-225 Octant", "Screen Orientation": "Front"}}}
-{"timestamp": "2025-06-13T12:21:29.813748", "changes": {"Operator MNID": {"Operator MNID 1": "0000", "Operator MNID 2": "0000", "Operator MNID 3": "0000"}}}
-{"timestamp": "2025-06-13T12:21:29.849651", "changes": {"Diagnostic Information": {"Global System Status": "Shutdown/Error", "Driver 0 Status": "Shutdown/Error", "Driver 1 Status": "Shutdown/Error", "Driver 2 Status": "Shutdown/Error", "Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T12:21:29.873433", "changes": {"CANBus Status": {"Vortex CAN Bus Status": "Safe/Normal", "AVR CAN Bus Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:21:29.889959", "changes": {"RFModuleStatus": {"SerialCommsStatus": "Safe/Normal", "MnetConnectionStatus": "Safe/Normal", "WirelessAvrErrorCodeStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:21:29.914677", "changes": {"Controller Status": {"Controller Version Status": "Safe/Normal", "Vortex Board Version Status": "Safe/Normal", "KeyLok Authentication Status": "Safe/Normal", "Soft PLC Comms Status": "Safe/Normal", "CAN Serial Number Status": "Safe/Normal", "MML RF Signal Detection Status": "Shutdown/Error", "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error", "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T12:21:29.929773", "changes": {"ProximitySensorStatus": {"SyncRate": "200ms", "LocatorTestStatus": "Safe/Normal", "SyncRateStatus": "Safe/Normal", "LocatorWaveSetStatus": "Safe/Normal", "LocatorBatteryVoltageStatus": "Safe/Normal", "LocatorNoFPGAIntStatus": "Safe/Normal", "LocatorDriverDistanceStatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:21:29.949812", "changes": {"Digital IO Status": {"Input 0": "Disabled", "Input 1": "Disabled", "Input 2": "Enabled", "Input 3": "Disabled", "Input 4": "Disabled", "Input 5": "Disabled", "Input 6": "Enabled", "Input 7": "Disabled", "Input 8": "Disabled", "Input 9": "Disabled", "Output 0": "Enabled", "Output 1": "Disabled", "Output 2": "Disabled", "Output 3": "Disabled"}}}
-{"timestamp": "2025-06-13T12:21:29.970144", "changes": {"Coil Driver Status": {"Serial Comms Driver 0": "Safe/Normal", "Serial Comms Driver 1": "Safe/Normal", "Serial Comms Driver 2": "Safe/Normal", "Serial Comms Driver 3": "Safe/Normal", "Signal Open Driver 0": "Safe/Normal", "Signal Open Driver 1": "Safe/Normal", "Signal Open Driver 2": "Safe/Normal", "Signal Open Driver 3": "Safe/Normal", "Signal Short Driver 0": "Safe/Normal", "Signal Short Driver 1": "Safe/Normal", "Signal Short Driver 2": "Safe/Normal", "Signal Short Driver 3": "Safe/Normal", "Power Open Driver 0": "Safe/Normal", "Power Open Driver 1": "Safe/Normal", "Power Open Driver 2": "Safe/Normal", "Power Open Driver 3": "Safe/Normal", "Power Short Driver 0": "Safe/Normal", "Power Short Driver 1": "Safe/Normal", "Power Short Driver 2": "Safe/Normal", "Power Short Driver 3": "Safe/Normal", "Driver Enable 0": "Enabled", "Driver Enable 1": "Enabled", "Driver Enable 2": "Enabled", "Driver Enable 3": "Enabled", "72V Supply Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:32:09.987268", "changes": {"Tracking_Status": {"Global_Zone_Status": "Safe/Normal", "Operator_Present": "Not Present", "Closest_Locator_ID": "007685", "Octant_Location": "180-225 Octant", "Screen_Orientation": "Front"}}}
-{"timestamp": "2025-06-13T12:32:10.287079", "changes": {"Operator_MNID": {"OperatorMNID_1": "0000", "OperatorMNID_2": "0000", "OperatorMNID_3": "0000"}}}
-{"timestamp": "2025-06-13T12:32:10.322920", "changes": {"Diagnostic_Information": {"Global_System_Status": "Shutdown/Error", "Driver_0_Status": "Shutdown/Error", "Driver_1_Status": "Shutdown/Error", "Driver_2_Status": "Shutdown/Error", "Driver_3_Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T12:32:10.342870", "changes": {"CANBus_Status": {"Vortex_CAN_Bus_Status": "Safe/Normal", "AVR_CAN_Bus_Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:32:10.363576", "changes": {"RF_Module_Status": {"Serial_Comms_Status": "Safe/Normal", "Mnet_Connection_Status": "Safe/Normal", "Wireless_Avr_Error_CodeS_tatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:32:10.383107", "changes": {"Controller_Status": {"Controller_Version_Status": "Safe/Normal", "Vortex_Board_Version_Status": "Safe/Normal", "KeyLok_Authentication_Status": "Safe/Normal", "Soft_PLC_Comms_Status": "Safe/Normal", "CAN_Serial_Number_Status": "Safe/Normal", "MML_RF_Signal_Detection_Status": "Shutdown/Error", "MML_Mag_Signal_Detection_Driver_0_Status": "Shutdown/Error", "MML_Mag_Signal_Detection_Driver_1_Status": "Shutdown/Error", "MML_Mag_Signal_Detection_Driver_2_Status": "Shutdown/Error", "MML_Mag_Signal_Detection_Driver_3_Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T12:32:10.402817", "changes": {"Proximity_SensorStatus": {"Sync_Rate": "200ms", "Locator_Test_Status": "Safe/Normal", "Sync_Rate_Status": "Safe/Normal", "Locator_Wave_Set_Status": "Safe/Normal", "Locator_Battery_Voltage_Status": "Safe/Normal", "Locator_No_FPGA_Int_Status": "Safe/Normal", "Locator_Driver_Distance_Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T12:32:10.422711", "changes": {"Digital_IO_Status": {"Input 0": "Disabled", "Input 1": "Disabled", "Input 2": "Enabled", "Input 3": "Disabled", "Input 4": "Disabled", "Input 5": "Disabled", "Input 6": "Enabled", "Input 7": "Disabled", "Input 8": "Disabled", "Input 9": "Disabled", "Output 0": "Enabled", "Output 1": "Disabled", "Output 2": "Disabled", "Output 3": "Disabled"}}}
-{"timestamp": "2025-06-13T12:32:10.448837", "changes": {"Coil_Driver_Status": {"Serial_Comms Driver 0": "Safe/Normal", "Serial_Comms Driver 1": "Safe/Normal", "Serial_Comms Driver 2": "Safe/Normal", "Serial_Comms Driver 3": "Safe/Normal", "Signal_Open Driver 0": "Safe/Normal", "Signal_Open Driver 1": "Safe/Normal", "Signal_Open Driver 2": "Safe/Normal", "Signal_Open Driver 3": "Safe/Normal", "Signal_Short Driver 0": "Safe/Normal", "Signal_Short Driver 1": "Safe/Normal", "Signal_Short Driver 2": "Safe/Normal", "Signal_Short Driver 3": "Safe/Normal", "Power_Open Driver 0": "Safe/Normal", "Power_Open Driver 1": "Safe/Normal", "Power_Open Driver 2": "Safe/Normal", "Power_Open Driver 3": "Safe/Normal", "Power_Short Driver 0": "Safe/Normal", "Power_Short Driver 1": "Safe/Normal", "Power_Short Driver 2": "Safe/Normal", "Power_Short Driver 3": "Safe/Normal", "Driver_Enable_0": "Enabled", "Driver_Enable_1": "Enabled", "Driver_Enable_2": "Enabled", "Driver_Enable_3": "Enabled", "72V_Supply_Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T13:32:55.934055", "changes": {"Tracking_Status": {"Global_Zone_Status": "Safe/Normal", "Operator_Present": "Not Present", "Closest_Locator_ID": "007C6D", "Octant_Location": "180-225 Octant", "Screen_Orientation": "Front"}}}
-{"timestamp": "2025-06-13T13:32:56.233996", "changes": {"Operator_MNID": {"OperatorMNID_1": "0000", "OperatorMNID_2": "0000", "OperatorMNID_3": "0000"}}}
-{"timestamp": "2025-06-13T13:32:56.273798", "changes": {"Diagnostic_Information": {"Global_System_Status": "Shutdown/Error", "Driver_0_Status": "Shutdown/Error", "Driver_1_Status": "Shutdown/Error", "Driver_2_Status": "Shutdown/Error", "Driver_3_Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T13:32:56.293616", "changes": {"CANBus_Status": {"Vortex_CAN_Bus_Status": "Safe/Normal", "AVR_CAN_Bus_Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T13:32:56.313792", "changes": {"RF_Module_Status": {"Serial_Comms_Status": "Safe/Normal", "Mnet_Connection_Status": "Safe/Normal", "Wireless_Avr_Error_CodeS_tatus": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T13:32:56.334731", "changes": {"Controller_Status": {"Controller_Version_Status": "Safe/Normal", "Vortex_Board_Version_Status": "Safe/Normal", "KeyLok_Authentication_Status": "Safe/Normal", "Soft_PLC_Comms_Status": "Safe/Normal", "CAN_Serial_Number_Status": "Safe/Normal", "MML_RF_Signal_Detection_Status": "Shutdown/Error", "MML_Mag_Signal_Detection_Driver_0_Status": "Shutdown/Error", "MML_Mag_Signal_Detection_Driver_1_Status": "Shutdown/Error", "MML_Mag_Signal_Detection_Driver_2_Status": "Shutdown/Error", "MML_Mag_Signal_Detection_Driver_3_Status": "Shutdown/Error"}}}
-{"timestamp": "2025-06-13T13:32:56.353821", "changes": {"Proximity_SensorStatus": {"Sync_Rate": "200ms", "Locator_Test_Status": "Safe/Normal", "Sync_Rate_Status": "Safe/Normal", "Locator_Wave_Set_Status": "Safe/Normal", "Locator_Battery_Voltage_Status": "Safe/Normal", "Locator_No_FPGA_Int_Status": "Safe/Normal", "Locator_Driver_Distance_Status": "Safe/Normal"}}}
-{"timestamp": "2025-06-13T13:32:56.373639", "changes": {"Digital_IO_Status": {"Input_0": "Disabled", "Input_1": "Disabled", "Input_2": "Enabled", "Input_3": "Disabled", "Input_4": "Disabled", "Input_5": "Disabled", "Input_6": "Enabled", "Input_7": "Disabled", "Input_8": "Disabled", "Input_9": "Disabled", "Output_0": "Enabled", "Output_1": "Disabled", "Output_2": "Disabled", "Output_3": "Disabled"}}}
-{"timestamp": "2025-06-13T13:32:56.394387", "changes": {"Coil_Driver_Status": {"Serial_Comms Driver 0": "Safe/Normal", "Serial_Comms Driver 1": "Safe/Normal", "Serial_Comms Driver 2": "Safe/Normal", "Serial_Comms Driver 3": "Safe/Normal", "Signal_Open Driver 0": "Safe/Normal", "Signal_Open Driver 1": "Safe/Normal", "Signal_Open Driver 2": "Safe/Normal", "Signal_Open Driver 3": "Safe/Normal", "Signal_Short Driver 0": "Safe/Normal", "Signal_Short Driver 1": "Safe/Normal", "Signal_Short Driver 2": "Safe/Normal", "Signal_Short Driver 3": "Safe/Normal", "Power_Open Driver 0": "Safe/Normal", "Power_Open Driver 1": "Safe/Normal", "Power_Open Driver 2": "Safe/Normal", "Power_Open Driver 3": "Safe/Normal", "Power_Short Driver 0": "Safe/Normal", "Power_Short Driver 1": "Safe/Normal", "Power_Short Driver 2": "Safe/Normal", "Power_Short Driver 3": "Safe/Normal", "Driver_Enable_0": "Enabled", "Driver_Enable_1": "Enabled", "Driver_Enable_2": "Enabled", "Driver_Enable_3": "Enabled", "72V_Supply_Status": "Safe/Normal"}}}
+{
+  "changes": {
+    "Tracking Status": {
+      "Closest Locator ID": "007C6D",
+      "Global Zone Status": "Safe/Normal",
+      "Octant Location": "180-225 Octant",
+      "Operator Present": "Not Present",
+      "Screen Orientation": "Front"
+    }
+  },
+  "timestamp": "2025-06-13T09:59:15.598083"
+}
+{
+  "changes": {
+    "Operator MNID": {
+      "Operator MNID 1": "0000",
+      "Operator MNID 2": "0000",
+      "Operator MNID 3": "0000"
+    }
+  },
+  "timestamp": "2025-06-13T09:59:15.893896"
+}
+{
+  "changes": {
+    "Diagnostic Information": {
+      "Driver 0 Status": "Shutdown/Error",
+      "Driver 1 Status": "Shutdown/Error",
+      "Driver 2 Status": "Shutdown/Error",
+      "Driver 3 Status": "Shutdown/Error",
+      "Global System Status": "Shutdown/Error"
+    }
+  },
+  "timestamp": "2025-06-13T09:59:15.937644"
+}
+{
+  "changes": {
+    "Controller Status": {
+      "CAN Serial Number Status": "Safe/Normal",
+      "Controller Version Status": "Safe/Normal",
+      "KeyLok Authentication Status": "Safe/Normal",
+      "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error",
+      "MML RF Signal Detection Status": "Shutdown/Error",
+      "Soft PLC Comms Status": "Safe/Normal",
+      "Vortex Board Version Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T09:59:15.993978"
+}
+{
+  "changes": {
+    "ProximitySensorStatus": {
+      "LocatorBatteryVoltageStatus": "Safe/Normal",
+      "LocatorDriverDistanceStatus": "Safe/Normal",
+      "LocatorNoFPGAIntStatus": "Safe/Normal",
+      "LocatorTestStatus": "Safe/Normal",
+      "LocatorWaveSetStatus": "Safe/Normal",
+      "SyncRate": "200ms",
+      "SyncRateStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T09:59:16.013786"
+}
+{
+  "changes": {
+    "Digital IO Status": {
+      "Input 0": "Disabled",
+      "Input 1": "Disabled",
+      "Input 2": "Enabled",
+      "Input 3": "Disabled",
+      "Input 4": "Disabled",
+      "Input 5": "Disabled",
+      "Input 6": "Enabled",
+      "Input 7": "Disabled",
+      "Input 8": "Disabled",
+      "Input 9": "Disabled",
+      "Output 0": "Enabled",
+      "Output 1": "Disabled",
+      "Output 2": "Disabled",
+      "Output 3": "Disabled"
+    }
+  },
+  "timestamp": "2025-06-13T09:59:16.033768"
+}
+{
+  "changes": {
+    "Coil Driver Status": {
+      "72V Supply Status": "Safe/Normal",
+      "Driver Enable 0": "Enabled",
+      "Driver Enable 1": "Enabled",
+      "Driver Enable 2": "Enabled",
+      "Driver Enable 3": "Enabled",
+      "Power Open Driver 0": "Safe/Normal",
+      "Power Open Driver 1": "Safe/Normal",
+      "Power Open Driver 2": "Safe/Normal",
+      "Power Open Driver 3": "Safe/Normal",
+      "Power Short Driver 0": "Safe/Normal",
+      "Power Short Driver 1": "Safe/Normal",
+      "Power Short Driver 2": "Safe/Normal",
+      "Power Short Driver 3": "Safe/Normal",
+      "Serial Comms Driver 0": "Safe/Normal",
+      "Serial Comms Driver 1": "Safe/Normal",
+      "Serial Comms Driver 2": "Safe/Normal",
+      "Serial Comms Driver 3": "Safe/Normal",
+      "Signal Open Driver 0": "Safe/Normal",
+      "Signal Open Driver 1": "Safe/Normal",
+      "Signal Open Driver 2": "Safe/Normal",
+      "Signal Open Driver 3": "Safe/Normal",
+      "Signal Short Driver 0": "Safe/Normal",
+      "Signal Short Driver 1": "Safe/Normal",
+      "Signal Short Driver 2": "Safe/Normal",
+      "Signal Short Driver 3": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T09:59:16.054219"
+}
+{
+  "changes": {
+    "Tracking Status": {
+      "Closest Locator ID": "007C6D",
+      "Global Zone Status": "Safe/Normal",
+      "Octant Location": "180-225 Octant",
+      "Operator Present": "Not Present",
+      "Screen Orientation": "Front"
+    }
+  },
+  "timestamp": "2025-06-13T11:21:52.295728"
+}
+{
+  "changes": {
+    "Operator MNID": {
+      "Operator MNID 1": "0000",
+      "Operator MNID 2": "0000",
+      "Operator MNID 3": "0000"
+    }
+  },
+  "timestamp": "2025-06-13T11:21:52.595141"
+}
+{
+  "changes": {
+    "Diagnostic Information": {
+      "Driver 0 Status": "Shutdown/Error",
+      "Driver 1 Status": "Shutdown/Error",
+      "Driver 2 Status": "Shutdown/Error",
+      "Driver 3 Status": "Shutdown/Error",
+      "Global System Status": "Shutdown/Error"
+    }
+  },
+  "timestamp": "2025-06-13T11:21:52.634868"
+}
+{
+  "changes": {
+    "Controller Status": {
+      "CAN Serial Number Status": "Safe/Normal",
+      "Controller Version Status": "Safe/Normal",
+      "KeyLok Authentication Status": "Safe/Normal",
+      "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error",
+      "MML RF Signal Detection Status": "Shutdown/Error",
+      "Soft PLC Comms Status": "Safe/Normal",
+      "Vortex Board Version Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:21:52.696169"
+}
+{
+  "changes": {
+    "ProximitySensorStatus": {
+      "LocatorBatteryVoltageStatus": "Safe/Normal",
+      "LocatorDriverDistanceStatus": "Safe/Normal",
+      "LocatorNoFPGAIntStatus": "Safe/Normal",
+      "LocatorTestStatus": "Safe/Normal",
+      "LocatorWaveSetStatus": "Safe/Normal",
+      "SyncRate": "200ms",
+      "SyncRateStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:21:52.714947"
+}
+{
+  "changes": {
+    "Digital IO Status": {
+      "Input 0": "Disabled",
+      "Input 1": "Disabled",
+      "Input 2": "Enabled",
+      "Input 3": "Disabled",
+      "Input 4": "Disabled",
+      "Input 5": "Disabled",
+      "Input 6": "Enabled",
+      "Input 7": "Disabled",
+      "Input 8": "Disabled",
+      "Input 9": "Disabled",
+      "Output 0": "Enabled",
+      "Output 1": "Disabled",
+      "Output 2": "Disabled",
+      "Output 3": "Disabled"
+    }
+  },
+  "timestamp": "2025-06-13T11:21:52.734980"
+}
+{
+  "changes": {
+    "Coil Driver Status": {
+      "72V Supply Status": "Safe/Normal",
+      "Driver Enable 0": "Enabled",
+      "Driver Enable 1": "Enabled",
+      "Driver Enable 2": "Enabled",
+      "Driver Enable 3": "Enabled",
+      "Power Open Driver 0": "Safe/Normal",
+      "Power Open Driver 1": "Safe/Normal",
+      "Power Open Driver 2": "Safe/Normal",
+      "Power Open Driver 3": "Safe/Normal",
+      "Power Short Driver 0": "Safe/Normal",
+      "Power Short Driver 1": "Safe/Normal",
+      "Power Short Driver 2": "Safe/Normal",
+      "Power Short Driver 3": "Safe/Normal",
+      "Serial Comms Driver 0": "Safe/Normal",
+      "Serial Comms Driver 1": "Safe/Normal",
+      "Serial Comms Driver 2": "Safe/Normal",
+      "Serial Comms Driver 3": "Safe/Normal",
+      "Signal Open Driver 0": "Safe/Normal",
+      "Signal Open Driver 1": "Safe/Normal",
+      "Signal Open Driver 2": "Safe/Normal",
+      "Signal Open Driver 3": "Safe/Normal",
+      "Signal Short Driver 0": "Safe/Normal",
+      "Signal Short Driver 1": "Safe/Normal",
+      "Signal Short Driver 2": "Safe/Normal",
+      "Signal Short Driver 3": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:21:52.755517"
+}
+{
+  "changes": {
+    "Tracking Status": {
+      "Closest Locator ID": "007C6D",
+      "Global Zone Status": "Safe/Normal",
+      "Octant Location": "180-225 Octant",
+      "Operator Present": "Not Present",
+      "Screen Orientation": "Front"
+    }
+  },
+  "timestamp": "2025-06-13T11:31:45.182772"
+}
+{
+  "changes": {
+    "Operator MNID": {
+      "Operator MNID 1": "0000",
+      "Operator MNID 2": "0000",
+      "Operator MNID 3": "0000"
+    }
+  },
+  "timestamp": "2025-06-13T11:31:45.482503"
+}
+{
+  "changes": {
+    "Diagnostic Information": {
+      "Driver 0 Status": "Shutdown/Error",
+      "Driver 1 Status": "Shutdown/Error",
+      "Driver 2 Status": "Shutdown/Error",
+      "Driver 3 Status": "Shutdown/Error",
+      "Global System Status": "Shutdown/Error"
+    }
+  },
+  "timestamp": "2025-06-13T11:31:45.523039"
+}
+{
+  "changes": {
+    "CANBus Status": {
+      "AVR CAN Bus Status": "Safe/Normal",
+      "Vortex CAN Bus Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:31:45.541922"
+}
+{
+  "changes": {
+    "RFModuleStatus": {
+      "MnetConnectionStatus": "Safe/Normal",
+      "SerialCommsStatus": "Safe/Normal",
+      "WirelessAvrErrorCodeStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:31:45.558258"
+}
+{
+  "changes": {
+    "Controller Status": {
+      "CAN Serial Number Status": "Safe/Normal",
+      "Controller Version Status": "Safe/Normal",
+      "KeyLok Authentication Status": "Safe/Normal",
+      "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error",
+      "MML RF Signal Detection Status": "Shutdown/Error",
+      "Soft PLC Comms Status": "Safe/Normal",
+      "Vortex Board Version Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:31:45.583382"
+}
+{
+  "changes": {
+    "ProximitySensorStatus": {
+      "LocatorBatteryVoltageStatus": "Safe/Normal",
+      "LocatorDriverDistanceStatus": "Safe/Normal",
+      "LocatorNoFPGAIntStatus": "Safe/Normal",
+      "LocatorTestStatus": "Safe/Normal",
+      "LocatorWaveSetStatus": "Safe/Normal",
+      "SyncRate": "200ms",
+      "SyncRateStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:31:45.603386"
+}
+{
+  "changes": {
+    "Digital IO Status": {
+      "Input 0": "Disabled",
+      "Input 1": "Disabled",
+      "Input 2": "Enabled",
+      "Input 3": "Disabled",
+      "Input 4": "Disabled",
+      "Input 5": "Disabled",
+      "Input 6": "Enabled",
+      "Input 7": "Disabled",
+      "Input 8": "Disabled",
+      "Input 9": "Disabled",
+      "Output 0": "Enabled",
+      "Output 1": "Disabled",
+      "Output 2": "Disabled",
+      "Output 3": "Disabled"
+    }
+  },
+  "timestamp": "2025-06-13T11:31:45.622070"
+}
+{
+  "changes": {
+    "Coil Driver Status": {
+      "72V Supply Status": "Safe/Normal",
+      "Driver Enable 0": "Enabled",
+      "Driver Enable 1": "Enabled",
+      "Driver Enable 2": "Enabled",
+      "Driver Enable 3": "Enabled",
+      "Power Open Driver 0": "Safe/Normal",
+      "Power Open Driver 1": "Safe/Normal",
+      "Power Open Driver 2": "Safe/Normal",
+      "Power Open Driver 3": "Safe/Normal",
+      "Power Short Driver 0": "Safe/Normal",
+      "Power Short Driver 1": "Safe/Normal",
+      "Power Short Driver 2": "Safe/Normal",
+      "Power Short Driver 3": "Safe/Normal",
+      "Serial Comms Driver 0": "Safe/Normal",
+      "Serial Comms Driver 1": "Safe/Normal",
+      "Serial Comms Driver 2": "Safe/Normal",
+      "Serial Comms Driver 3": "Safe/Normal",
+      "Signal Open Driver 0": "Safe/Normal",
+      "Signal Open Driver 1": "Safe/Normal",
+      "Signal Open Driver 2": "Safe/Normal",
+      "Signal Open Driver 3": "Safe/Normal",
+      "Signal Short Driver 0": "Safe/Normal",
+      "Signal Short Driver 1": "Safe/Normal",
+      "Signal Short Driver 2": "Safe/Normal",
+      "Signal Short Driver 3": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:31:45.642661"
+}
+{
+  "changes": {
+    "Tracking Status": {
+      "Closest Locator ID": "007C6D",
+      "Global Zone Status": "Safe/Normal",
+      "Octant Location": "180-225 Octant",
+      "Operator Present": "Not Present",
+      "Screen Orientation": "Front"
+    }
+  },
+  "timestamp": "2025-06-13T11:35:28.794150"
+}
+{
+  "changes": {
+    "Operator MNID": {
+      "Operator MNID 1": "0000",
+      "Operator MNID 2": "0000",
+      "Operator MNID 3": "0000"
+    }
+  },
+  "timestamp": "2025-06-13T11:35:29.094142"
+}
+{
+  "changes": {
+    "Diagnostic Information": {
+      "Driver 0 Status": "Shutdown/Error",
+      "Driver 1 Status": "Shutdown/Error",
+      "Driver 2 Status": "Shutdown/Error",
+      "Driver 3 Status": "Shutdown/Error",
+      "Global System Status": "Shutdown/Error"
+    }
+  },
+  "timestamp": "2025-06-13T11:35:29.133931"
+}
+{
+  "changes": {
+    "CANBus Status": {
+      "AVR CAN Bus Status": "Safe/Normal",
+      "Vortex CAN Bus Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:35:29.153885"
+}
+{
+  "changes": {
+    "RFModuleStatus": {
+      "MnetConnectionStatus": "Safe/Normal",
+      "SerialCommsStatus": "Safe/Normal",
+      "WirelessAvrErrorCodeStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:35:29.174194"
+}
+{
+  "changes": {
+    "Controller Status": {
+      "CAN Serial Number Status": "Safe/Normal",
+      "Controller Version Status": "Safe/Normal",
+      "KeyLok Authentication Status": "Safe/Normal",
+      "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error",
+      "MML RF Signal Detection Status": "Shutdown/Error",
+      "Soft PLC Comms Status": "Safe/Normal",
+      "Vortex Board Version Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:35:29.195003"
+}
+{
+  "changes": {
+    "ProximitySensorStatus": {
+      "LocatorBatteryVoltageStatus": "Safe/Normal",
+      "LocatorDriverDistanceStatus": "Safe/Normal",
+      "LocatorNoFPGAIntStatus": "Safe/Normal",
+      "LocatorTestStatus": "Safe/Normal",
+      "LocatorWaveSetStatus": "Safe/Normal",
+      "SyncRate": "200ms",
+      "SyncRateStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:35:29.214005"
+}
+{
+  "changes": {
+    "Digital IO Status": {
+      "Input 0": "Disabled",
+      "Input 1": "Disabled",
+      "Input 2": "Enabled",
+      "Input 3": "Disabled",
+      "Input 4": "Disabled",
+      "Input 5": "Disabled",
+      "Input 6": "Enabled",
+      "Input 7": "Disabled",
+      "Input 8": "Disabled",
+      "Input 9": "Disabled",
+      "Output 0": "Enabled",
+      "Output 1": "Disabled",
+      "Output 2": "Disabled",
+      "Output 3": "Disabled"
+    }
+  },
+  "timestamp": "2025-06-13T11:35:29.237091"
+}
+{
+  "changes": {
+    "Coil Driver Status": {
+      "72V Supply Status": "Safe/Normal",
+      "Driver Enable 0": "Enabled",
+      "Driver Enable 1": "Enabled",
+      "Driver Enable 2": "Enabled",
+      "Driver Enable 3": "Enabled",
+      "Power Open Driver 0": "Safe/Normal",
+      "Power Open Driver 1": "Safe/Normal",
+      "Power Open Driver 2": "Safe/Normal",
+      "Power Open Driver 3": "Safe/Normal",
+      "Power Short Driver 0": "Safe/Normal",
+      "Power Short Driver 1": "Safe/Normal",
+      "Power Short Driver 2": "Safe/Normal",
+      "Power Short Driver 3": "Safe/Normal",
+      "Serial Comms Driver 0": "Safe/Normal",
+      "Serial Comms Driver 1": "Safe/Normal",
+      "Serial Comms Driver 2": "Safe/Normal",
+      "Serial Comms Driver 3": "Safe/Normal",
+      "Signal Open Driver 0": "Safe/Normal",
+      "Signal Open Driver 1": "Safe/Normal",
+      "Signal Open Driver 2": "Safe/Normal",
+      "Signal Open Driver 3": "Safe/Normal",
+      "Signal Short Driver 0": "Safe/Normal",
+      "Signal Short Driver 1": "Safe/Normal",
+      "Signal Short Driver 2": "Safe/Normal",
+      "Signal Short Driver 3": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:35:29.254519"
+}
+{
+  "changes": {
+    "Tracking Status": {
+      "Closest Locator ID": "007685",
+      "Global Zone Status": "Shutdown/Error",
+      "Octant Location": "0-45 Octant"
+    }
+  },
+  "timestamp": "2025-06-13T11:40:00.964469"
+}
+{
+  "changes": {
+    "Tracking Status": {
+      "Global Zone Status": "Safe/Normal",
+      "Octant Location": "180-225 Octant"
+    }
+  },
+  "timestamp": "2025-06-13T11:40:10.985360"
+}
+{
+  "changes": {
+    "Tracking Status": {
+      "Closest Locator ID": "007685",
+      "Global Zone Status": "Safe/Normal",
+      "Octant Location": "180-225 Octant",
+      "Operator Present": "Not Present",
+      "Screen Orientation": "Front"
+    }
+  },
+  "timestamp": "2025-06-13T11:47:20.222375"
+}
+{
+  "changes": {
+    "Operator MNID": {
+      "Operator MNID 1": "0000",
+      "Operator MNID 2": "0000",
+      "Operator MNID 3": "0000"
+    }
+  },
+  "timestamp": "2025-06-13T11:47:20.522240"
+}
+{
+  "changes": {
+    "Diagnostic Information": {
+      "Driver 0 Status": "Shutdown/Error",
+      "Driver 1 Status": "Shutdown/Error",
+      "Driver 2 Status": "Shutdown/Error",
+      "Driver 3 Status": "Shutdown/Error",
+      "Global System Status": "Shutdown/Error"
+    }
+  },
+  "timestamp": "2025-06-13T11:47:20.562161"
+}
+{
+  "changes": {
+    "CANBus Status": {
+      "AVR CAN Bus Status": "Safe/Normal",
+      "Vortex CAN Bus Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:47:20.583210"
+}
+{
+  "changes": {
+    "RFModuleStatus": {
+      "MnetConnectionStatus": "Safe/Normal",
+      "SerialCommsStatus": "Safe/Normal",
+      "WirelessAvrErrorCodeStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:47:20.602221"
+}
+{
+  "changes": {
+    "Controller Status": {
+      "CAN Serial Number Status": "Safe/Normal",
+      "Controller Version Status": "Safe/Normal",
+      "KeyLok Authentication Status": "Safe/Normal",
+      "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error",
+      "MML RF Signal Detection Status": "Shutdown/Error",
+      "Soft PLC Comms Status": "Safe/Normal",
+      "Vortex Board Version Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:47:20.623348"
+}
+{
+  "changes": {
+    "ProximitySensorStatus": {
+      "LocatorBatteryVoltageStatus": "Safe/Normal",
+      "LocatorDriverDistanceStatus": "Safe/Normal",
+      "LocatorNoFPGAIntStatus": "Safe/Normal",
+      "LocatorTestStatus": "Safe/Normal",
+      "LocatorWaveSetStatus": "Safe/Normal",
+      "SyncRate": "200ms",
+      "SyncRateStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:47:20.642335"
+}
+{
+  "changes": {
+    "Digital IO Status": {
+      "Input 0": "Disabled",
+      "Input 1": "Disabled",
+      "Input 2": "Enabled",
+      "Input 3": "Disabled",
+      "Input 4": "Disabled",
+      "Input 5": "Disabled",
+      "Input 6": "Enabled",
+      "Input 7": "Disabled",
+      "Input 8": "Disabled",
+      "Input 9": "Disabled",
+      "Output 0": "Enabled",
+      "Output 1": "Disabled",
+      "Output 2": "Disabled",
+      "Output 3": "Disabled"
+    }
+  },
+  "timestamp": "2025-06-13T11:47:20.662812"
+}
+{
+  "changes": {
+    "Coil Driver Status": {
+      "72V Supply Status": "Safe/Normal",
+      "Driver Enable 0": "Enabled",
+      "Driver Enable 1": "Enabled",
+      "Driver Enable 2": "Enabled",
+      "Driver Enable 3": "Enabled",
+      "Power Open Driver 0": "Safe/Normal",
+      "Power Open Driver 1": "Safe/Normal",
+      "Power Open Driver 2": "Safe/Normal",
+      "Power Open Driver 3": "Safe/Normal",
+      "Power Short Driver 0": "Safe/Normal",
+      "Power Short Driver 1": "Safe/Normal",
+      "Power Short Driver 2": "Safe/Normal",
+      "Power Short Driver 3": "Safe/Normal",
+      "Serial Comms Driver 0": "Safe/Normal",
+      "Serial Comms Driver 1": "Safe/Normal",
+      "Serial Comms Driver 2": "Safe/Normal",
+      "Serial Comms Driver 3": "Safe/Normal",
+      "Signal Open Driver 0": "Safe/Normal",
+      "Signal Open Driver 1": "Safe/Normal",
+      "Signal Open Driver 2": "Safe/Normal",
+      "Signal Open Driver 3": "Safe/Normal",
+      "Signal Short Driver 0": "Safe/Normal",
+      "Signal Short Driver 1": "Safe/Normal",
+      "Signal Short Driver 2": "Safe/Normal",
+      "Signal Short Driver 3": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:47:20.683041"
+}
+{
+  "changes": {
+    "Tracking Status": {
+      "Closest Locator ID": "007685",
+      "Global Zone Status": "Safe/Normal",
+      "Octant Location": "180-225 Octant",
+      "Operator Present": "Not Present",
+      "Screen Orientation": "Front"
+    }
+  },
+  "timestamp": "2025-06-13T11:48:19.714866"
+}
+{
+  "changes": {
+    "Operator MNID": {
+      "Operator MNID 1": "0000",
+      "Operator MNID 2": "0000",
+      "Operator MNID 3": "0000"
+    }
+  },
+  "timestamp": "2025-06-13T11:48:20.017068"
+}
+{
+  "changes": {
+    "Diagnostic Information": {
+      "Driver 0 Status": "Shutdown/Error",
+      "Driver 1 Status": "Shutdown/Error",
+      "Driver 2 Status": "Shutdown/Error",
+      "Driver 3 Status": "Shutdown/Error",
+      "Global System Status": "Shutdown/Error"
+    }
+  },
+  "timestamp": "2025-06-13T11:48:20.054619"
+}
+{
+  "changes": {
+    "CANBus Status": {
+      "AVR CAN Bus Status": "Safe/Normal",
+      "Vortex CAN Bus Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:48:20.074245"
+}
+{
+  "changes": {
+    "RFModuleStatus": {
+      "MnetConnectionStatus": "Safe/Normal",
+      "SerialCommsStatus": "Safe/Normal",
+      "WirelessAvrErrorCodeStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:48:20.094308"
+}
+{
+  "changes": {
+    "Controller Status": {
+      "CAN Serial Number Status": "Safe/Normal",
+      "Controller Version Status": "Safe/Normal",
+      "KeyLok Authentication Status": "Safe/Normal",
+      "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error",
+      "MML RF Signal Detection Status": "Shutdown/Error",
+      "Soft PLC Comms Status": "Safe/Normal",
+      "Vortex Board Version Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:48:20.115227"
+}
+{
+  "changes": {
+    "ProximitySensorStatus": {
+      "LocatorBatteryVoltageStatus": "Safe/Normal",
+      "LocatorDriverDistanceStatus": "Safe/Normal",
+      "LocatorNoFPGAIntStatus": "Safe/Normal",
+      "LocatorTestStatus": "Safe/Normal",
+      "LocatorWaveSetStatus": "Safe/Normal",
+      "SyncRate": "200ms",
+      "SyncRateStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:48:20.134385"
+}
+{
+  "changes": {
+    "Digital IO Status": {
+      "Input 0": "Disabled",
+      "Input 1": "Disabled",
+      "Input 2": "Enabled",
+      "Input 3": "Disabled",
+      "Input 4": "Disabled",
+      "Input 5": "Disabled",
+      "Input 6": "Enabled",
+      "Input 7": "Disabled",
+      "Input 8": "Disabled",
+      "Input 9": "Disabled",
+      "Output 0": "Enabled",
+      "Output 1": "Disabled",
+      "Output 2": "Disabled",
+      "Output 3": "Disabled"
+    }
+  },
+  "timestamp": "2025-06-13T11:48:20.154214"
+}
+{
+  "changes": {
+    "Coil Driver Status": {
+      "72V Supply Status": "Safe/Normal",
+      "Driver Enable 0": "Enabled",
+      "Driver Enable 1": "Enabled",
+      "Driver Enable 2": "Enabled",
+      "Driver Enable 3": "Enabled",
+      "Power Open Driver 0": "Safe/Normal",
+      "Power Open Driver 1": "Safe/Normal",
+      "Power Open Driver 2": "Safe/Normal",
+      "Power Open Driver 3": "Safe/Normal",
+      "Power Short Driver 0": "Safe/Normal",
+      "Power Short Driver 1": "Safe/Normal",
+      "Power Short Driver 2": "Safe/Normal",
+      "Power Short Driver 3": "Safe/Normal",
+      "Serial Comms Driver 0": "Safe/Normal",
+      "Serial Comms Driver 1": "Safe/Normal",
+      "Serial Comms Driver 2": "Safe/Normal",
+      "Serial Comms Driver 3": "Safe/Normal",
+      "Signal Open Driver 0": "Safe/Normal",
+      "Signal Open Driver 1": "Safe/Normal",
+      "Signal Open Driver 2": "Safe/Normal",
+      "Signal Open Driver 3": "Safe/Normal",
+      "Signal Short Driver 0": "Safe/Normal",
+      "Signal Short Driver 1": "Safe/Normal",
+      "Signal Short Driver 2": "Safe/Normal",
+      "Signal Short Driver 3": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T11:48:20.174673"
+}
+{
+  "changes": {
+    "Tracking Status": {
+      "Closest Locator ID": "007685",
+      "Global Zone Status": "Safe/Normal",
+      "Octant Location": "180-225 Octant",
+      "Operator Present": "Not Present",
+      "Screen Orientation": "Front"
+    }
+  },
+  "timestamp": "2025-06-13T12:06:40.592610"
+}
+{
+  "changes": {
+    "Operator MNID": {
+      "Operator MNID 1": "0000",
+      "Operator MNID 2": "0000",
+      "Operator MNID 3": "0000"
+    }
+  },
+  "timestamp": "2025-06-13T12:06:40.895297"
+}
+{
+  "changes": {
+    "Diagnostic Information": {
+      "Driver 0 Status": "Shutdown/Error",
+      "Driver 1 Status": "Shutdown/Error",
+      "Driver 2 Status": "Shutdown/Error",
+      "Driver 3 Status": "Shutdown/Error",
+      "Global System Status": "Shutdown/Error"
+    }
+  },
+  "timestamp": "2025-06-13T12:06:40.935281"
+}
+{
+  "changes": {
+    "CANBus Status": {
+      "AVR CAN Bus Status": "Safe/Normal",
+      "Vortex CAN Bus Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:06:40.955011"
+}
+{
+  "changes": {
+    "RFModuleStatus": {
+      "MnetConnectionStatus": "Safe/Normal",
+      "SerialCommsStatus": "Safe/Normal",
+      "WirelessAvrErrorCodeStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:06:40.974957"
+}
+{
+  "changes": {
+    "Controller Status": {
+      "CAN Serial Number Status": "Safe/Normal",
+      "Controller Version Status": "Safe/Normal",
+      "KeyLok Authentication Status": "Safe/Normal",
+      "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error",
+      "MML RF Signal Detection Status": "Shutdown/Error",
+      "Soft PLC Comms Status": "Safe/Normal",
+      "Vortex Board Version Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:06:40.993238"
+}
+{
+  "changes": {
+    "ProximitySensorStatus": {
+      "LocatorBatteryVoltageStatus": "Safe/Normal",
+      "LocatorDriverDistanceStatus": "Safe/Normal",
+      "LocatorNoFPGAIntStatus": "Safe/Normal",
+      "LocatorTestStatus": "Safe/Normal",
+      "LocatorWaveSetStatus": "Safe/Normal",
+      "SyncRate": "200ms",
+      "SyncRateStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:06:41.015166"
+}
+{
+  "changes": {
+    "Digital IO Status": {
+      "Input 0": "Disabled",
+      "Input 1": "Disabled",
+      "Input 2": "Enabled",
+      "Input 3": "Disabled",
+      "Input 4": "Disabled",
+      "Input 5": "Disabled",
+      "Input 6": "Enabled",
+      "Input 7": "Disabled",
+      "Input 8": "Disabled",
+      "Input 9": "Disabled",
+      "Output 0": "Enabled",
+      "Output 1": "Disabled",
+      "Output 2": "Disabled",
+      "Output 3": "Disabled"
+    }
+  },
+  "timestamp": "2025-06-13T12:06:41.035201"
+}
+{
+  "changes": {
+    "Coil Driver Status": {
+      "72V Supply Status": "Safe/Normal",
+      "Driver Enable 0": "Enabled",
+      "Driver Enable 1": "Enabled",
+      "Driver Enable 2": "Enabled",
+      "Driver Enable 3": "Enabled",
+      "Power Open Driver 0": "Safe/Normal",
+      "Power Open Driver 1": "Safe/Normal",
+      "Power Open Driver 2": "Safe/Normal",
+      "Power Open Driver 3": "Safe/Normal",
+      "Power Short Driver 0": "Safe/Normal",
+      "Power Short Driver 1": "Safe/Normal",
+      "Power Short Driver 2": "Safe/Normal",
+      "Power Short Driver 3": "Safe/Normal",
+      "Serial Comms Driver 0": "Safe/Normal",
+      "Serial Comms Driver 1": "Safe/Normal",
+      "Serial Comms Driver 2": "Safe/Normal",
+      "Serial Comms Driver 3": "Safe/Normal",
+      "Signal Open Driver 0": "Safe/Normal",
+      "Signal Open Driver 1": "Safe/Normal",
+      "Signal Open Driver 2": "Safe/Normal",
+      "Signal Open Driver 3": "Safe/Normal",
+      "Signal Short Driver 0": "Safe/Normal",
+      "Signal Short Driver 1": "Safe/Normal",
+      "Signal Short Driver 2": "Safe/Normal",
+      "Signal Short Driver 3": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:06:41.055474"
+}
+{
+  "changes": {
+    "Tracking Status": {
+      "Closest Locator ID": "007685",
+      "Global Zone Status": "Safe/Normal",
+      "Octant Location": "180-225 Octant",
+      "Operator Present": "Not Present",
+      "Screen Orientation": "Front"
+    }
+  },
+  "timestamp": "2025-06-13T12:21:29.510303"
+}
+{
+  "changes": {
+    "Operator MNID": {
+      "Operator MNID 1": "0000",
+      "Operator MNID 2": "0000",
+      "Operator MNID 3": "0000"
+    }
+  },
+  "timestamp": "2025-06-13T12:21:29.813748"
+}
+{
+  "changes": {
+    "Diagnostic Information": {
+      "Driver 0 Status": "Shutdown/Error",
+      "Driver 1 Status": "Shutdown/Error",
+      "Driver 2 Status": "Shutdown/Error",
+      "Driver 3 Status": "Shutdown/Error",
+      "Global System Status": "Shutdown/Error"
+    }
+  },
+  "timestamp": "2025-06-13T12:21:29.849651"
+}
+{
+  "changes": {
+    "CANBus Status": {
+      "AVR CAN Bus Status": "Safe/Normal",
+      "Vortex CAN Bus Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:21:29.873433"
+}
+{
+  "changes": {
+    "RFModuleStatus": {
+      "MnetConnectionStatus": "Safe/Normal",
+      "SerialCommsStatus": "Safe/Normal",
+      "WirelessAvrErrorCodeStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:21:29.889959"
+}
+{
+  "changes": {
+    "Controller Status": {
+      "CAN Serial Number Status": "Safe/Normal",
+      "Controller Version Status": "Safe/Normal",
+      "KeyLok Authentication Status": "Safe/Normal",
+      "MML Mag Signal Detection Driver 0 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 1 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 2 Status": "Shutdown/Error",
+      "MML Mag Signal Detection Driver 3 Status": "Shutdown/Error",
+      "MML RF Signal Detection Status": "Shutdown/Error",
+      "Soft PLC Comms Status": "Safe/Normal",
+      "Vortex Board Version Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:21:29.914677"
+}
+{
+  "changes": {
+    "ProximitySensorStatus": {
+      "LocatorBatteryVoltageStatus": "Safe/Normal",
+      "LocatorDriverDistanceStatus": "Safe/Normal",
+      "LocatorNoFPGAIntStatus": "Safe/Normal",
+      "LocatorTestStatus": "Safe/Normal",
+      "LocatorWaveSetStatus": "Safe/Normal",
+      "SyncRate": "200ms",
+      "SyncRateStatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:21:29.929773"
+}
+{
+  "changes": {
+    "Digital IO Status": {
+      "Input 0": "Disabled",
+      "Input 1": "Disabled",
+      "Input 2": "Enabled",
+      "Input 3": "Disabled",
+      "Input 4": "Disabled",
+      "Input 5": "Disabled",
+      "Input 6": "Enabled",
+      "Input 7": "Disabled",
+      "Input 8": "Disabled",
+      "Input 9": "Disabled",
+      "Output 0": "Enabled",
+      "Output 1": "Disabled",
+      "Output 2": "Disabled",
+      "Output 3": "Disabled"
+    }
+  },
+  "timestamp": "2025-06-13T12:21:29.949812"
+}
+{
+  "changes": {
+    "Coil Driver Status": {
+      "72V Supply Status": "Safe/Normal",
+      "Driver Enable 0": "Enabled",
+      "Driver Enable 1": "Enabled",
+      "Driver Enable 2": "Enabled",
+      "Driver Enable 3": "Enabled",
+      "Power Open Driver 0": "Safe/Normal",
+      "Power Open Driver 1": "Safe/Normal",
+      "Power Open Driver 2": "Safe/Normal",
+      "Power Open Driver 3": "Safe/Normal",
+      "Power Short Driver 0": "Safe/Normal",
+      "Power Short Driver 1": "Safe/Normal",
+      "Power Short Driver 2": "Safe/Normal",
+      "Power Short Driver 3": "Safe/Normal",
+      "Serial Comms Driver 0": "Safe/Normal",
+      "Serial Comms Driver 1": "Safe/Normal",
+      "Serial Comms Driver 2": "Safe/Normal",
+      "Serial Comms Driver 3": "Safe/Normal",
+      "Signal Open Driver 0": "Safe/Normal",
+      "Signal Open Driver 1": "Safe/Normal",
+      "Signal Open Driver 2": "Safe/Normal",
+      "Signal Open Driver 3": "Safe/Normal",
+      "Signal Short Driver 0": "Safe/Normal",
+      "Signal Short Driver 1": "Safe/Normal",
+      "Signal Short Driver 2": "Safe/Normal",
+      "Signal Short Driver 3": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:21:29.970144"
+}
+{
+  "changes": {
+    "Tracking_Status": {
+      "Closest_Locator_ID": "007685",
+      "Global_Zone_Status": "Safe/Normal",
+      "Octant_Location": "180-225 Octant",
+      "Operator_Present": "Not Present",
+      "Screen_Orientation": "Front"
+    }
+  },
+  "timestamp": "2025-06-13T12:32:09.987268"
+}
+{
+  "changes": {
+    "Operator_MNID": {
+      "OperatorMNID_1": "0000",
+      "OperatorMNID_2": "0000",
+      "OperatorMNID_3": "0000"
+    }
+  },
+  "timestamp": "2025-06-13T12:32:10.287079"
+}
+{
+  "changes": {
+    "Diagnostic_Information": {
+      "Driver_0_Status": "Shutdown/Error",
+      "Driver_1_Status": "Shutdown/Error",
+      "Driver_2_Status": "Shutdown/Error",
+      "Driver_3_Status": "Shutdown/Error",
+      "Global_System_Status": "Shutdown/Error"
+    }
+  },
+  "timestamp": "2025-06-13T12:32:10.322920"
+}
+{
+  "changes": {
+    "CANBus_Status": {
+      "AVR_CAN_Bus_Status": "Safe/Normal",
+      "Vortex_CAN_Bus_Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:32:10.342870"
+}
+{
+  "changes": {
+    "RF_Module_Status": {
+      "Mnet_Connection_Status": "Safe/Normal",
+      "Serial_Comms_Status": "Safe/Normal",
+      "Wireless_Avr_Error_CodeS_tatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:32:10.363576"
+}
+{
+  "changes": {
+    "Controller_Status": {
+      "CAN_Serial_Number_Status": "Safe/Normal",
+      "Controller_Version_Status": "Safe/Normal",
+      "KeyLok_Authentication_Status": "Safe/Normal",
+      "MML_Mag_Signal_Detection_Driver_0_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_1_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_2_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_3_Status": "Shutdown/Error",
+      "MML_RF_Signal_Detection_Status": "Shutdown/Error",
+      "Soft_PLC_Comms_Status": "Safe/Normal",
+      "Vortex_Board_Version_Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:32:10.383107"
+}
+{
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Locator_Battery_Voltage_Status": "Safe/Normal",
+      "Locator_Driver_Distance_Status": "Safe/Normal",
+      "Locator_No_FPGA_Int_Status": "Safe/Normal",
+      "Locator_Test_Status": "Safe/Normal",
+      "Locator_Wave_Set_Status": "Safe/Normal",
+      "Sync_Rate": "200ms",
+      "Sync_Rate_Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:32:10.402817"
+}
+{
+  "changes": {
+    "Digital_IO_Status": {
+      "Input 0": "Disabled",
+      "Input 1": "Disabled",
+      "Input 2": "Enabled",
+      "Input 3": "Disabled",
+      "Input 4": "Disabled",
+      "Input 5": "Disabled",
+      "Input 6": "Enabled",
+      "Input 7": "Disabled",
+      "Input 8": "Disabled",
+      "Input 9": "Disabled",
+      "Output 0": "Enabled",
+      "Output 1": "Disabled",
+      "Output 2": "Disabled",
+      "Output 3": "Disabled"
+    }
+  },
+  "timestamp": "2025-06-13T12:32:10.422711"
+}
+{
+  "changes": {
+    "Coil_Driver_Status": {
+      "72V_Supply_Status": "Safe/Normal",
+      "Driver_Enable_0": "Enabled",
+      "Driver_Enable_1": "Enabled",
+      "Driver_Enable_2": "Enabled",
+      "Driver_Enable_3": "Enabled",
+      "Power_Open Driver 0": "Safe/Normal",
+      "Power_Open Driver 1": "Safe/Normal",
+      "Power_Open Driver 2": "Safe/Normal",
+      "Power_Open Driver 3": "Safe/Normal",
+      "Power_Short Driver 0": "Safe/Normal",
+      "Power_Short Driver 1": "Safe/Normal",
+      "Power_Short Driver 2": "Safe/Normal",
+      "Power_Short Driver 3": "Safe/Normal",
+      "Serial_Comms Driver 0": "Safe/Normal",
+      "Serial_Comms Driver 1": "Safe/Normal",
+      "Serial_Comms Driver 2": "Safe/Normal",
+      "Serial_Comms Driver 3": "Safe/Normal",
+      "Signal_Open Driver 0": "Safe/Normal",
+      "Signal_Open Driver 1": "Safe/Normal",
+      "Signal_Open Driver 2": "Safe/Normal",
+      "Signal_Open Driver 3": "Safe/Normal",
+      "Signal_Short Driver 0": "Safe/Normal",
+      "Signal_Short Driver 1": "Safe/Normal",
+      "Signal_Short Driver 2": "Safe/Normal",
+      "Signal_Short Driver 3": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T12:32:10.448837"
+}
+{
+  "changes": {
+    "Tracking_Status": {
+      "Closest_Locator_ID": "007C6D",
+      "Global_Zone_Status": "Safe/Normal",
+      "Octant_Location": "180-225 Octant",
+      "Operator_Present": "Not Present",
+      "Screen_Orientation": "Front"
+    }
+  },
+  "timestamp": "2025-06-13T13:32:55.934055"
+}
+{
+  "changes": {
+    "Operator_MNID": {
+      "OperatorMNID_1": "0000",
+      "OperatorMNID_2": "0000",
+      "OperatorMNID_3": "0000"
+    }
+  },
+  "timestamp": "2025-06-13T13:32:56.233996"
+}
+{
+  "changes": {
+    "Diagnostic_Information": {
+      "Driver_0_Status": "Shutdown/Error",
+      "Driver_1_Status": "Shutdown/Error",
+      "Driver_2_Status": "Shutdown/Error",
+      "Driver_3_Status": "Shutdown/Error",
+      "Global_System_Status": "Shutdown/Error"
+    }
+  },
+  "timestamp": "2025-06-13T13:32:56.273798"
+}
+{
+  "changes": {
+    "CANBus_Status": {
+      "AVR_CAN_Bus_Status": "Safe/Normal",
+      "Vortex_CAN_Bus_Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T13:32:56.293616"
+}
+{
+  "changes": {
+    "RF_Module_Status": {
+      "Mnet_Connection_Status": "Safe/Normal",
+      "Serial_Comms_Status": "Safe/Normal",
+      "Wireless_Avr_Error_CodeS_tatus": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T13:32:56.313792"
+}
+{
+  "changes": {
+    "Controller_Status": {
+      "CAN_Serial_Number_Status": "Safe/Normal",
+      "Controller_Version_Status": "Safe/Normal",
+      "KeyLok_Authentication_Status": "Safe/Normal",
+      "MML_Mag_Signal_Detection_Driver_0_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_1_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_2_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_3_Status": "Shutdown/Error",
+      "MML_RF_Signal_Detection_Status": "Shutdown/Error",
+      "Soft_PLC_Comms_Status": "Safe/Normal",
+      "Vortex_Board_Version_Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T13:32:56.334731"
+}
+{
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Locator_Battery_Voltage_Status": "Safe/Normal",
+      "Locator_Driver_Distance_Status": "Safe/Normal",
+      "Locator_No_FPGA_Int_Status": "Safe/Normal",
+      "Locator_Test_Status": "Safe/Normal",
+      "Locator_Wave_Set_Status": "Safe/Normal",
+      "Sync_Rate": "200ms",
+      "Sync_Rate_Status": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T13:32:56.353821"
+}
+{
+  "changes": {
+    "Digital_IO_Status": {
+      "Input_0": "Disabled",
+      "Input_1": "Disabled",
+      "Input_2": "Enabled",
+      "Input_3": "Disabled",
+      "Input_4": "Disabled",
+      "Input_5": "Disabled",
+      "Input_6": "Enabled",
+      "Input_7": "Disabled",
+      "Input_8": "Disabled",
+      "Input_9": "Disabled",
+      "Output_0": "Enabled",
+      "Output_1": "Disabled",
+      "Output_2": "Disabled",
+      "Output_3": "Disabled"
+    }
+  },
+  "timestamp": "2025-06-13T13:32:56.373639"
+}
+{
+  "changes": {
+    "Coil_Driver_Status": {
+      "72V_Supply_Status": "Safe/Normal",
+      "Driver_Enable_0": "Enabled",
+      "Driver_Enable_1": "Enabled",
+      "Driver_Enable_2": "Enabled",
+      "Driver_Enable_3": "Enabled",
+      "Power_Open Driver 0": "Safe/Normal",
+      "Power_Open Driver 1": "Safe/Normal",
+      "Power_Open Driver 2": "Safe/Normal",
+      "Power_Open Driver 3": "Safe/Normal",
+      "Power_Short Driver 0": "Safe/Normal",
+      "Power_Short Driver 1": "Safe/Normal",
+      "Power_Short Driver 2": "Safe/Normal",
+      "Power_Short Driver 3": "Safe/Normal",
+      "Serial_Comms Driver 0": "Safe/Normal",
+      "Serial_Comms Driver 1": "Safe/Normal",
+      "Serial_Comms Driver 2": "Safe/Normal",
+      "Serial_Comms Driver 3": "Safe/Normal",
+      "Signal_Open Driver 0": "Safe/Normal",
+      "Signal_Open Driver 1": "Safe/Normal",
+      "Signal_Open Driver 2": "Safe/Normal",
+      "Signal_Open Driver 3": "Safe/Normal",
+      "Signal_Short Driver 0": "Safe/Normal",
+      "Signal_Short Driver 1": "Safe/Normal",
+      "Signal_Short Driver 2": "Safe/Normal",
+      "Signal_Short Driver 3": "Safe/Normal"
+    }
+  },
+  "timestamp": "2025-06-13T13:32:56.394387"
+}

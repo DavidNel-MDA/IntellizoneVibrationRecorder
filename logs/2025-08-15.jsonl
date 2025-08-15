@@ -1,0 +1,1059 @@
+{
+  "timestamp": "2025-08-15T10:52:24.050389",
+  "changes": {
+    "Tracking_Status": {
+      "Global_Zone_Status": "Shutdown/Error",
+      "Operator_Present": "Not Present",
+      "Closest_Locator_ID": "017DBE",
+      "Octant_Location": "90-135 Octant",
+      "Screen_Orientation": "Left"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:24.153154",
+  "changes": {
+    "Operator_MNID": {
+      "OperatorMNID_1": "0000",
+      "OperatorMNID_2": "0000",
+      "OperatorMNID_3": "0000"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:24.233393",
+  "changes": {
+    "Coil_Driver_Status": {
+      "Serial_Comms Driver 0": "Safe/Normal",
+      "Serial_Comms Driver 1": "Safe/Normal",
+      "Serial_Comms Driver 2": "Safe/Normal",
+      "Serial_Comms Driver 3": "Safe/Normal",
+      "Signal_Open Driver 0": "Safe/Normal",
+      "Signal_Open Driver 1": "Safe/Normal",
+      "Signal_Open Driver 2": "Safe/Normal",
+      "Signal_Open Driver 3": "Safe/Normal",
+      "Signal_Short Driver 0": "Safe/Normal",
+      "Signal_Short Driver 1": "Safe/Normal",
+      "Signal_Short Driver 2": "Safe/Normal",
+      "Signal_Short Driver 3": "Safe/Normal",
+      "Power_Open Driver 0": "Safe/Normal",
+      "Power_Open Driver 1": "Safe/Normal",
+      "Power_Open Driver 2": "Safe/Normal",
+      "Power_Open Driver 3": "Safe/Normal",
+      "Power_Short Driver 0": "Safe/Normal",
+      "Power_Short Driver 1": "Safe/Normal",
+      "Power_Short Driver 2": "Safe/Normal",
+      "Power_Short Driver 3": "Safe/Normal",
+      "Driver_Enable_0": "Enabled",
+      "Driver_Enable_1": "Enabled",
+      "Driver_Enable_2": "Enabled",
+      "Driver_Enable_3": "Enabled",
+      "72V_Supply_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:24.258509",
+  "changes": {
+    "RF_Module_Status": {
+      "Serial_Comms_Status": "Safe/Normal",
+      "Mnet_Connection_Status": "Safe/Normal",
+      "Wireless_Avr_Error_Code_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:24.368480",
+  "changes": {
+    "Digital_IO_Status": {
+      "Input_0": "Disabled",
+      "Input_1": "Disabled",
+      "Input_2": "Disabled",
+      "Input_3": "Disabled",
+      "Input_4": "Disabled",
+      "Input_5": "Disabled",
+      "Input_6": "Disabled",
+      "Input_7": "Disabled",
+      "Input_8": "Disabled",
+      "Input_9": "Disabled",
+      "Output_0": "Disabled",
+      "Output_1": "Disabled",
+      "Output_2": "Enabled",
+      "Output_3": "Enabled"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:24.384797",
+  "changes": {
+    "Controller_Status": {
+      "Controller_Version_Status": "Safe/Normal",
+      "Vortex_Board_Version_Status": "Safe/Normal",
+      "KeyLok_Authentication_Status": "Safe/Normal",
+      "Soft_PLC_Comms_Status": "Safe/Normal",
+      "CAN_Serial_Number_Status": "Safe/Normal",
+      "MML_RF_Signal_Detection_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_0_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_1_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_2_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_3_Status": "Shutdown/Error"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:24.408552",
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Sync_Rate": "200ms",
+      "Locator_Test_Status": "Shutdown/Error",
+      "Sync_Rate_Status": "Safe/Normal",
+      "Locator_Wave_Set_Status": "Safe/Normal",
+      "Locator_Battery_Voltage_Status": "Safe/Normal",
+      "Locator_No_FPGA_Int_Status": "Safe/Normal",
+      "Locator_Driver_Distance_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:24.453584",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Locator_ID": "017D",
+      "Failure_Type": "Wave Set",
+      "Update_Type": "Remove"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:24.540595",
+  "changes": {
+    "Diagnostic_Information": {
+      "Global_System_Status": "Shutdown/Error",
+      "Driver_0_Status": "Shutdown/Error",
+      "Driver_1_Status": "Shutdown/Error",
+      "Driver_2_Status": "Shutdown/Error",
+      "Driver_3_Status": "Shutdown/Error"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:24.804670",
+  "changes": {
+    "CANBus_Status": {
+      "Vortex_CAN_Bus_Status": "Safe/Normal",
+      "AVR_CAN_Bus_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:34.068681",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:41.672865",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:42.472967",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:59.269470",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Failure_Type": "Test Status"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:59.356876",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:59.670538",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Failure_Type": "Wave Set"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:52:59.756797",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:00.097628",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:00.897808",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:01.296965",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:01.697041",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:02.096880",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:02.497316",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:17.725075",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:17.808984",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:18.524945",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:18.925164",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:19.009110",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:53:20.125089",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:54:20.741906",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:54:21.034095",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:54:25.149763",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:54:27.041839",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:54:27.846435",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "0-45 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:54:28.353819",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:54:28.645809",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:54:29.154060",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:54:29.553751",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:55:32.711024",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Failure_Type": "Test Status"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:55:33.114834",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Failure_Type": "Wave Set"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:56:22.756980",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Failure_Type": "Test Status"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:56:22.835446",
+  "changes": {
+    "Digital_IO_Status": {
+      "Output_2": "Disabled",
+      "Output_3": "Disabled"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:56:23.159575",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Failure_Type": "Wave Set"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:56:23.963857",
+  "changes": {
+    "Digital_IO_Status": {
+      "Output_0": "Enabled"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:57:29.264886",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Failure_Type": "Test Status"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:57:29.665221",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Failure_Type": "Wave Set"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:58:49.591119",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:58:50.394983",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:58:51.200270",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:58:58.983337",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:02.594780",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:03.230919",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "0-45 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:04.034840",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:04.835515",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:06.603012",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:08.435083",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:11.002965",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:12.843309",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:37.299657",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:37.699693",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T10:59:56.136093",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:00:55.130021",
+  "changes": {
+    "Tracking_Status": {
+      "Global_Zone_Status": "Safe/Normal",
+      "Closest_Locator_ID": "000000",
+      "Octant_Location": "0-45 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:00:55.485686",
+  "changes": {
+    "CANBus_Status": {
+      "Vortex_CAN_Bus_Status": "Unknown"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:00:55.505609",
+  "changes": {
+    "RF_Module_Status": {
+      "Serial_Comms_Status": "Unknown",
+      "Mnet_Connection_Status": "Unknown"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:00:55.525836",
+  "changes": {
+    "Controller_Status": {
+      "Vortex_Board_Version_Status": "Shutdown/Error",
+      "KeyLok_Authentication_Status": "Shutdown/Error",
+      "Soft_PLC_Comms_Status": "Shutdown/Error",
+      "CAN_Serial_Number_Status": "Shutdown/Error"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:00:55.546905",
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Sync_Rate": "100ms",
+      "Sync_Rate_Status": "Shutdown/Error",
+      "Locator_Wave_Set_Status": "Shutdown/Error",
+      "Locator_Battery_Voltage_Status": "Shutdown/Error",
+      "Locator_No_FPGA_Int_Status": "Shutdown/Error",
+      "Locator_Driver_Distance_Status": "Shutdown/Error"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:00:55.586926",
+  "changes": {
+    "Coil_Driver_Status": {
+      "Serial_Comms Driver 0": "Shutdown/Error",
+      "Serial_Comms Driver 1": "Shutdown/Error",
+      "Serial_Comms Driver 2": "Shutdown/Error",
+      "Serial_Comms Driver 3": "Shutdown/Error",
+      "Signal_Open Driver 0": "Shutdown/Error",
+      "Signal_Open Driver 1": "Shutdown/Error",
+      "Signal_Open Driver 2": "Shutdown/Error",
+      "Signal_Open Driver 3": "Shutdown/Error",
+      "Signal_Short Driver 0": "Shutdown/Error",
+      "Signal_Short Driver 1": "Shutdown/Error",
+      "Signal_Short Driver 2": "Shutdown/Error",
+      "Signal_Short Driver 3": "Shutdown/Error",
+      "Power_Open Driver 0": "Shutdown/Error",
+      "Power_Open Driver 1": "Shutdown/Error",
+      "Power_Open Driver 2": "Shutdown/Error",
+      "Power_Open Driver 3": "Shutdown/Error",
+      "Power_Short Driver 0": "Shutdown/Error",
+      "Power_Short Driver 1": "Shutdown/Error",
+      "Power_Short Driver 2": "Shutdown/Error",
+      "Power_Short Driver 3": "Shutdown/Error",
+      "Driver_Enable_0": "Disabled",
+      "Driver_Enable_1": "Disabled",
+      "Driver_Enable_2": "Disabled",
+      "Driver_Enable_3": "Disabled",
+      "72V_Supply_Status": "Shutdown/Error"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:00:56.245547",
+  "changes": {
+    "CANBus_Status": {
+      "Vortex_CAN_Bus_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:00:56.286377",
+  "changes": {
+    "RF_Module_Status": {
+      "Mnet_Connection_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:00:56.327420",
+  "changes": {
+    "Controller_Status": {
+      "Controller_Version_Status": "Shutdown/Error",
+      "Vortex_Board_Version_Status": "Safe/Normal",
+      "KeyLok_Authentication_Status": "Safe/Normal",
+      "Soft_PLC_Comms_Status": "Safe/Normal",
+      "CAN_Serial_Number_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:02.937990",
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Locator_Driver_Distance_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:05.061247",
+  "changes": {
+    "Coil_Driver_Status": {
+      "Signal_Open Driver 0": "Safe/Normal",
+      "Signal_Open Driver 1": "Safe/Normal",
+      "Signal_Open Driver 2": "Safe/Normal",
+      "Signal_Open Driver 3": "Safe/Normal",
+      "Signal_Short Driver 0": "Safe/Normal",
+      "Signal_Short Driver 1": "Safe/Normal",
+      "Signal_Short Driver 2": "Safe/Normal",
+      "Signal_Short Driver 3": "Safe/Normal",
+      "Power_Open Driver 0": "Safe/Normal",
+      "Power_Open Driver 1": "Safe/Normal",
+      "Power_Open Driver 2": "Safe/Normal",
+      "Power_Open Driver 3": "Safe/Normal",
+      "Power_Short Driver 0": "Safe/Normal",
+      "Power_Short Driver 1": "Safe/Normal",
+      "Power_Short Driver 2": "Safe/Normal",
+      "Power_Short Driver 3": "Safe/Normal",
+      "Driver_Enable_0": "Enabled",
+      "Driver_Enable_1": "Enabled",
+      "Driver_Enable_2": "Enabled",
+      "Driver_Enable_3": "Enabled",
+      "72V_Supply_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:05.558190",
+  "changes": {
+    "Tracking_Status": {
+      "Global_Zone_Status": "Shutdown/Error",
+      "Closest_Locator_ID": "017DBE",
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:05.922422",
+  "changes": {
+    "Coil_Driver_Status": {
+      "Serial_Comms Driver 0": "Safe/Normal",
+      "Serial_Comms Driver 1": "Safe/Normal",
+      "Serial_Comms Driver 2": "Safe/Normal",
+      "Serial_Comms Driver 3": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:05.958407",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:06.226659",
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Sync_Rate": "700ms"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:06.442262",
+  "changes": {
+    "RF_Module_Status": {
+      "Serial_Comms_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:07.046521",
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Sync_Rate": "500ms",
+      "Sync_Rate_Status": "Warning"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:07.554119",
+  "changes": {
+    "Controller_Status": {
+      "Controller_Version_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:07.866106",
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Sync_Rate": "300ms"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:07.959350",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Failure_Type": "Test Status"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:08.362126",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Failure_Type": "Wave Set"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:08.686037",
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Sync_Rate": "200ms",
+      "Locator_Wave_Set_Status": "Safe/Normal",
+      "Locator_Battery_Voltage_Status": "Warning",
+      "Locator_No_FPGA_Int_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:18.526651",
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Sync_Rate_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:01:28.371449",
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Locator_Battery_Voltage_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:02:25.972175",
+  "changes": {
+    "CANBus_Status": {
+      "Vortex_CAN_Bus_Status": "Safe/Normal",
+      "AVR_CAN_Bus_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:02:25.992426",
+  "changes": {
+    "Controller_Status": {
+      "Controller_Version_Status": "Safe/Normal",
+      "Vortex_Board_Version_Status": "Safe/Normal",
+      "KeyLok_Authentication_Status": "Safe/Normal",
+      "Soft_PLC_Comms_Status": "Safe/Normal",
+      "CAN_Serial_Number_Status": "Safe/Normal",
+      "MML_RF_Signal_Detection_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_0_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_1_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_2_Status": "Shutdown/Error",
+      "MML_Mag_Signal_Detection_Driver_3_Status": "Shutdown/Error"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:02:26.084630",
+  "changes": {
+    "Tracking_Status": {
+      "Global_Zone_Status": "Shutdown/Error",
+      "Operator_Present": "Not Present",
+      "Closest_Locator_ID": "017DBE",
+      "Octant_Location": "45-90 Octant",
+      "Screen_Orientation": "Left"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:02:26.092132",
+  "changes": {
+    "RF_Module_Status": {
+      "Serial_Comms_Status": "Safe/Normal",
+      "Mnet_Connection_Status": "Safe/Normal",
+      "Wireless_Avr_Error_Code_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:02:26.250980",
+  "changes": {
+    "Operator_MNID": {
+      "OperatorMNID_1": "0000",
+      "OperatorMNID_2": "0000",
+      "OperatorMNID_3": "0000"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:02:26.344229",
+  "changes": {
+    "Digital_IO_Status": {
+      "Input_0": "Disabled",
+      "Input_1": "Disabled",
+      "Input_2": "Disabled",
+      "Input_3": "Disabled",
+      "Input_4": "Disabled",
+      "Input_5": "Disabled",
+      "Input_6": "Disabled",
+      "Input_7": "Disabled",
+      "Input_8": "Disabled",
+      "Input_9": "Disabled",
+      "Output_0": "Enabled",
+      "Output_1": "Disabled",
+      "Output_2": "Disabled",
+      "Output_3": "Disabled"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:02:26.372315",
+  "changes": {
+    "Locator_Failure_Update": {
+      "Locator_ID": "017D",
+      "Failure_Type": "Wave Set",
+      "Update_Type": "Remove"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:02:26.588912",
+  "changes": {
+    "Diagnostic_Information": {
+      "Global_System_Status": "Shutdown/Error",
+      "Driver_0_Status": "Shutdown/Error",
+      "Driver_1_Status": "Shutdown/Error",
+      "Driver_2_Status": "Shutdown/Error",
+      "Driver_3_Status": "Shutdown/Error"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:02:26.628460",
+  "changes": {
+    "Proximity_SensorStatus": {
+      "Sync_Rate": "200ms",
+      "Locator_Test_Status": "Shutdown/Error",
+      "Sync_Rate_Status": "Safe/Normal",
+      "Locator_Wave_Set_Status": "Safe/Normal",
+      "Locator_Battery_Voltage_Status": "Safe/Normal",
+      "Locator_No_FPGA_Int_Status": "Safe/Normal",
+      "Locator_Driver_Distance_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:02:26.817358",
+  "changes": {
+    "Coil_Driver_Status": {
+      "Serial_Comms Driver 0": "Safe/Normal",
+      "Serial_Comms Driver 1": "Safe/Normal",
+      "Serial_Comms Driver 2": "Safe/Normal",
+      "Serial_Comms Driver 3": "Safe/Normal",
+      "Signal_Open Driver 0": "Safe/Normal",
+      "Signal_Open Driver 1": "Safe/Normal",
+      "Signal_Open Driver 2": "Safe/Normal",
+      "Signal_Open Driver 3": "Safe/Normal",
+      "Signal_Short Driver 0": "Safe/Normal",
+      "Signal_Short Driver 1": "Safe/Normal",
+      "Signal_Short Driver 2": "Safe/Normal",
+      "Signal_Short Driver 3": "Safe/Normal",
+      "Power_Open Driver 0": "Safe/Normal",
+      "Power_Open Driver 1": "Safe/Normal",
+      "Power_Open Driver 2": "Safe/Normal",
+      "Power_Open Driver 3": "Safe/Normal",
+      "Power_Short Driver 0": "Safe/Normal",
+      "Power_Short Driver 1": "Safe/Normal",
+      "Power_Short Driver 2": "Safe/Normal",
+      "Power_Short Driver 3": "Safe/Normal",
+      "Driver_Enable_0": "Enabled",
+      "Driver_Enable_1": "Enabled",
+      "Driver_Enable_2": "Enabled",
+      "Driver_Enable_3": "Enabled",
+      "72V_Supply_Status": "Safe/Normal"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:24.327762",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:24.967951",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:25.131855",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:28.176149",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "135-180 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:28.339852",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "180-225 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:28.576080",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "270-315 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:28.975952",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "315-360 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:29.539847",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "0-45 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:31.379954",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "45-90 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:36.985704",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:38.588087",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "135-180 Octant"
+    }
+  }
+}
+{
+  "timestamp": "2025-08-15T11:04:39.388245",
+  "changes": {
+    "Tracking_Status": {
+      "Octant_Location": "90-135 Octant"
+    }
+  }
+}
