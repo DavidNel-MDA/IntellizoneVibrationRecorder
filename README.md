@@ -34,7 +34,7 @@ Support for multiple module types and message types
 
 ## Installation
 
-1. Clone the repository: [git clone https://github.com/your-repo/intellizone-can-device.git](https://github.com/DavidNel-MDA/IntellizoneVibrationRecorder.git)
+1. Clone the repository: [git clone https://github.com/DavidNel-MDA/IntellizoneVibrationRecorder.git](https://github.com/DavidNel-MDA/IntellizoneVibrationRecorder.git)
 2. Install the required libraries: pip install -r requirements.txt
 3. Configure the config_yaml.py file with your device's Unique ID (UID) and
 other settings.
