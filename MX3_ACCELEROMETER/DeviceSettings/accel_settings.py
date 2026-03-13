@@ -7,7 +7,7 @@ ACC6 = REG["READ_WRITE"]["CONTROL_REGISTER"]["Accelerometer_Control_6"]
 # Extract bitfield values from YAML
 ACC_ODR = ACC6["Output_Data_Rate"]["952Hz"]
 ACC_FS_BITVAL = ACC6["Full_Scale_Selection"]["±2g"]
-ACC_BW_SCALE = 1 if ACC6["Bandwidth_Scaling"]["Auto"] else 0
+ACC_BW_SCALE = ACC6["Bandwidth_Scaling"]["ODR_Determined"]
 ACC_BW = ACC6["Bandwidth_Filter"]["408Hz"]
 
 # Bit-pack the control register value

@@ -33,11 +33,6 @@ def request_controller_status(
     -------
     None
     """
-    # if can_bus is None or node_id is None:
-    #     # Check for valid CAN bus and Node ID
-    #     logger.error("Invalid CAN bus or node ID.")
-    #     return
-
     # Create a SendMessage object for Status_Read_Request
     sender = SendMessage(
         message_type=CONTROLLER_MESSAGE_TYPE["Status_Read_Request"],

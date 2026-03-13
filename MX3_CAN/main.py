@@ -8,9 +8,11 @@ import can
 from MX3_CAN.can_interface import CANInterface
 from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, MODULE_TYPE, UID
 from MX3_CAN.messages import SendMessage
-from MX3_CAN.node_discovery import (log_timeout_error,
-                                    send_periodic_node_discovery,
-                                    wait_for_configuration_write)
+from MX3_CAN.node_discovery import (
+    log_timeout_error,
+    send_periodic_node_discovery,
+    wait_for_configuration_write,
+)
 from MX3_CAN.status_listener import StatusListener
 from MX3_CAN.status_request import request_controller_status
 
@@ -26,18 +28,18 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def initialize_can_interface() -> can.BusABC:
+def initialize_can_interface() -> tuple[CANInterface, can.BusABC]:
     """
     Initialize the CAN interface and bring it up.
 
     Returns the active CAN bus interface.
     """
     # Create a CAN interface object
-    can_if: CANInterface = CANInterface()
+    can_interface = CANInterface()
     # Bring up the CAN interface
-    can_bus: can.BusABC = can_if.bring_up()
+    can_bus = can_interface.bring_up()
     # Return the active CAN bus interface
-    return can_bus
+    return can_interface, can_bus
 
 
 def perform_node_discovery(canbus: can.BusABC, uid: list[int]) -> int:
@@ -156,8 +158,7 @@ def main() -> None:
 
         try:
             # 1. Initialize CAN
-            can_interface = CANInterface()
-            can_bus = can_interface.bring_up()
+            can_interface, can_bus = initialize_can_interface()
             logger.info("Initialized CAN bus interface.")
 
             # 2. Node discovery (may raise TimeoutError)

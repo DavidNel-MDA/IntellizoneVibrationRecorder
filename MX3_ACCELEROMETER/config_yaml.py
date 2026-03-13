@@ -40,9 +40,8 @@ def reload_config(path: str) -> None:
 
 
 # Load default config on import
-if __name__ == "__main__" or True:  # Always load on import for now
-    relative_path = get_config_path()
-    default_path = os.path.abspath(
-        os.path.join(os.path.dirname(__file__), "..", relative_path)
-    )
-    reload_config(default_path)
+relative_path = get_config_path()
+default_path = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", relative_path)
+)
+reload_config(default_path)

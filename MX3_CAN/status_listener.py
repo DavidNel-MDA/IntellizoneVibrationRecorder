@@ -6,7 +6,7 @@ import threading
 
 import can
 
-from MX3_CAN.config_yaml import *
+from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE
 from MX3_CAN.message_parser import parse_message
 
 

@@ -4,23 +4,18 @@ from datetime import datetime
 
 import can
 
-from MX3_CAN.config_yaml import (CONTROLLER_MESSAGE_TYPE, DISCOVERY_TIMEOUT,
-                                 MODULE_TYPE)
+from MX3_CAN.config_yaml import CONTROLLER_MESSAGE_TYPE, DISCOVERY_TIMEOUT, MODULE_TYPE
 from MX3_CAN.messages import SendMessage
-
-ERROR_LOG_BASE = "error_log_"
 
 
 def get_daily_error_log_filename():
     """Generate filename for today's error log."""
-    return f"{ERROR_LOG_BASE}{datetime.now().strftime('%Y-%m-%d')}.log"
+    return f"error_log_{datetime.now().strftime('%Y-%m-%d')}.log"
 
 
 def log_timeout_error(message: str):
-    os.makedirs("logs", exist_ok=True)  # Ensure folder exists
-    log_file = os.path.join(
-        "logs", f"error_log_{datetime.now().strftime('%Y-%m-%d')}.log"
-    )
+    os.makedirs("logs", exist_ok=True)
+    log_file = os.path.join("logs", get_daily_error_log_filename())
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     with open(log_file, "a") as f:
         f.write(f"{timestamp} - {message}\n")

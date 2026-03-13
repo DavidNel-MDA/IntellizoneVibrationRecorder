@@ -1,6 +1,16 @@
 import logging
 
-from MX3_CAN.config_yaml import *
+from MX3_CAN.config_yaml import (
+    ENABLED_STATUS,
+    GLOBAL_ZONE_STATUS,
+    LOCATOR_FAILURE_TYPES,
+    LOCATOR_UPDATE_TYPES,
+    OCTANT_LOCATION,
+    OPERATOR_PRESENCE,
+    PROXIMITY_SYNC_RATE,
+    SCREEN_ORIENTATION,
+    STATUS_LEVEL,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -232,7 +242,7 @@ def parse_can_bus_status(
 
     except Exception as e:
         # Log exception information and the raw data
-        logger.exception("Error parsing <Message Type>: %s", e)
+        logger.exception("Error parsing CAN bus status: %s", e)
         logger.debug("Raw data: %s", data_bytes)
 
     return status_store
@@ -283,7 +293,7 @@ def parse_rf_module_status(
                 status_store[status_key][key] = value
 
     except Exception as e:
-        logger.exception("Error parsing <Message Type>: %s", e)
+        logger.exception("Error parsing CAN bus status: %s", e)
         logger.debug("Raw data: %s", data_bytes)
 
     return status_store
@@ -365,7 +375,7 @@ def parse_controller_status(
                 status_store["Controller_Status"][key] = value
 
     except Exception as e:
-        logger.exception("Error parsing <Message Type>: %s", e)
+        logger.exception("Error parsing CAN bus status: %s", e)
         logger.debug("Raw data: %s", data_bytes)
 
     return status_store
@@ -429,7 +439,7 @@ def parse_proximity_sensor_status(
                 status_store[status_key][key] = value
     except Exception as e:
         # Log exception information and the raw data
-        logger.exception("Error parsing <Message Type>: %s", e)
+        logger.exception("Error parsing CAN bus status: %s", e)
         logger.debug("Raw data: %s", data_bytes)
 
     return status_store
@@ -499,7 +509,7 @@ def parse_coil_driver_status(
             if status_store[status_key].get(key) != value:
                 status_store[status_key][key] = value
     except Exception as e:
-        logger.exception("Error parsing <Message Type>: %s", e)
+        logger.exception("Error parsing CAN bus status: %s", e)
         logger.debug("Raw data: %s", data_bytes)
 
     return status_store
@@ -548,7 +558,7 @@ def parse_digital_io_status(
             if status_store["Digital_IO_Status"].get(key) != value:
                 status_store["Digital_IO_Status"][key] = value
     except Exception as e:
-        logger.exception("Error parsing <Message Type>: %s", e)
+        logger.exception("Error parsing CAN bus status: %s", e)
         logger.debug("Raw data: %s", data_bytes)
     return status_store
 
@@ -613,7 +623,7 @@ def parse_long_range_drive_status_1(
             if status_store[status_key].get(key) != value:
                 status_store[status_key][key] = value
     except Exception as e:
-        logger.exception("Error parsing <Message Type>: %s", e)
+        logger.exception("Error parsing CAN bus status: %s", e)
         logger.debug("Raw data: %s", data_bytes)
     return status_store
 
@@ -696,7 +706,7 @@ def parse_long_range_drive_status_2(
             if status_store[status_key].get(key) != value:
                 status_store[status_key][key] = value
     except Exception as e:
-        logger.exception("Error parsing <Message Type>: %s", e)
+        logger.exception("Error parsing CAN bus status: %s", e)
         logger.debug("Raw data: %s", data_bytes)
     return status_store
 
@@ -747,7 +757,7 @@ def parse_locator_failure_update(
             if status_store["Locator_Failure_Update"].get(key) != value:
                 status_store["Locator_Failure_Update"][key] = value
     except Exception as e:
-        logger.exception("Error parsing <Message Type>: %s", e)
+        logger.exception("Error parsing CAN bus status: %s", e)
         logger.debug("Raw data: %s", data_bytes)
     return status_store
 
@@ -780,7 +790,7 @@ def parse_message(
             return parser_function(data_bytes, status_store)
 
     except Exception as e:
-        logger.exception("Error parsing <Message Type>: %s", e)
+        logger.exception("Error parsing CAN bus status: %s", e)
         logger.debug("Raw data: %s", data_bytes)
     return status_store
 
